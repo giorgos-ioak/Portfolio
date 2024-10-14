@@ -1,0 +1,223 @@
+.h2 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.p {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 2rem;
+}
+
+.summarySection {
+  width: 60%;
+  margin: auto;
+  margin-top: 15rem;
+}
+
+
+.redBlock {
+  position: absolute;
+  right: -20vw;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6rem;
+  background-color: red;
+}
+
+
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 90%;
+    margin-top: 8rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -5vw;
+    top: 35%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 80%;
+    margin-top: 8rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -10vw;
+    top: 35%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 75%;
+    margin-top: 8rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -12.5vw;
+    top: 40%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 70%;
+    margin-top: 12rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -15vw;
+    top: 45%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 70%;
+    margin-top: 12rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -15vw;
+    top: 50%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1rem;
+    line-height: 150%;
+    font-size: 1rem;
+  }
+  
+  .summarySection {
+    width: 70%;
+    margin-top: 12rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -15vw;
+    top: 50%;
+    width: 6px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1444px) {
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .p {
+    margin-top: 1.2rem;
+    line-height: 150%;
+    font-size: 1.1rem;
+  }
+  
+  .summarySection {
+    width: 65%;
+    margin-top: 12rem;
+  }
+  
+  .redBlock {
+    position: absolute;
+    right: -17.5vw;
+    top: 45%;
+    width: 6px;
+    height: 6rem;
+  }
+}
