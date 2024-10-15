@@ -1,0 +1,238 @@
+.mainContainer {
+  background-color: white;
+  border-radius: 1rem;
+  width: 40%;
+  padding: 2rem;
+  height: fit-content;
+}
+
+.titleContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.itemContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  gap: 1rem;
+  padding-left: 2.5rem;
+}
+
+
+.label {
+  font-family: 'Roboto';
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+
+.p {
+  font-family: 'Roboto';
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+
+
+
+
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.2rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1444px) {
+  .mainContainer {
+    width: 100%;
+    padding: 1rem;
+  }
+  
+
+  .img {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  
+  .itemContainer {
+    gap: 0.8rem;
+  }
+  
+  .label {
+    font-size: 1.2rem;
+  }
+  
+  
+  .p {
+    font-size: 1rem;
+  }
+}

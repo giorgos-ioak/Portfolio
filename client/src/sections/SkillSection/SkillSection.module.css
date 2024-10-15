@@ -1,0 +1,260 @@
+
+/****  CONTAINERS FOR SMALL AND LARGE SCREENS  ****/
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 60vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+.subContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.subContainerSmall {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/*********/
+
+
+
+
+
+.h2 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+
+.titleContainer {
+  display: flex;
+  gap: 1rem;
+  width: 60%;
+  margin: auto;
+}
+
+
+
+.skillSection {
+  margin-top: 12rem;
+}
+
+
+.redBlock {
+  position: absolute;
+  right: -20vw;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 6rem;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainerSmall {
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 90%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainerSmall {
+    width: 80%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 80%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainerSmall {
+    width: 75%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 75%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainerSmall {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .skillSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1444px) {
+  .skillSection {
+    margin-top: 10rem;
+  }
+
+  .subContainer {
+    width: 65%;
+    gap: 1.5rem;
+  }
+
+  .mainContainer {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .titleContainer {
+    width: 65%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+}
