@@ -8,7 +8,7 @@ import database from '../../assets/database.png';
 import frameworks from '../../assets/frameworks.png';
 import libraries_platforms from '../../assets/libraries_platforms.png';
 
-import SkillsContainer from '../../components/SkillsContainer.jsx';
+import SkillsContainer from '../../components/SkillsContainer/SkillsContainer.jsx';
 
 function SkillSection() {
   const isVerySmallScreen = useMediaQuery('(max-width:768px)');
@@ -64,7 +64,7 @@ function SkillSection() {
           
         </div>
         
-          
+        <div className={classes.redBlock}></div> 
       </section>
     </>
     
