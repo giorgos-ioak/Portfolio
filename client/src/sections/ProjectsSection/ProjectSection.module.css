@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 60vh;
+  height: 70vh;
   margin-top: 1rem;
   background-color: rgba(114, 170, 255);
   padding-top: 2rem;
@@ -24,9 +24,20 @@
   margin: 0 auto;
 }
 
-/*********/
+
+.btnContainer {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+/******/
 
 
+.projectSection {
+  margin-top: 12rem;
+}
 
 
 
@@ -39,22 +50,16 @@
 
 .titleContainer {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   width: 60%;
   margin: auto;
 }
 
 
-
-.skillSection {
-  margin-top: 12rem;
-}
-
-
 .redBlock {
   position: absolute;
-  left: 0vw;
-  top: 19.5%;
+  right: 0vw;
+  top: 17%;
   transform: translateY(-50%);
   width: 10px;
   height: 8rem;
@@ -68,36 +73,35 @@
 
 
 
-
 /*****  WIDTH   *****/
 @media (max-width: 370px) {
-  .skillSection {
-    margin-top: 8rem;
-  }
-
   .subContainerSmall {
     width: 90%;
     gap: 1.5rem;
   }
 
-  .mainContainer {
-    gap: 1.5rem;
-    height: 72vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 90%;
+  .projectSection {
+    margin-top: 8rem;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 90%;
+  }
+
+  .btnContainer {
+    width: 90%;
+    justify-content: center;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 13%;
+    right: 0vw;
+    top: 13.5%;
     width: 4px;
     height: 6rem;
   }
@@ -105,66 +109,60 @@
 
 
 @media (min-width: 371px) and (max-width: 500px) {
-  .skillSection {
-    margin-top: 8rem;
-  }
-
   .subContainerSmall {
     width: 80%;
     gap: 1.5rem;
   }
 
-  .mainContainer {
-    gap: 1.5rem;
-    height: 72vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 80%;
+  .projectSection {
+    margin-top: 8rem;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 80%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 13%;
+    right: 0vw;
+    top: 13.5%;
     width: 4px;
     height: 6rem;
   }
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
-  .skillSection {
-    margin-top: 8rem;
-  }
-
   .subContainerSmall {
-    width: 75%;
+    width: 90%;
     gap: 1.5rem;
   }
 
-  .mainContainer {
-    gap: 1.5rem;
-    height: 72vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 75%;
+  .projectSection {
+    margin-top: 8rem;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 75%;
+  }
+
+  .btnContainer {
+    width: 55%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 13%;
+    right: 0vw;
+    top: 13.5%;
     width: 4px;
     height: 6rem;
   }
@@ -173,33 +171,32 @@
 
 
 @media (min-width: 601px) and (max-width: 768px) {
-  .skillSection {
+  .subContainer {
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .projectSection {
     margin-top: 8rem;
-  }
-
-  .subContainerSmall {
-    width: 70%;
-    gap: 1.5rem;
-  }
-
-  .mainContainer {
-    gap: 1.5rem;
-    height: 72vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 70%;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 80%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 13%;
+    right: 0vw;
+    top: 13.5%;
     width: 4px;
     height: 6rem;
   }
@@ -208,33 +205,32 @@
 
 
 @media (min-width: 769px) and (max-width: 900px) {
-  .skillSection {
-    margin-top: 8rem;
-  }
-
   .subContainer {
     width: 70%;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .mainContainer {
-    gap: 3rem;
-    height: 45vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 70%;
+  .projectSection {
+    margin-top: 8rem;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 70%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 20%;
+    right: 0vw;
+    top: 13.5%;
     width: 4px;
     height: 6rem;
   }
@@ -242,68 +238,101 @@
 
 
 @media (min-width: 901px) and (max-width: 1024px) {
-  .skillSection {
+  .subContainer {
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  .projectSection {
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 70%;
-    gap: 1.5rem;
-  }
-
-  .mainContainer {
-    gap: 3rem;
-    height: 45vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 70%;
-  }
-
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 70%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 20%;
+    right: 0vw;
+    top: 13.5%;
     width: 6px;
     height: 6rem;
   }
 }
 
 
-@media (min-width: 1025px) and (max-width: 1444px) {
-  .skillSection {
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .subContainer {
+    width: 65%;
+    gap: 2rem;
+  }
+
+  .projectSection {
     margin-top: 10rem;
   }
 
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 65%;
+  }
+
+  .btnContainer {
+    width: 65%;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 13.5%;
+    width: 6px;
+    height: 6rem;
+  }
+}
+
+
+
+@media (min-width: 1281px) and (max-width: 1444px) {
   .subContainer {
     width: 65%;
-    gap: 1.5rem;
+    gap: 2rem;
   }
 
-  .mainContainer {
-    gap: 3rem;
-    height: 45vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .titleContainer {
-    width: 65%;
+  .projectSection {
+    margin-top: 10rem;
   }
 
   .h2 {
     font-size: 1.5rem;
   }
+  
+  
+  .titleContainer {
+    gap: 1.5rem;
+    width: 65%;
+  }
+
+  .btnContainer {
+    width: 65%;
+  }
 
   .redBlock {
-    left: 0vw;
-    top: 20%;
+    right: 0vw;
+    top: 13.5%;
     width: 6px;
     height: 6rem;
   }
 }
+
