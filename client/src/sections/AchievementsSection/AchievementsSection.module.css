@@ -1,0 +1,325 @@
+
+/****  CONTAINERS FOR SMALL AND LARGE SCREENS  ****/
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 70vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+
+.subContainer {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+/*********/
+
+
+
+.achievementsSection {
+  margin-top: 12rem;
+}
+
+
+
+.h2 {
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+
+.titleContainer {
+  display: flex;
+  gap: 2rem;
+  width: 60%;
+  margin: auto;
+}
+
+
+
+.btnContainer {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  justify-content: flex-end;
+}
+
+
+.redBlock {
+  position: absolute;
+  left: 0vw;
+  top: 10%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 8rem;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 90%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 90%;
+  }
+
+  .btnContainer {
+    width: 90%;
+    justify-content: center;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 80%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 80%;
+  }
+
+  .btnContainer {
+    width: 80%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 75%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 75%;
+  }
+
+  .btnContainer {
+    width: 75%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 70%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 70%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 4px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .mainContainer {
+    height: 45vh;
+  }
+
+  .achievementsSection {
+    margin-top: 8rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 70%;
+  }
+
+  .btnContainer {
+    width: 70%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 11.5%;
+    width: 6px;
+    height: 6rem;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1444px) {
+  .subContainer {
+    width: 65%;
+  }
+
+  .achievementsSection {
+    margin-top: 10rem;
+  }
+
+  .h2 {
+    font-size: 1.5rem;
+  }
+  
+  .titleContainer {
+    gap: 1rem;
+    width: 65%;
+  }
+
+  .btnContainer {
+    width: 65%;
+    justify-content: flex-end;
+  }
+
+  .redBlock {
+    right: 0vw;
+    top: 7.5%;
+    width: 6px;
+    height: 6rem;
+  }
+}
