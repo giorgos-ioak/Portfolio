@@ -1,0 +1,174 @@
+.mainContainer {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+
+.label {
+  font-family: 'Montserrat';
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.p {
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+@media (min-width: 1281px) and (max-width: 1444px) {
+  .mainContainer {
+    gap: 1rem;
+    padding: 1.5rem;
+    width: 100%;
+  }
+  
+  
+  .label {
+    font-size: 1.1rem;
+  }
+  
+  .p {
+    font-size: 0.9rem;
+  }
+}
