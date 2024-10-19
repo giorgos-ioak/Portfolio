@@ -5,9 +5,10 @@ import { useMediaQuery } from '@mui/material';
 
 import Button from '../../components/Button/Button.jsx';
 import Achievement from '../../components/AchievementContainer/Achievement.jsx';
-import Container from '../../components/Container/Container.jsx';
+import SubContainer from '../../components/SubContainer/SubContainer.jsx';
 import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
 import RedBlock from '../../components/RedBlock/RedBlock.jsx';
+import MainContainer from '../../components/MainContainer/MainContainer.jsx';
 
 function AchievementsSection() {
   const smallScreen = useMediaQuery('(max-width:1025px)');
@@ -21,8 +22,8 @@ function AchievementsSection() {
         className='titleContainer'
       />
 
-      <div className={classes.mainContainer}>
-        <Container className={'subContainer_AchievementSection'}>
+      <MainContainer className='mainContainer_AchievementSection'>
+        <SubContainer className={'subContainer_AchievementSection'}>
           {smallScreen && 
             <Achievement 
               label='Achievement 1' 
@@ -43,7 +44,7 @@ function AchievementsSection() {
               />
             </> 
           }
-        </Container>
+        </SubContainer>
         
 
         <div className={classes.btnContainer}>
@@ -52,7 +53,7 @@ function AchievementsSection() {
 
         <RedBlock className='redBlock_AchievementSection'/>
 
-      </div>
+      </MainContainer>
     </section>
   )
 }

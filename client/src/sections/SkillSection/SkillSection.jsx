@@ -9,9 +9,10 @@ import frameworks from '../../assets/frameworks.png';
 import libraries_platforms from '../../assets/libraries_platforms.png';
 
 import SkillsContainer from '../../components/SkillContainer/SkillsContainer.jsx';
-import Container from '../../components/Container/Container.jsx';
+import SubContainer from '../../components/SubContainer/SubContainer.jsx';
 import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
 import RedBlock from '../../components/RedBlock/RedBlock.jsx';
+import MainContainer from '../../components/MainContainer/MainContainer.jsx';
 
 function SkillSection() {
   const isSmallScreen = useMediaQuery('(max-width:768px)');
@@ -29,8 +30,8 @@ function SkillSection() {
           alt='lightningIcon'
           className='titleContainer'
         />
-        <div className={classes.mainContainer}>
-          <Container className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
+        <MainContainer className='mainContainer_SkillSection'>
+          <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
               items={items1} 
               title='Programming Languages' 
@@ -46,9 +47,9 @@ function SkillSection() {
               itemSvgIcon={dot}
               imgTitle=''
             />
-          </Container>
+          </SubContainer>
 
-          <Container className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
+          <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
               items={items3} 
               title='Libraries & Platforms' 
@@ -64,9 +65,8 @@ function SkillSection() {
               itemSvgIcon={dot}
               imgTitle=''
             />
-          </Container>
-          
-        </div>
+          </SubContainer>
+        </MainContainer>
         
         <RedBlock className='redBlock_SkillSection'/>
       </section>
