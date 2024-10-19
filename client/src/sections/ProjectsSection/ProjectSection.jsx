@@ -9,6 +9,9 @@ import project3Img from '../../assets/project3Img.jpg';
 
 import ProjectContainer from '../../components/ProjectContainer/ProjectContainer.jsx';
 import Button from '../../components/Button/Button.jsx';
+import Container from '../../components/Container/Container.jsx';
+import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 
 function ProjectSection() {
   const smallScreen = useMediaQuery('(max-width:600px)');
@@ -34,13 +37,15 @@ function ProjectSection() {
   
   return (
     <section className={classes.projectSection}>
-      <div className={classes.titleContainer}>
-        <h2 className={classes.h2}>Projects</h2>
-        <img src={projectSvg} alt='projectIcon'/>
-      </div>
+      <TitleContainer 
+        title='Projects'
+        image={projectSvg}
+        alt='projectIcon'
+        className='titleContainer'
+      />
 
       <div className={classes.mainContainer}>
-        <div className={smallScreen ? classes.subContainerSmall : classes.subContainer}>
+        <Container className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
           {smallScreen && <ProjectContainer project={project1} image={project1Img}/>}
 
           {mediumScreen && 
@@ -57,7 +62,7 @@ function ProjectSection() {
               <ProjectContainer project={project3} image={project3Img}/>
             </>
           }
-        </div>
+        </Container>
         
         <div className={classes.btnContainer}>
           <Button className='viewMoreBtn'>View More</Button>
@@ -65,7 +70,7 @@ function ProjectSection() {
 
       </div>
 
-      <div className={classes.redBlock}></div> 
+      <RedBlock className='redBlock_ProjectSection'/>
     </section>
   )
 }

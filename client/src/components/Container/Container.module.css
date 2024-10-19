@@ -1,0 +1,221 @@
+
+/****  SUB_CONTAINERS  ****/
+.subContainer_ProjectSection {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.subContainerSmall_ProjectSection {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+
+
+
+.subContainer_AchievementSection {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+
+
+
+
+
+
+.subContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.subContainerSmall {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/**********/
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .subContainerSmall_ProjectSection {
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 90%;
+  }
+
+  .subContainerSmall {
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 90%;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .subContainerSmall_ProjectSection {
+    width: 80%;
+    gap: 1.5rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 80%;
+  }
+
+  .subContainerSmall {
+    width: 80%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 80%;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .subContainerSmall_ProjectSection {
+    width: 90%;
+    gap: 1.5rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 75%;
+  }
+
+  .subContainerSmall {
+    width: 75%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 75%;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .subContainer_ProjectSection {
+    width: 80%;
+    gap: 2rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 70%;
+  }
+
+  .subContainerSmall {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .subContainer_ProjectSection {
+    width: 70%;
+    gap: 2rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 70%;
+  }
+
+  .subContainer {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .subContainer_ProjectSection {
+    width: 70%;
+    justify-content: space-between;
+  }
+
+  .subContainer_AchievementSection {
+    width: 70%;
+  }
+
+  .subContainer {
+    width: 70%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 70%;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .subContainer_ProjectSection {
+    width: 65%;
+    gap: 2rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 65%;
+  }
+
+  .subContainer {
+    width: 65%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 65%;
+  }
+}
+
+
+
+@media (min-width: 1281px) and (max-width: 1444px) {
+  .subContainer_ProjectSection {
+    width: 65%;
+    gap: 2rem;
+  }
+
+  .subContainer_AchievementSection {
+    width: 65%;
+  }
+
+  .subContainer {
+    width: 65%;
+    gap: 1.5rem;
+  }
+
+  .subContainer {
+    width: 65%;
+  }
+}

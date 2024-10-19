@@ -1,13 +1,17 @@
 import classes from './SummarySection.module.css';
 import flag from '../../assets/flag.svg';
 
+import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
+
 function SummarySection() {
   return (
     <section className={classes.summarySection}>
-        <div className={classes.titleContainer}>
-          <h2 className={classes.h2}>Summary</h2>
-          <img src={flag} alt='flagIcon'/>
-        </div>
+        <TitleContainer 
+          title='Summary' 
+          image={flag} 
+          alt='flagIcon' 
+          className='titleContainer'
+        />
 
         <p className={classes.p}>
           I'm Giorgos, a Freelance Software Developer and I have 2 Years of Experience, in creating
@@ -15,8 +19,6 @@ function SummarySection() {
           I have used a variety of technologies. My GitHub projects highlight my proficiency with
           JavaScript, React.js, Node.js, Express.js, Redux Toolkit and React Router among others.
         </p>
-
-        <div className={classes.redBlock}></div>
     </section>
   )
 }
