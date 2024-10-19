@@ -10,21 +10,6 @@
   padding-top: 2rem;
 }
 
-.subContainer {
-  display: flex;
-  justify-content: space-between;
-  width: 60%;
-  margin: 0 auto;
-}
-
-.subContainerSmall {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: 0 auto;
-}
-
-
 .btnContainer {
   display: flex;
   width: 60%;
@@ -41,298 +26,92 @@
 
 
 
-.h2 {
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 2rem;
-}
-
-
-.titleContainer {
-  display: flex;
-  gap: 2rem;
-  width: 60%;
-  margin: auto;
-}
-
-
-.redBlock {
-  position: absolute;
-  right: 0vw;
-  top: 17%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 8rem;
-  background-color: red;
-}
-
-
-
-
-
-
 
 
 /*****  WIDTH   *****/
 @media (max-width: 370px) {
-  .subContainerSmall {
-    width: 90%;
-    gap: 1.5rem;
-  }
-
   .projectSection {
     margin-top: 8rem;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 90%;
   }
 
   .btnContainer {
     width: 90%;
     justify-content: center;
   }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
-  }
 }
 
 
 @media (min-width: 371px) and (max-width: 500px) {
-  .subContainerSmall {
-    width: 80%;
-    gap: 1.5rem;
-  }
-
   .projectSection {
     margin-top: 8rem;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 80%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
-  .subContainerSmall {
-    width: 90%;
-    gap: 1.5rem;
-  }
-
   .projectSection {
     margin-top: 8rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 75%;
-  }
-
   .btnContainer {
     width: 55%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
 
 
 @media (min-width: 601px) and (max-width: 768px) {
-  .subContainer {
-    width: 80%;
-    gap: 2rem;
-  }
-
   .projectSection {
     margin-top: 8rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 80%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
 
 
 @media (min-width: 769px) and (max-width: 900px) {
-  .subContainer {
-    width: 70%;
-    gap: 2rem;
-  }
-
   .projectSection {
     margin-top: 8rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 70%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
 
 @media (min-width: 901px) and (max-width: 1024px) {
-  .subContainer {
-    width: 70%;
-    justify-content: space-between;
-  }
-
   .projectSection {
     margin-top: 8rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 70%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 6px;
-    height: 6rem;
   }
 }
 
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .subContainer {
-    width: 65%;
-    gap: 2rem;
-  }
-
   .projectSection {
     margin-top: 10rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 65%;
-  }
-
   .btnContainer {
     width: 65%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 6px;
-    height: 6rem;
   }
 }
 
 
 
 @media (min-width: 1281px) and (max-width: 1444px) {
-  .subContainer {
-    width: 65%;
-    gap: 2rem;
-  }
-
   .projectSection {
     margin-top: 10rem;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  
-  .titleContainer {
-    gap: 1.5rem;
-    width: 65%;
-  }
-
   .btnContainer {
     width: 65%;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 13.5%;
-    width: 6px;
-    height: 6rem;
   }
 }
 

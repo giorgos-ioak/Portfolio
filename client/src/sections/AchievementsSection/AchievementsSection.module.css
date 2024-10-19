@@ -10,15 +10,6 @@
   padding-top: 2rem;
 }
 
-
-.subContainer {
-  display: flex;
-  flex-direction: column;
-  width: 60%;
-  margin: 0 auto;
-  gap: 2rem;
-}
-
 /*********/
 
 
@@ -28,44 +19,12 @@
 }
 
 
-
-.h2 {
-  font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 2rem;
-}
-
-
-.titleContainer {
-  display: flex;
-  gap: 2rem;
-  width: 60%;
-  margin: auto;
-}
-
-
-
 .btnContainer {
   display: flex;
   width: 60%;
   margin: 0 auto;
   justify-content: flex-end;
 }
-
-
-.redBlock {
-  position: absolute;
-  left: 0vw;
-  top: 10%;
-  transform: translateY(-50%);
-  width: 10px;
-  height: 8rem;
-  background-color: red;
-}
-
-
-
-
 
 
 
@@ -85,29 +44,9 @@
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 90%;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 90%;
-  }
-
   .btnContainer {
     width: 90%;
     justify-content: center;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
@@ -121,29 +60,9 @@
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 80%;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 80%;
-  }
-
   .btnContainer {
     width: 80%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
@@ -156,29 +75,9 @@
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 75%;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 75%;
-  }
-
   .btnContainer {
     width: 75%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
@@ -193,29 +92,9 @@
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 70%;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 70%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
@@ -234,25 +113,9 @@
     width: 70%;
   }
 
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 70%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
   }
 }
 
@@ -266,60 +129,20 @@
     margin-top: 8rem;
   }
 
-  .subContainer {
-    width: 70%;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 70%;
-  }
-
   .btnContainer {
     width: 70%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 11.5%;
-    width: 6px;
-    height: 6rem;
   }
 }
 
 
 @media (min-width: 1025px) and (max-width: 1444px) {
-  .subContainer {
-    width: 65%;
-  }
-
   .achievementsSection {
     margin-top: 10rem;
-  }
-
-  .h2 {
-    font-size: 1.5rem;
-  }
-  
-  .titleContainer {
-    gap: 1rem;
-    width: 65%;
   }
 
   .btnContainer {
     width: 65%;
     justify-content: flex-end;
-  }
-
-  .redBlock {
-    right: 0vw;
-    top: 7.5%;
-    width: 6px;
-    height: 6rem;
   }
 }

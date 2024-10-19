@@ -4,20 +4,25 @@ import { useMediaQuery } from '@mui/material';
 
 
 import Button from '../../components/Button/Button.jsx';
-import Achievement from '../../components/Achievement/Achievement.jsx';
+import Achievement from '../../components/AchievementContainer/Achievement.jsx';
+import Container from '../../components/Container/Container.jsx';
+import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 
 function AchievementsSection() {
   const smallScreen = useMediaQuery('(max-width:1025px)');
 
   return (
     <section className={classes.achievementsSection}>
-      <div className={classes.titleContainer}>
-        <h2 className={classes.h2}>Key Achievements</h2>
-        <img src={titleIcon} alt='projectIcon'/>
-      </div>
+      <TitleContainer 
+        title='Key Achievements'
+        image={titleIcon}
+        alt='titleIcon'
+        className='titleContainer'
+      />
 
       <div className={classes.mainContainer}>
-        <div className={classes.subContainer}>
+        <Container className={'subContainer_AchievementSection'}>
           {smallScreen && 
             <Achievement 
               label='Achievement 1' 
@@ -38,14 +43,14 @@ function AchievementsSection() {
               />
             </> 
           }
-        </div>
+        </Container>
         
 
         <div className={classes.btnContainer}>
           <Button className='viewMoreBtn'>View More</Button>
         </div>
 
-        <div className={classes.redBlock}></div> 
+        <RedBlock className='redBlock_AchievementSection'/>
 
       </div>
     </section>

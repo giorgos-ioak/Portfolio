@@ -8,10 +8,13 @@ import database from '../../assets/database.png';
 import frameworks from '../../assets/frameworks.png';
 import libraries_platforms from '../../assets/libraries_platforms.png';
 
-import SkillsContainer from '../../components/SkillsContainer/SkillsContainer.jsx';
+import SkillsContainer from '../../components/SkillContainer/SkillsContainer.jsx';
+import Container from '../../components/Container/Container.jsx';
+import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 
 function SkillSection() {
-  const isVerySmallScreen = useMediaQuery('(max-width:768px)');
+  const isSmallScreen = useMediaQuery('(max-width:768px)');
   const items1 = ['Java', 'Javascript'];
   const items2 = ['MongoDB', 'MySQL'];
   const items3 = ['Node.js', 'React.js', 'Redux Toolkit', 'React Router'];
@@ -20,13 +23,14 @@ function SkillSection() {
   return (
     <>
       <section className={classes.skillSection}>
-        <div className={classes.titleContainer}>
-          <h2 className={classes.h2}>Skills</h2>
-          <img src={lightning} alt='lightningIcon'/>
-        </div>
-        
+        <TitleContainer 
+          title='Skills'
+          image={lightning}
+          alt='lightningIcon'
+          className='titleContainer'
+        />
         <div className={classes.mainContainer}>
-          <div className={isVerySmallScreen ? classes.subContainerSmall : classes.subContainer}>
+          <Container className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
               items={items1} 
               title='Programming Languages' 
@@ -42,9 +46,9 @@ function SkillSection() {
               itemSvgIcon={dot}
               imgTitle=''
             />
-          </div>
+          </Container>
 
-          <div className={isVerySmallScreen ? classes.subContainerSmall : classes.subContainer}>
+          <Container className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
               items={items3} 
               title='Libraries & Platforms' 
@@ -60,11 +64,11 @@ function SkillSection() {
               itemSvgIcon={dot}
               imgTitle=''
             />
-          </div>
+          </Container>
           
         </div>
         
-        <div className={classes.redBlock}></div> 
+        <RedBlock className='redBlock_SkillSection'/>
       </section>
     </>
     
