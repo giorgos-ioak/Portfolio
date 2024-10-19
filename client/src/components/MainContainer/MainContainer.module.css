@@ -1,0 +1,131 @@
+.mainContainer_SkillSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 60vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+
+.mainContainer_ProjectSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 70vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+
+.mainContainer_AchievementSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 70vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+
+
+
+
+
+/*****  WIDTH   *****/
+@media (max-width: 370px) {
+  .mainContainer_SkillSection {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+
+@media (min-width: 371px) and (max-width: 500px) {
+  .mainContainer_SkillSection {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 600px) {
+  .mainContainer_SkillSection {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+
+
+@media (min-width: 601px) and (max-width: 768px) {
+  .mainContainer_SkillSection {
+    gap: 1.5rem;
+    height: 72vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .mainContainer_SkillSection {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .mainContainer_SkillSection {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+}
+
+
+@media (min-width: 1025px) and (max-width: 1444px) {
+  .mainContainer_SkillSection {
+    gap: 3rem;
+    height: 45vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+}
