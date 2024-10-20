@@ -24,17 +24,22 @@
   padding-left: 2.5rem;
 }
 
+.img {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
 
 .label {
   font-family: 'Roboto';
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 
 
 .p {
   font-family: 'Roboto';
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 300;
 }
 
@@ -56,8 +61,8 @@
   
 
   .img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
   }
   
   .itemContainer {
@@ -65,7 +70,7 @@
   }
   
   .label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   
@@ -83,8 +88,8 @@
   
 
   .img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
   }
   
   .itemContainer {
@@ -92,7 +97,7 @@
   }
   
   .label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   
@@ -109,8 +114,8 @@
   
 
   .img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
   }
   
   .itemContainer {
@@ -118,7 +123,7 @@
   }
   
   .label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   
@@ -137,8 +142,8 @@
   
 
   .img {
-    height: 1.5rem;
-    width: 1.5rem;
+    height: 1rem;
+    width: 1rem;
   }
   
   .itemContainer {
@@ -146,7 +151,7 @@
   }
   
   .label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   
@@ -165,8 +170,8 @@
   
 
   .img {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
   }
   
   .itemContainer {
@@ -174,12 +179,12 @@
   }
   
   .label {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   
   
   .p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -192,8 +197,8 @@
   
 
   .img {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
   }
   
   .itemContainer {
@@ -201,7 +206,7 @@
   }
   
   .label {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   
@@ -219,8 +224,8 @@
   
 
   .img {
-    height: 1.2rem;
-    width: 1.2rem;
+    height: 1.1rem;
+    width: 1.1rem;
   }
   
   .itemContainer {
@@ -228,7 +233,7 @@
   }
   
   .label {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   
   
