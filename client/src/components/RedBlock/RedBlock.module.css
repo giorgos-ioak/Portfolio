@@ -203,3 +203,51 @@
     height: 6rem;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/*****  HEIGHT   *****/
+
+/* For very small screen heights (e.g., mobile landscape) */
+@media (max-height: 500px) {
+
+}
+
+
+/* For small to medium screen heights (mobile portrait, small tablets) */
+@media (min-height: 501px) and (max-height: 540px)  {
+
+}
+
+@media (min-height: 541px) and (max-height: 600px)  {
+  
+}
+
+@media (min-height: 601px) and (max-height: 700px)  {
+  
+}
+
+@media (min-height: 701px) and (max-height: 800px)  {
+  
+}
+
+
+
+/* For medium to large screen heights (laptops, desktops) */
+@media (min-height: 801px) and (max-width: 900px)  {
+  .redBlock_SkillSection {
+    top: 13.5%;
+  }
+
+  .redBlock_ProjectSection {
+    top: 15%;
+  }
+}
