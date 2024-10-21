@@ -32,6 +32,18 @@
 
 
 
+.mainContainer_GetInTouchSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 60vh;
+  margin-top: 1rem;
+  background-color: rgba(114, 170, 255);
+  padding-top: 2rem;
+}
+
+
+
 
 
 
@@ -47,6 +59,10 @@
   .mainContainer_AchievementSection {
     height: 45vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 60vh;
+  }
 }
 
 
@@ -60,6 +76,10 @@
 
   .mainContainer_AchievementSection {
     height: 45vh;
+  }
+
+  .mainContainer_GetInTouchSection {
+    height: 60vh;
   }
 }
 
@@ -104,6 +124,10 @@
   .mainContainer_AchievementSection {
     height: 45vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 55vh;
+  }
 }
 
 
@@ -118,6 +142,10 @@
   .mainContainer_AchievementSection {
     height: 45vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 55vh;
+  }
 }
 
 
@@ -127,6 +155,10 @@
     height: 45vh;
     margin-top: 1rem;
     padding-top: 2rem;
+  }
+
+  .mainContainer_GetInTouchSection {
+    height: 60vh;
   }
 }
 
