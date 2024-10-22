@@ -183,6 +183,10 @@
   .mainContainer_AchievementSection {
     height: 80vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 110vh;
+  }
 }
 
 @media (min-height: 541px) and (max-height: 600px)  {
@@ -196,6 +200,10 @@
 
   .mainContainer_AchievementSection {
     height: 70vh;
+  }
+
+  .mainContainer_GetInTouchSection {
+    height: 100vh;
   }
 }
 
@@ -211,6 +219,10 @@
   .mainContainer_AchievementSection {
     height: 62vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 90vh;
+  }
 }
 
 @media (min-height: 701px) and (max-height: 800px)  {
@@ -225,6 +237,10 @@
   .mainContainer_AchievementSection {
     height: 55vh;
   }
+
+  .mainContainer_GetInTouchSection {
+    height: 75vh;
+  }
 }
 
 
@@ -237,6 +253,10 @@
 
   .mainContainer_AchievementSection {
     height: 49vh;
+  }
+
+  .mainContainer_GetInTouchSection {
+    height: 67vh;
   }
 }
 
