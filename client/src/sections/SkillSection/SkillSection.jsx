@@ -15,7 +15,9 @@ import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/MainContainer/MainContainer.jsx';
 
 function SkillSection() {
+  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const isSmallScreen = useMediaQuery('(max-width:768px)');
+
   const items1 = ['Java', 'Javascript'];
   const items2 = ['MongoDB', 'MySQL'];
   const items3 = ['Node.js', 'React.js', 'Redux Toolkit', 'React Router'];
@@ -68,7 +70,9 @@ function SkillSection() {
           </SubContainer>
         </MainContainer>
         
-        <RedBlock className='redBlock_SkillSection'/>
+        {!verySmallScreen && 
+          <RedBlock className='redBlock_SkillSection'/>
+        }
       </section>
     </>
     

@@ -29,6 +29,19 @@
 }
 
 
+.viewMoreBtn:hover {
+  background-color: black;
+  color: white;
+  transition: 0.3s ease-out;
+}
+
+
+.detailsBtn:hover {
+  color: white;
+  transition: 0.3s ease-out;
+}
+
+
 
 
 

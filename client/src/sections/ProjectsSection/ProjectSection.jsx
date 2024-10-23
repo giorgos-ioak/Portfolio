@@ -15,6 +15,7 @@ import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
+  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
@@ -72,7 +73,9 @@ function ProjectSection() {
         
       </MainContainer>
 
-      <RedBlock className='redBlock_ProjectSection'/>
+      {!verySmallScreen && 
+        <RedBlock className='redBlock_ProjectSection'/>
+      }
     </section>
   )
 }
