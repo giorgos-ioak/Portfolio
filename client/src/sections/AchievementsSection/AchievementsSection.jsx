@@ -11,6 +11,7 @@ import RedBlock from '../../components/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/MainContainer/MainContainer.jsx';
 
 function AchievementsSection() {
+  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:1025px)');
 
   return (
@@ -51,7 +52,9 @@ function AchievementsSection() {
           <Button className='viewMoreBtn'>View More</Button>
         </div>
 
-        <RedBlock className='redBlock_AchievementSection'/>
+        {!verySmallScreen && 
+          <RedBlock className='redBlock_AchievementSection'/>
+        }
 
       </MainContainer>
     </section>

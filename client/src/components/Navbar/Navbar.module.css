@@ -34,7 +34,7 @@
 .nav_link:hover {
   color: white;
   background-color: black;
-  transition: color 0.3s ease;
+  transition: 0.4s ease-out;
 }
 
 .login_button {
