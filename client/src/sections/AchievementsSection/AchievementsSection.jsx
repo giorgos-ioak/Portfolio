@@ -1,14 +1,14 @@
 import classes from './AchievementsSection.module.css';
-import titleIcon from '../../assets/story.svg';
+import titleIcon from '../../assets/svgIcons/story.svg';
 import { useMediaQuery } from '@mui/material';
 
 
-import Button from '../../components/Button/Button.jsx';
-import Achievement from '../../components/AchievementContainer/Achievement.jsx';
-import SubContainer from '../../components/SubContainer/SubContainer.jsx';
-import TitleContainer from '../../components/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../components/RedBlock/RedBlock.jsx';
-import MainContainer from '../../components/MainContainer/MainContainer.jsx';
+import Button from '../../components/UI/Button/Button.jsx';
+import Achievement from '../../components/Containers/AchievementContainer/Achievement.jsx';
+import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
+import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
+import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
 
 function AchievementsSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');
