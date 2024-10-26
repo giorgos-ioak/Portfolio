@@ -1,10 +1,10 @@
 import classes from './GetInTouchContainer.module.css';
 
-import whatsup from '../../assets/socialMediaIcons/whatsup.png';
-import facebook from '../../assets/socialMediaIcons/facebook.png';
-import snapchat from '../../assets/socialMediaIcons/snapchat.png';
-import gmail from '../../assets/socialMediaIcons/gmail.png';
-import messageIcon from '../../assets/messageIcon.svg';
+import whatsup from '../../../assets/socialMediaIcons/whatsup.png';
+import facebook from '../../../assets/socialMediaIcons/facebook.png';
+import snapchat from '../../../assets/socialMediaIcons/snapchat.png';
+import gmail from '../../../assets/socialMediaIcons/gmail.png';
+import messageIcon from '../../../assets/svgIcons/messageIcon.svg';
 
 function GetInTouchContainer() {
   return (

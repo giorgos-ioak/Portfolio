@@ -1,4 +1,4 @@
-import Button from '../Button/Button.jsx';
+import Button from '../../UI/Button/Button.jsx';
 import classes from './Achievement.module.css'; 
 
 function Achievement({ label, text }) {

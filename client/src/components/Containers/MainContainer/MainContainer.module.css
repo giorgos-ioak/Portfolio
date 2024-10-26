@@ -4,7 +4,7 @@
   gap: 3rem;
   height: 60vh;
   margin-top: 1rem;
-  background-color: rgba(114, 170, 255);
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -15,7 +15,7 @@
   gap: 3rem;
   height: 70vh;
   margin-top: 1rem;
-  background-color: rgba(114, 170, 255);
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -26,7 +26,7 @@
   gap: 3rem;
   height: 70vh;
   margin-top: 1rem;
-  background-color: rgba(114, 170, 255);
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
 
