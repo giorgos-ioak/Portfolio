@@ -4,6 +4,8 @@ import './styles/index.css';
 
 import Home from './pages/Home.jsx';
 
+import { loader as dbData } from './pages/Home.jsx';
+
 
 import { 
   createBrowserRouter,
@@ -17,7 +19,8 @@ import { store } from './app/store.js';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />
+    element: <Home />,
+    loader: dbData
   }
 ]);
 
