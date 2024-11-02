@@ -1,16 +1,20 @@
-const express = require("express");
-const cors = require("cors");
-const mysql = require("mysql2");
+import express from 'express';
+import cors from 'cors';
+import mysql from 'mysql2';
+import dotenv from 'dotenv';
+
+import { getProjects, getSkills, getAchievements } from './middleware/mySQL/index.js';
+
 
 
 const app = express();
-require('dotenv').config();
+dotenv.config();
 app.use(cors());
 
 
 
 /// CONFIGURE MySQL CONNECTION
-const db = mysql.createConnection({
+export const db = mysql.createConnection({
   host: process.env.DB_HOST, 
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
@@ -30,15 +34,24 @@ db.connect((err) => {
 
 
 
-app.get('/projects', (req,res) => {
-  db.query('CALL getProjects()', (err, results) => {
-    if(err) {
-      res.status(500).send('Error fetching data');
-      return;
-    }
-    return res.json(results[0]);
-  })
+
+
+
+app.get('/dbData', async(req,res) => {
+  try {
+    const projects = await getProjects();
+    const skills = await getSkills();
+    const achievements = await getAchievements();
+
+    res.json({projects, skills, achievements});
+  } catch(err) {
+    res.status(500).json({error: err});
+  }
 });
+
+
+
+
 
 
 app.listen(3000, () => {
