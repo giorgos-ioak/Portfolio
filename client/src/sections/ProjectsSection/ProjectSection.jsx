@@ -1,5 +1,6 @@
 import classes from './ProjectSection.module.css';
 import { useMediaQuery } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 
 import projectSvg from '../../assets/svgIcons/project.svg';
@@ -15,26 +16,13 @@ import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
+  const data = useSelector((state) => state.databaseData.value);
+
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
-
-  const project1 = {
-    label: 'Admin Dashboard',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
-  };
-
-  const project2 = {
-    label: 'Social Media App',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
-  };
-
-  const project3 = {
-    label: 'Currency Calculator',
-    text: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
-  };
 
   
   return (
@@ -49,20 +37,61 @@ function ProjectSection() {
       <MainContainer className='mainContainer_ProjectSection'>
 
         <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
-          {smallScreen && <ProjectContainer project={project1} image={project1Img}/>}
+          {smallScreen && 
+            <ProjectContainer 
+              project={{
+                label: data?.projects[0].title,
+                text: data?.projects[0]._description,
+              }} 
+              image={project1Img}
+            />
+          }
 
           {mediumScreen && 
             <>
-              <ProjectContainer project={project1} image={project1Img}/>
-              <ProjectContainer project={project2} image={project2Img}/>
+              <ProjectContainer 
+                project={{
+                  label: data?.projects[0].title,
+                  text: data?.projects[0]._description,
+                }} 
+                image={project1Img}
+              />
+
+              <ProjectContainer 
+                project={{
+                  label: data?.projects[1].title,
+                  text: data?.projects[1]._description,
+                }}
+                image={project2Img}
+              />
             </>
           }
 
           {largeScreen && 
             <>
-              <ProjectContainer project={project1} image={project1Img}/>
-              <ProjectContainer project={project2} image={project2Img}/>
-              <ProjectContainer project={project3} image={project3Img}/>
+              <ProjectContainer 
+                project={{
+                  label: data?.projects[0].title,
+                  text: data?.projects[0]._description,
+                }}
+                image={project1Img}
+              />
+
+              <ProjectContainer 
+                project={{
+                  label: data?.projects[1].title,
+                  text: data?.projects[1]._description,
+                }}
+                image={project2Img}
+              />
+
+              <ProjectContainer 
+                project={{
+                  label: data?.projects[2].title,
+                  text: data?.projects[2]._description,
+                }} 
+                image={project3Img}
+              />
             </>
           }
         </SubContainer>

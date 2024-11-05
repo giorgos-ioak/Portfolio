@@ -1,5 +1,6 @@
 import classes from './SkillSection.module.css';
 import { useMediaQuery } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 import dot from '../../assets/svgIcons/dot.svg';
 import lightning from '../../assets/svgIcons/lightning.svg';
@@ -17,11 +18,8 @@ import MainContainer from '../../components/Containers/MainContainer/MainContain
 function SkillSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const isSmallScreen = useMediaQuery('(max-width:768px)');
+  const skills = useSelector((state) => state.databaseData.value?.skills);
 
-  const items1 = ['Java', 'Javascript'];
-  const items2 = ['MongoDB', 'MySQL'];
-  const items3 = ['Node.js', 'React.js', 'Redux Toolkit', 'React Router'];
-  const items4 = ['Express.js'];
 
   return (
     <>
@@ -35,7 +33,10 @@ function SkillSection() {
         <MainContainer className='mainContainer_SkillSection'>
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
-              items={items1} 
+              items={[
+                skills?.[0].technology,
+                skills?.[1].technology,
+              ]} 
               title='Programming Languages' 
               titleSvgIcon={computer} 
               itemSvgIcon={dot}
@@ -43,7 +44,10 @@ function SkillSection() {
             />
 
             <SkillsContainer 
-              items={items2} 
+              items={[
+                skills?.[2].technology,
+                skills?.[3].technology,
+              ]} 
               title='Databases' 
               titleSvgIcon={database} 
               itemSvgIcon={dot}
@@ -53,7 +57,13 @@ function SkillSection() {
 
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
-              items={items3} 
+              items={[
+                skills?.[5].technology,
+                skills?.[6].technology,
+                skills?.[7].technology,
+                skills?.[8].technology,
+              ]} 
+
               title='Libraries & Platforms' 
               titleSvgIcon={libraries_platforms} 
               itemSvgIcon={dot}
@@ -61,7 +71,9 @@ function SkillSection() {
             />
 
             <SkillsContainer 
-              items={items4} 
+              items={[
+                skills?.[4].technology,
+              ]} 
               title='Frameworks' 
               titleSvgIcon={frameworks} 
               itemSvgIcon={dot}

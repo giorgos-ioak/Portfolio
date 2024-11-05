@@ -7,11 +7,28 @@ import GetInTouchSection from "../sections/GetInTouchSection/GetInTouchSection.j
 import Navbar from "../components/Navbar/Navbar.jsx";
 
 import { useLoaderData } from "react-router-dom";
+import { storeData } from "../app/reducers/databaseData.js";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 function App() {
   const data = useLoaderData();
+  const dispatch = useDispatch();
 
-  console.log(data);
+
+  const values = useSelector((state) => state.databaseData.value);
+  console.log('Values', values);
+
+
+  useEffect(() => {
+    dispatch(storeData(data));
+  }, [dispatch, data]);
+
+  
+
+ 
+
+
 
   return (
     <>
@@ -37,6 +54,7 @@ export const loader = async() => {
   if(!response.ok) {
     console.log('There was an error fetching the Database Data.')
   } 
-    const data = await response.json();
-    return data;
+
+  const data = await response.json();
+  return data;
 };

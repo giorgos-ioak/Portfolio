@@ -43,7 +43,7 @@ app.get('/dbData', async(req,res) => {
     const skills = await getSkills();
     const achievements = await getAchievements();
 
-    res.json({projects, skills, achievements});
+    res.json({ projects, skills, achievements });
   } catch(err) {
     res.status(500).json({error: err});
   }

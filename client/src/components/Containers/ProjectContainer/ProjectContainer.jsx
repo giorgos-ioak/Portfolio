@@ -9,8 +9,10 @@ function ProjectContainer({ project, image }) {
       
       <div className={classes.itemContainer}>
         <div className={classes.project}>
-          <label className={classes.label}>{project.label}</label>
-          <p className={classes.p}>{project.text}</p>
+          <>
+            <label className={classes.label}>{project.label}</label>
+            <p className={classes.p}>{project.text}</p>
+          </>
           <Button className='detailsBtn'>Details</Button>
         </div>
       </div>
