@@ -1,6 +1,7 @@
 import classes from './AchievementsSection.module.css';
 import titleIcon from '../../assets/svgIcons/story.svg';
 import { useMediaQuery } from '@mui/material';
+import { useSelector } from 'react-redux';
 
 
 import Button from '../../components/UI/Button/Button.jsx';
@@ -11,13 +12,15 @@ import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
 
 function AchievementsSection() {
+  const data = useSelector((state) => state.databaseData.value);
+
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:1025px)');
 
   return (
     <section className={classes.achievementsSection}>
       <TitleContainer 
-        title='Key Achievements'
+        title='Achievements'
         image={titleIcon}
         alt='titleIcon'
         className='titleContainer'
@@ -27,16 +30,16 @@ function AchievementsSection() {
         <SubContainer className={'subContainer_AchievementSection'}>
           {smallScreen && 
             <Achievement 
-              label='Achievement 1' 
-              text='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
+              label={data?.achievements[0].title}
+              text={data?.achievements[0]._description}
             />
           }
 
           {!smallScreen && 
             <>
               <Achievement 
-                label='Achievement 1' 
-                text='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
+                label={data?.achievements[0].title}
+                text={data?.achievements[0]._description}
               />
 
               <Achievement 
