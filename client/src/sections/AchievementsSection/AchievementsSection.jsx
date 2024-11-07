@@ -11,11 +11,13 @@ import TitleContainer from '../../components/Containers/TitleContainer/TitleCont
 import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
 
-function AchievementsSection() {
-  const data = useSelector((state) => state.databaseData.value);
 
+
+function AchievementsSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:1025px)');
+
+  const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   return (
     <section className={classes.achievementsSection}>
@@ -30,16 +32,16 @@ function AchievementsSection() {
         <SubContainer className={'subContainer_AchievementSection'}>
           {smallScreen && 
             <Achievement 
-              label={data?.achievements[0].title}
-              text={data?.achievements[0]._description}
+              label={achievements?.[0].title}
+              text={achievements?.[0]._description}
             />
           }
 
           {!smallScreen && 
             <>
               <Achievement 
-                label={data?.achievements[0].title}
-                text={data?.achievements[0]._description}
+                label={achievements?.[0].title}
+                text={achievements?.[0]._description}
               />
 
               <Achievement 

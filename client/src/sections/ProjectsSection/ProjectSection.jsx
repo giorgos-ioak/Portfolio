@@ -16,12 +16,12 @@ import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
-  const data = useSelector((state) => state.databaseData.value);
-
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
+
+  const projects = useSelector((state) => state.databaseData.value?.projects);
 
 
   
@@ -40,8 +40,8 @@ function ProjectSection() {
           {smallScreen && 
             <ProjectContainer 
               project={{
-                label: data?.projects[0].title,
-                text: data?.projects[0]._description,
+                label: projects?.[0].title,
+                text: projects?.[0]._description,
               }} 
               image={project1Img}
             />
@@ -51,16 +51,16 @@ function ProjectSection() {
             <>
               <ProjectContainer 
                 project={{
-                  label: data?.projects[0].title,
-                  text: data?.projects[0]._description,
+                  label: projects?.[0].title,
+                  text: projects?.[0]._description,
                 }} 
                 image={project1Img}
               />
 
               <ProjectContainer 
                 project={{
-                  label: data?.projects[1].title,
-                  text: data?.projects[1]._description,
+                  label: projects?.[1].title,
+                  text: projects?.[1]._description,
                 }}
                 image={project2Img}
               />
@@ -71,24 +71,24 @@ function ProjectSection() {
             <>
               <ProjectContainer 
                 project={{
-                  label: data?.projects[0].title,
-                  text: data?.projects[0]._description,
+                  label: projects?.[0].title,
+                  text: projects?.[0]._description,
                 }}
                 image={project1Img}
               />
 
               <ProjectContainer 
                 project={{
-                  label: data?.projects[1].title,
-                  text: data?.projects[1]._description,
+                  label: projects?.[1].title,
+                  text: projects?.[1]._description,
                 }}
                 image={project2Img}
               />
 
               <ProjectContainer 
                 project={{
-                  label: data?.projects[2].title,
-                  text: data?.projects[2]._description,
+                  label: projects?.[2].title,
+                  text: projects?.[2]._description,
                 }} 
                 image={project3Img}
               />
