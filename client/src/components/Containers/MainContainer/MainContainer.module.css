@@ -1,9 +1,10 @@
+/*******  SECTIONS  ********/
 .mainContainer_SkillSection {
   display: flex;
   flex-direction: column;
   gap: 3rem;
   height: 60vh;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
@@ -14,7 +15,7 @@
   flex-direction: column;
   gap: 3rem;
   height: 70vh;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
@@ -25,7 +26,7 @@
   flex-direction: column;
   gap: 3rem;
   height: 70vh;
-  margin-top: 1rem;
+  margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
 }
