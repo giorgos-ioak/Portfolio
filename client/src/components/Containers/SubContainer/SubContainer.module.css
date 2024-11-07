@@ -1,5 +1,5 @@
 
-/****  SUB_CONTAINERS  ****/
+/******  SECTIONS  ******/
 .subContainer_ProjectSection {
   display: flex;
   justify-content: space-between;
@@ -33,10 +33,6 @@
   margin: 0 auto;
   gap: 2rem;
 }
-
-
-
-
 
 
 
