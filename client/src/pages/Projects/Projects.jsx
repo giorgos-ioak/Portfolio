@@ -22,13 +22,14 @@ function Projects() {
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
+
   const projects = useSelector((state) => state.databaseData.value?.projects); 
   const totalProjects = projects?.length;
 
 
 
 
-  ///// PAGINATION
+///// PAGINATION /////
   const [projectData, setProjectData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [projectsPerPage, setProjectsPerPage] = useState(null);
@@ -38,7 +39,7 @@ function Projects() {
   const currentProjects = projectData.slice(firstProjectIndex, lastProjectIndex);
 
 
- //CHANGE NUM OF PROJECTS PER PAGE
+  /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
   function handleProjectsPerPage() {     
     if(smallScreen) {
       setProjectsPerPage(projectsPerPage != 1 ? 1 : projectsPerPage);
@@ -51,13 +52,14 @@ function Projects() {
       setCurrentPage(1);
     }
   };
- //
+  /*****/
 
- //CHANGE NUM OF PROJECTS PER PAGE
+
+ /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
  function handleCurrentPage(currentPage) {     
   setCurrentPage(currentPage);
  };
- //
+ /*****/
 
  
 
@@ -67,7 +69,7 @@ function Projects() {
     handleProjectsPerPage();
   }, [projects, smallScreen, mediumScreen, largeScreen]);
 
-  ///////
+////////
 
 
   
@@ -84,22 +86,15 @@ function Projects() {
         <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
             
             {
-              <div style={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2rem'
-              }}>
+              <div className={classes.mainContainer}>
 
-                <div style={{
-                  display: 'flex',
-                  gap: '3rem',
-                  justifyContent: 'space-between'
-                }}>
+                <div className={classes.innerContainer}>
                   {currentProjects.map((project) => (
                     <ProjectContainer 
                       project={{
                         label: project?.title,
                         text: project?._description,
+                        id: project?.project_id
                       }} 
                       image={project1Img}
                       key={project.project_id}

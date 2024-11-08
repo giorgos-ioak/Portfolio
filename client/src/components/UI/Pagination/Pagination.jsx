@@ -8,9 +8,7 @@ function Pagination({ totalItems, itemsPerPage, pageClick }) {
     pageClick(currentPage);
     setCurrentPageIndex(index);
   };
-
-  console.log(currentPageIndex);
-  
+    
 
   let pages = [];
 
