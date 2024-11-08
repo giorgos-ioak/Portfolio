@@ -12,7 +12,7 @@
 .redBlock_ProjectSection {
   position: absolute;
   right: 0vw;
-  top: 17%;
+  top: 19%;
   transform: translateY(-50%);
   width: 10px;
   height: 8rem;
@@ -23,7 +23,7 @@
 .redBlock_SkillSection {
   position: absolute;
   left: 0vw;
-  top: 19.5%;
+  top: 21.5%;
   transform: translateY(-50%);
   width: 10px;
   height: 8rem;
@@ -34,30 +34,6 @@
 
 
 /*****  WIDTH   *****/
-@media (max-width: 370px) {
-  .redBlock_AchievementSection {
-    right: 0vw;
-    top: 11.5%;
-    width: 4px;
-    height: 6rem;
-  }
-
-  .redBlock_ProjectSection {
-    right: 0vw;
-    top: 13.5%;
-    width: 4px;
-    height: 6rem;
-  }
-
-  .redBlock_SkillSection {
-    left: 0vw;
-    top: 13%;
-    width: 4px;
-    height: 6rem;
-  }
-}
-
-
 @media (min-width: 371px) and (max-width: 500px) {
   .redBlock_AchievementSection {
     top: 11.5%;
@@ -66,13 +42,13 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 4px;
     height: 6rem;
   }
 
   .redBlock_SkillSection {
-    top: 13%;
+    top: 12.5%;
     width: 4px;
     height: 6rem;
   }
@@ -86,13 +62,13 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 4px;
     height: 6rem;
   }
 
   .redBlock_SkillSection {
-    top: 13%;
+    top: 12%;
     width: 4px;
     height: 6rem;
   }
@@ -108,13 +84,13 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 4px;
     height: 6rem;
   }
 
   .redBlock_SkillSection {
-    top: 13%;
+    top: 12%;
     width: 4px;
     height: 6rem;
   }
@@ -130,13 +106,13 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 4px;
     height: 6rem;
   }
 
   .redBlock_SkillSection {
-    top: 20%;
+    top: 12%;
     width: 4px;
     height: 6rem;
   }
@@ -151,7 +127,7 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 6px;
     height: 6rem;
   }
@@ -172,7 +148,7 @@
   }
 
   .redBlock_ProjectSection {
-    top: 13.5%;
+    top: 15.5%;
     width: 6px;
     height: 6rem;
   }
