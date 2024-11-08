@@ -1,5 +1,7 @@
 import classes from './Navbar.module.css';
 
+import { Link } from 'react-router-dom';
+
 function Navbar() {
   return (
     <nav className={classes.nav}>
@@ -22,7 +24,9 @@ function Navbar() {
           </svg>
         </label>
 
-        <a className={classes.nav_link}>Projects</a> 
+        <Link to='/projects' className={classes.nav_link}>
+          Projects
+        </Link>
         <a className={classes.nav_link}>Achievements</a> 
         <a className={classes.nav_link}>Get In Touch</a>
         <a className={`${classes.nav_link} ${classes.login_button}`}>Login</a> 

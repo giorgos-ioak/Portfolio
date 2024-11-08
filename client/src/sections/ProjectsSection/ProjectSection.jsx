@@ -1,6 +1,7 @@
 import classes from './ProjectSection.module.css';
 import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 import projectSvg from '../../assets/svgIcons/project.svg';
@@ -14,7 +15,6 @@ import SubContainer from '../../components/Containers/SubContainer/SubContainer.
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
-import { useEffect, useState } from 'react';
 
 function ProjectSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');
@@ -23,6 +23,7 @@ function ProjectSection() {
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
   const projects = useSelector((state) => state.databaseData.value?.projects);
+
 
   
   return (
@@ -98,7 +99,9 @@ function ProjectSection() {
         </SubContainer>
         
         <div className={classes.btnContainer}>
-          <Button className='viewMoreBtn'>View More</Button>
+          <Link to='/projects'>
+            <Button className='viewMoreBtn'>View More</Button>
+          </Link>
         </div>   
 
       </MainContainer>
