@@ -1,6 +1,7 @@
 import classes from './Projects.module.css';
 import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { useState, useEffect } from 'react';
 
 import projectSvg from '../../assets/svgIcons/project.svg';
 import project1Img from '../../assets/project1Img.jpg';
@@ -12,6 +13,7 @@ import TitleContainer from '../../components/Containers/TitleContainer/TitleCont
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx'
 import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
 import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
+import Pagination from '../../components/UI/Pagination/Pagination.jsx';
 
 
 
@@ -20,8 +22,53 @@ function Projects() {
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
+  const projects = useSelector((state) => state.databaseData.value?.projects); 
+  const totalProjects = projects?.length;
 
-  const projects = useSelector((state) => state.databaseData.value?.projects);
+
+
+
+  ///// PAGINATION
+  const [projectData, setProjectData] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [projectsPerPage, setProjectsPerPage] = useState(null);
+
+  const lastProjectIndex = currentPage * projectsPerPage;
+  const firstProjectIndex = lastProjectIndex - projectsPerPage;
+  const currentProjects = projectData.slice(firstProjectIndex, lastProjectIndex);
+
+
+ //CHANGE NUM OF PROJECTS PER PAGE
+  function handleProjectsPerPage() {     
+    if(smallScreen) {
+      setProjectsPerPage(projectsPerPage != 1 ? 1 : projectsPerPage);
+      setCurrentPage(1);
+    } else if (mediumScreen) {
+      setProjectsPerPage(projectsPerPage != 2 ? 2 : projectsPerPage);
+      setCurrentPage(1);
+    } else if(largeScreen) {
+      setProjectsPerPage(projectsPerPage != 3 ? 3 : projectsPerPage);
+      setCurrentPage(1);
+    }
+  };
+ //
+
+ //CHANGE NUM OF PROJECTS PER PAGE
+ function handleCurrentPage(currentPage) {     
+  setCurrentPage(currentPage);
+ };
+ //
+
+ 
+
+  useEffect(() => {
+    setProjectData(projects);
+
+    handleProjectsPerPage();
+  }, [projects, smallScreen, mediumScreen, largeScreen]);
+
+  ///////
+
 
   
   return (
@@ -35,63 +82,41 @@ function Projects() {
 
       <MainContainer className='mainContainer_ProjectSection'>
         <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
-          {smallScreen && 
-            <ProjectContainer 
-              project={{
-                label: projects?.[0].title,
-                text: projects?.[0]._description,
-              }} 
-              image={project1Img}
-            />
-          }
+            
+            {
+              <div style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2rem'
+              }}>
 
-          {mediumScreen && 
-            <>
-              <ProjectContainer 
-                project={{
-                  label: projects?.[0].title,
-                  text: projects?.[0]._description,
-                }} 
-                image={project1Img}
-              />
+                <div style={{
+                  display: 'flex',
+                  gap: '3rem',
+                  justifyContent: 'space-between'
+                }}>
+                  {currentProjects.map((project) => (
+                    <ProjectContainer 
+                      project={{
+                        label: project?.title,
+                        text: project?._description,
+                      }} 
+                      image={project1Img}
+                      key={project.project_id}
+                    />
+                  ))}
+                </div>
 
-              <ProjectContainer 
-                project={{
-                  label: projects?.[1].title,
-                  text: projects?.[1]._description,
-                }}
-                image={project2Img}
-              />
-            </>
-          }
+                {(smallScreen || mediumScreen) &&
+                  <Pagination 
+                    totalItems={totalProjects} 
+                    itemsPerPage={projectsPerPage ? projectsPerPage : 1}
+                    pageClick={handleCurrentPage}
+                  />
+                }
+              </div>
+            }
 
-          {largeScreen && 
-            <>
-              <ProjectContainer 
-                project={{
-                  label: projects?.[0].title,
-                  text: projects?.[0]._description,
-                }}
-                image={project1Img}
-              />
-
-              <ProjectContainer 
-                project={{
-                  label: projects?.[1].title,
-                  text: projects?.[1]._description,
-                }}
-                image={project2Img}
-              />
-
-              <ProjectContainer 
-                project={{
-                  label: projects?.[2].title,
-                  text: projects?.[2]._description,
-                }} 
-                image={project3Img}
-              />
-            </>
-          }
         </SubContainer>      
       </MainContainer>
     </section>

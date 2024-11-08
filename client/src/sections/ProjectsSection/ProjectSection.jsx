@@ -14,6 +14,7 @@ import SubContainer from '../../components/Containers/SubContainer/SubContainer.
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
+import { useEffect, useState } from 'react';
 
 function ProjectSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');
@@ -22,7 +23,6 @@ function ProjectSection() {
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
   const projects = useSelector((state) => state.databaseData.value?.projects);
-
 
   
   return (
@@ -37,6 +37,7 @@ function ProjectSection() {
       <MainContainer className='mainContainer_ProjectSection'>
 
         <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
+
           {smallScreen && 
             <ProjectContainer 
               project={{
@@ -98,8 +99,8 @@ function ProjectSection() {
         
         <div className={classes.btnContainer}>
           <Button className='viewMoreBtn'>View More</Button>
-        </div>
-        
+        </div>   
+
       </MainContainer>
 
       {!verySmallScreen && 
