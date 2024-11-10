@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import classes from './Pagination.module.css';
 
-function Pagination({ totalItems, itemsPerPage, pageClick }) {
+function Pagination({ totalItems, itemsPerPage, pageClick, containerClass }) {
   const [currentPageIndex, setCurrentPageIndex] = useState(0);
 
   function handleClick(currentPage, index){
@@ -17,7 +17,7 @@ function Pagination({ totalItems, itemsPerPage, pageClick }) {
   }
 
   return (
-    <div className={classes.container}>
+    <div className={`${classes[containerClass]}`}>
       {pages.map((page, index) => (
         <button 
           onClick={() => handleClick(page, index)}

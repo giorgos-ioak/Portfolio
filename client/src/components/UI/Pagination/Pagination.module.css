@@ -1,4 +1,9 @@
-.container {
+.container_project {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.container_achievement {
   display: flex;
   gap: 1.2rem;
 }
@@ -37,11 +42,9 @@
 
 
 
-
-
 /*****  WIDTH   *****/
 @media (max-width: 370px) {
-  .container {
+  .container_project {
     width: 80%;
     margin: auto;
   }
@@ -49,14 +52,14 @@
 
 
 @media (min-width: 371px) and (max-width: 500px) {
-  .container {
+  .container_project {
     width: 80%;
     margin: auto;
   }
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
-  .container {
+  .container_project {
     width: 60%;
     margin: auto;
   }
@@ -65,7 +68,7 @@
 
 
 @media (min-width: 601px) and (max-width: 768px) {
-  .container {
+  .container_project {
     width: 100%;
     margin: auto;
   }
@@ -74,7 +77,7 @@
 
 
 @media (min-width: 769px) and (max-width: 900px) {
-  .container {
+  .container_project {
     width: 100%;
     margin: auto;
   }
@@ -82,7 +85,7 @@
 
 
 @media (min-width: 901px) and (max-width: 1024px) {
-  .container {
+  .container_project {
     width: 100%;
     margin: auto;
   }
@@ -90,14 +93,14 @@
 
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  .container {
+  .container_project {
     width: 100%;
     margin: auto;
   }
 }
 
 @media (min-width: 1281px) and (max-width: 1444px) {
-  .container {
+  .container_project {
     width: 100%;
     margin: auto;
   }

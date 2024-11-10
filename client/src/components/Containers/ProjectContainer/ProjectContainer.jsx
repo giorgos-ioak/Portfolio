@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Button from '../../UI/Button/Button';
 
 
-function ProjectContainer({ project, image, isActive }) { 
+function ProjectContainer({ project, image }) { 
   return (
     <div className={classes.mainContainer}>
       <img className={classes.img} src={image} alt='projectImage'/>
@@ -13,7 +13,7 @@ function ProjectContainer({ project, image, isActive }) {
         <div className={classes.project}>
           <>
             <label className={classes.label}>{project.label}</label>
-            <p className={isActive ? classes.p_isOpen : classes.p_isClosed}>
+            <p className={classes.p_isClosed}>
               {project.text}
             </p>
             <span className={classes.readMoreSpan}>
