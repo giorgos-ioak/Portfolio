@@ -2,6 +2,7 @@ import classes from './AchievementsSection.module.css';
 import titleIcon from '../../assets/svgIcons/story.svg';
 import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 import Button from '../../components/UI/Button/Button.jsx';
@@ -54,7 +55,9 @@ function AchievementsSection() {
         
 
         <div className={classes.btnContainer}>
-          <Button className='viewMoreBtn'>View More</Button>
+          <Link to='/achievements'>
+            <Button className='viewMoreBtn'>View More</Button>
+          </Link>
         </div>
 
         {!verySmallScreen && 

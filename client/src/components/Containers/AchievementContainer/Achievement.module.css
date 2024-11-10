@@ -17,6 +17,11 @@
 }
 
 .p {
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  
   font-family: 'Montserrat';
   font-size: 0.9rem;
   font-weight: 400;

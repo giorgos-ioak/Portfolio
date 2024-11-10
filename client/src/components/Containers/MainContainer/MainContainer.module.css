@@ -25,7 +25,17 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 70vh;
+  height: 65vh;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  padding-top: 2rem;
+}
+
+.mainContainer_AchievementPageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 65vh;
   margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
@@ -58,6 +68,11 @@
     height: 45vh;
   }
 
+  .mainContainer_AchievementPageSection{
+    height: 68vh;
+  }
+  
+
   .mainContainer_GetInTouchSection {
     height: 60vh;
   }
@@ -80,6 +95,10 @@
     height: 45vh;
   }
 
+  .mainContainer_AchievementPageSection{
+    height: 68vh;
+  }
+
   .mainContainer_GetInTouchSection {
     height: 60vh;
   }
@@ -99,6 +118,10 @@
 
   .mainContainer_AchievementSection {
     height: 45vh;
+  }
+
+  .mainContainer_AchievementPageSection{
+    height: 70vh;
   }
 
   .mainContainer_ProjectSection {
@@ -156,6 +179,11 @@
   .mainContainer_AchievementSection {
     height: 45vh;
   }
+
+  .mainContainer_AchievementPageSection{
+    height: 65vh;
+  }
+
 
   .mainContainer_GetInTouchSection {
     height: 55vh;

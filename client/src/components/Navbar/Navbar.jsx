@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom';
 function Navbar() {
   return (
     <nav className={classes.nav}>
-      <div className={classes.logo}>
+      <Link to='/' className={classes.logo}>
         LOGO
-      </div>
+      </Link>
       <input type="checkbox" id="sidebar-active" className={classes.checkbox}/>
       <label htmlFor="sidebar-active" className={classes.open_sidebar_button}>
         <svg xmlns="http://www.w3.org/2000/svg" height="32" viewBox="0 -960 960 960" width="32">
@@ -27,7 +27,9 @@ function Navbar() {
         <Link to='/projects' className={classes.nav_link}>
           Projects
         </Link>
-        <a className={classes.nav_link}>Achievements</a> 
+        <Link to='/achievements' className={classes.nav_link}>
+          Achievements
+        </Link>
         <a className={classes.nav_link}>Get In Touch</a>
         <a className={`${classes.nav_link} ${classes.login_button}`}>Login</a> 
       </div>

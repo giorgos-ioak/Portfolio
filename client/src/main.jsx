@@ -5,6 +5,7 @@ import './styles/index.css';
 import MainLayout from './components/Layouts/MainLayout.jsx';
 import Home from './pages/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx';
+import Achievements from './pages/Achievements/Achievements.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: 'projects',
         element: <Projects />
+      },
+      {
+        path: 'achievements',
+        element: <Achievements />
       }
     ]
   }

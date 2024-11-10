@@ -107,6 +107,7 @@ function Projects() {
                     totalItems={totalProjects} 
                     itemsPerPage={projectsPerPage ? projectsPerPage : 1}
                     pageClick={handleCurrentPage}
+                    containerClass='container_project'
                   />
                 }
               </div>
