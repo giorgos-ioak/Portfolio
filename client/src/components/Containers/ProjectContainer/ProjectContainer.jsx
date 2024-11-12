@@ -1,6 +1,5 @@
 import classes from './ProjectContainer.module.css';
-import { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button';
 
 
@@ -20,7 +19,9 @@ function ProjectContainer({ project, image }) {
               Read more..
             </span>
           </>
-          <Button className='detailsBtn'>Details</Button>
+          <Link to={`/projects/${project.id}`}>
+            <Button className='detailsBtn'>Details</Button>
+          </Link>
         </div>
       </div>
     </div>
