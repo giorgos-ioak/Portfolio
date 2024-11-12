@@ -13,6 +13,11 @@
 }
 
 
+.detailsBtn:hover {
+  color: white;
+  transition: 0.3s ease-out;
+}
+
 
 .viewMoreBtn {
   align-self: flex-end;
@@ -36,10 +41,27 @@
 }
 
 
-.detailsBtn:hover {
-  color: white;
-  transition: 0.3s ease-out;
+
+
+.redirectBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  background-color: rgb(141, 186, 255);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  font-weight: 600;
 }
+
+
+
 
 
 

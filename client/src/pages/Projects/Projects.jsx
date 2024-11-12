@@ -74,48 +74,48 @@ function Projects() {
 
   
   return (
-    <section className={classes.projectPageSection}>
-      <TitleContainer 
-        title='My Projects'
-        image={projectSvg}
-        alt='projectIcon'
-        className='titleContainer'
-      />
+      <section className={classes.projectPageSection}>
+        <TitleContainer 
+          title='My Projects'
+          image={projectSvg}
+          alt='projectIcon'
+          className='titleContainer'
+        />
 
-      <MainContainer className='mainContainer_ProjectSection'>
-        <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
-            
-            {
-              <div className={classes.mainContainer}>
+        <MainContainer className='mainContainer_ProjectSection'>
+          <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
+              
+              {
+                <div className={classes.mainContainer}>
 
-                <div className={classes.innerContainer}>
-                  {currentProjects.map((project) => (
-                    <ProjectContainer 
-                      project={{
-                        label: project?.title,
-                        text: project?._description,
-                        id: project?.project_id
-                      }} 
-                      image={project1Img}
-                      key={project.project_id}
+                  <div className={classes.innerContainer}>
+                    {currentProjects.map((project) => (
+                      <ProjectContainer 
+                        project={{
+                          label: project?.title,
+                          text: project?._description,
+                          id: project?.project_id
+                        }} 
+                        image={project1Img}
+                        key={project.project_id}
+                      />
+                    ))}
+                  </div>
+
+                  {(smallScreen || mediumScreen) &&
+                    <Pagination 
+                      totalItems={totalProjects} 
+                      itemsPerPage={projectsPerPage ? projectsPerPage : 1}
+                      pageClick={handleCurrentPage}
+                      containerClass='container_project'
                     />
-                  ))}
+                  }
                 </div>
+              }
 
-                {(smallScreen || mediumScreen) &&
-                  <Pagination 
-                    totalItems={totalProjects} 
-                    itemsPerPage={projectsPerPage ? projectsPerPage : 1}
-                    pageClick={handleCurrentPage}
-                    containerClass='container_project'
-                  />
-                }
-              </div>
-            }
-
-        </SubContainer>      
-      </MainContainer>
-    </section>
+          </SubContainer>      
+        </MainContainer>
+      </section>
   )
 }
 
