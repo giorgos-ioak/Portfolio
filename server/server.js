@@ -3,7 +3,7 @@ import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
-import { getProjects, getSkills, getAchievements } from './middleware/mySQL/index.js';
+import { getProjects, getSkills, getAchievements, getProjectTechnologies } from './middleware/mySQL/index.js';
 
 
 
@@ -13,7 +13,7 @@ app.use(cors());
 
 
 
-/// CONFIGURE MySQL CONNECTION
+/// CONFIGURE mySQL CONNECTION
 export const db = mysql.createConnection({
   host: process.env.DB_HOST, 
   user: process.env.DB_USER,
@@ -49,6 +49,17 @@ app.get('/dbData', async(req,res) => {
   }
 });
 
+
+app.get('/projectTech/:projectId', async(req, res) => {
+  try {
+    const { projectId } = req.params;
+    const technologies = await getProjectTechnologies(projectId);
+
+    res.json({ technologies });
+  } catch(err) {
+    res.status(500).json({ error: err });
+  }
+});
 
 
 
