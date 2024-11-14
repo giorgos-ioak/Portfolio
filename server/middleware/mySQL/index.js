@@ -18,7 +18,7 @@ export async function getProjects() {
   return new Promise((resolve, reject) => {
     db.query('CALL getProjects()', (err, results) => {
       if(err) {
-        reject('Error fetching projects');
+        reject('Error fetching projects', err);
       } 
       
       resolve(results[0]);
@@ -28,11 +28,26 @@ export async function getProjects() {
 
 
 
+export async function getProjectTechnologies(id) {
+  return new Promise((resolve, reject) => {
+    db.query(`CALL getProjectTechnologies(${id})`, (err, results) => {
+      if(err) {
+        reject(`There was an error fetching the Project's Technologies`, err);
+      }
+
+      resolve(results[0]);
+    })
+  });
+};
+
+
+
+
 export async function getSkills() {
   return new Promise((resolve, reject) => {
     db.query('CALL getSkills()', (err, results) => {
       if(err) {
-        reject('Error fetching projects');
+        reject('Error fetching projects', err);
       }
 
       resolve(results[0]);
@@ -46,10 +61,13 @@ export async function getAchievements() {
   return new Promise((resolve, reject) => {
     db.query('CALL getAchievements()', (err, results) => {
       if(err) {
-        reject('Error fetching projects');
+        reject('Error fetching projects', err);
       }
 
       resolve(results[0]);
     });
   });
 };
+
+
+

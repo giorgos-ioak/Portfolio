@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useLoaderData } from "react-router-dom";
 import { storeData } from "../../app/reducers/databaseData.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar.jsx";
@@ -18,6 +18,9 @@ function MainLayout() {
     dispatch(storeData(data));
     // console.log('UseEffect executed');
   }, [dispatch, data]);
+
+  // const db = useSelector((state) => state.databaseData.value);
+  // console.log('Main Layout', db);
 
 
 
