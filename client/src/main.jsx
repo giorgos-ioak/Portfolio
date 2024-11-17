@@ -7,7 +7,7 @@ import Home from './pages/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
 import Achievements from './pages/Achievements/Achievements.jsx';
-
+import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.jsx';
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
 
@@ -41,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'achievements',
         element: <Achievements />
+      },
+      {
+        path: 'achievements/:achievementId',
+        element: <AchievementDetails />
       }
     ]
   }

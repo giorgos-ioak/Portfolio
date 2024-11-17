@@ -44,6 +44,7 @@ function ProjectSection() {
               project={{
                 label: projects?.[0].title,
                 text: projects?.[0]._description,
+                id: projects?.[0].project_id
               }} 
               image={project1Img}
             />
@@ -55,6 +56,7 @@ function ProjectSection() {
                 project={{
                   label: projects?.[0].title,
                   text: projects?.[0]._description,
+                  id: projects?.[0].project_id
                 }} 
                 image={project1Img}
               />
@@ -63,6 +65,7 @@ function ProjectSection() {
                 project={{
                   label: projects?.[1].title,
                   text: projects?.[1]._description,
+                  id: projects?.[1].project_id
                 }}
                 image={project2Img}
               />
@@ -75,6 +78,7 @@ function ProjectSection() {
                 project={{
                   label: projects?.[0].title,
                   text: projects?.[0]._description,
+                  id: projects?.[0].project_id
                 }}
                 image={project1Img}
               />
@@ -83,6 +87,7 @@ function ProjectSection() {
                 project={{
                   label: projects?.[1].title,
                   text: projects?.[1]._description,
+                  id: projects?.[1].project_id
                 }}
                 image={project2Img}
               />
@@ -91,6 +96,7 @@ function ProjectSection() {
                 project={{
                   label: projects?.[2].title,
                   text: projects?.[2]._description,
+                  id: projects?.[2].project_id
                 }} 
                 image={project3Img}
               />

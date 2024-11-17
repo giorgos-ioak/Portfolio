@@ -35,6 +35,7 @@ function AchievementsSection() {
             <Achievement 
               label={achievements?.[0].title}
               text={achievements?.[0]._description}
+              id={achievements?.[0].achievement_id}
             />
           }
 
@@ -43,11 +44,13 @@ function AchievementsSection() {
               <Achievement 
                 label={achievements?.[0].title}
                 text={achievements?.[0]._description}
+                id={achievements?.[0].achievement_id}
               />
 
               <Achievement 
-                label='Achievement 2' 
-                text='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry. Lorem Ipsum has been the industry.'
+                label={achievements?.[1].title}
+                text={achievements?.[1]._description}
+                id={achievements?.[1].achievement_id}
               />
             </> 
           }
