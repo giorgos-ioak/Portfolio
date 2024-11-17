@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useLocation } from "react-router-dom";
 import { storeData } from "../../app/reducers/databaseData.js";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar.jsx";
@@ -10,19 +10,17 @@ import Navbar from "../Navbar/Navbar.jsx";
 
 
 function MainLayout() {
+  const { pathname } = useLocation();
+
   const data = useLoaderData();
   const dispatch = useDispatch();
 
 
   useEffect(() => {
     dispatch(storeData(data));
-    // console.log('UseEffect executed');
-  }, [dispatch, data]);
 
-  // const db = useSelector((state) => state.databaseData.value);
-  // console.log('Main Layout', db);
-
-
+    window.scrollTo(0, 0);
+  }, [dispatch, data, pathname]);
 
 
   return (

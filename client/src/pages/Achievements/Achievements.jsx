@@ -24,11 +24,7 @@ function Achievements() {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const totalAchievements = achievements?.length;
 
-  console.log('Achievements', achievements);
-
-
-
-
+  
 ///// PAGINATION /////
   const [achievementsData, setAchievementsData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
