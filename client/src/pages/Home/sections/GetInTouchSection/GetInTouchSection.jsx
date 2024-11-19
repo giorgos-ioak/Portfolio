@@ -1,8 +1,8 @@
 import classes from './GetInTouchSection.module.css';
 
-import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
-import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
-import GetInTouchContainer from '../../components/Containers/GetInTouchContainer/GetInTouchContainer.jsx';
+import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
+import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
+import GetInTouchContainer from '../../../../components/Containers/GetInTouchContainer/GetInTouchContainer.jsx';
 
 function GetInTouchSection() {
   return (
