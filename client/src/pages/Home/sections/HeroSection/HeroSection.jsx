@@ -1,5 +1,5 @@
 import classes from './HeroSection.module.css';
-import image from '../../assets/robotFace.jpg';
+import image from '../../../../assets/robotFace.jpg';
 
 
 function HeroSection() {

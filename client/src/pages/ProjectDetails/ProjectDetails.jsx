@@ -102,12 +102,14 @@ function ProjectDetails() {
           </ul>
         </div>
 
-        <div className={classes.instructionsContainer}>
-          <h2 className={classes.h2}>Demo Instructions</h2>
-          <p className={classes.p}>
-            {project?.[0].demo_instructions}
-          </p>
-        </div>
+        {project?.[0].demo_instructions ? (
+          <div className={classes.instructionsContainer}>
+            <h2 className={classes.h2}>Demo Instructions</h2>
+            <p className={classes.p}>
+              {project?.[0].demo_instructions}
+            </p>
+          </div>
+        ) : null}
       </div>
 
     </section>

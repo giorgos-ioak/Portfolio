@@ -4,17 +4,17 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-import projectSvg from '../../assets/svgIcons/project.svg';
-import project1Img from '../../assets/project1Img.jpg';
-import project2Img from '../../assets/project2Img.jpg';
-import project3Img from '../../assets/project3Img.jpg';
+import projectSvg from '../../../../assets/svgIcons/project.svg';
+import project1Img from '../../../../assets/project1Img.jpg';
+import project2Img from '../../../../assets/project2Img.jpg';
+import project3Img from '../../../../assets/project3Img.jpg';
 
-import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
-import Button from '../../components/UI/Button/Button.jsx';
-import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
-import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
-import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
+import ProjectContainer from '../../../../components/Containers/ProjectContainer/ProjectContainer.jsx';
+import Button from '../../../../components/UI/Button/Button.jsx';
+import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
+import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
+import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
   const verySmallScreen = useMediaQuery('(max-width:370px)');

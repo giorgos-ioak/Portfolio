@@ -1,7 +1,7 @@
 import classes from './SummarySection.module.css';
-import flag from '../../assets/svgIcons/flag.svg';
+import flag from '../../../../assets/svgIcons/flag.svg';
 
-import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
+import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
 
 function SummarySection() {
   return (

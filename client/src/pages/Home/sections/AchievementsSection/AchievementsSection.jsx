@@ -1,16 +1,16 @@
 import classes from './AchievementsSection.module.css';
-import titleIcon from '../../assets/svgIcons/story.svg';
+import titleIcon from '../../../../assets/svgIcons/story.svg';
 import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 
-import Button from '../../components/UI/Button/Button.jsx';
-import Achievement from '../../components/Containers/AchievementContainer/Achievement.jsx';
-import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
-import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../components/UI/RedBlock/RedBlock.jsx';
-import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx';
+import Button from '../../../../components/UI/Button/Button.jsx';
+import Achievement from '../../../../components/Containers/AchievementContainer/Achievement.jsx';
+import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
+import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
+import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
+import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 
 

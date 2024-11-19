@@ -3,11 +3,12 @@ import { createRoot } from 'react-dom/client';
 import './styles/index.css';
 
 import MainLayout from './components/Layouts/MainLayout.jsx';
-import Home from './pages/Home.jsx';
+import Home from './pages/Home/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
 import Achievements from './pages/Achievements/Achievements.jsx';
 import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.jsx';
+import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       {
         path: 'achievements/:achievementId',
         element: <AchievementDetails />
+      },
+      {
+        path: 'dashboard',
+        element: <Dashboard />
       }
     ]
   }
