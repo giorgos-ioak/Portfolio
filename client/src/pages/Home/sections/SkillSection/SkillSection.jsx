@@ -37,7 +37,7 @@ function SkillSection() {
                 skills?.[0].technology,
                 skills?.[1].technology,
               ]} 
-              title='Programming Languages' 
+              title='Languages' 
               titleSvgIcon={computer} 
               itemSvgIcon={dot}
               imgTitle=''

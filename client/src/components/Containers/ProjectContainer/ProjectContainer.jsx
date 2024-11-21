@@ -12,12 +12,9 @@ function ProjectContainer({ project, image }) {
         <div className={classes.project}>
           <>
             <label className={classes.label}>{project.label}</label>
-            <p className={classes.p_isClosed}>
+            <p className={classes.p}>
               {project.text}
             </p>
-            <span className={classes.readMoreSpan}>
-              Read more..
-            </span>
           </>
           <Link to={`/projects/${project.id}`}>
             <Button className='detailsBtn'>Details</Button>
