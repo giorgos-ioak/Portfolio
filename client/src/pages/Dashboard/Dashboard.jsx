@@ -4,10 +4,45 @@ import FormTextArea from '../../components/UI/DashboardForm/FormTextArea/FormTex
 import FormInput from '../../components/UI/DashboardForm/FormInput/FormInput.jsx';
 import Divider from '../../components/UI/Divider/Divider.jsx';
 import Loading from '../../components/UI/Loading/Loading.jsx';
+import { useState } from 'react';
 
 function Dashboard() {
+
+  const [type, setType] = useState('');
+
+  function handleTypeChange(event) {
+    setType(event.target.value);
+  }
+
+  console.log(type);
+
   return (
     <section className={classes.section}>
+      <div className={classes.selectType_container}>
+        <label 
+          className={classes.label} 
+          style={{
+            alignSelf: 'center',
+            marginBottom: '0',
+            fontWeight: 'bold',
+            opacity: '1'
+          }}
+        >
+          Type :
+        </label>
+
+        <select 
+          required 
+          value={type}
+          onChange={handleTypeChange}
+        >
+          <option value='' disabled>Choose a Type</option>
+          <option value='Skills'>Skills</option>
+          <option value='Projects'>Projects</option>
+          <option value='Achievements'>Achievements</option>
+        </select>
+      </div>
+
       <form className={classes.form}>
         <h3 className={classes.h3}>Dashboard</h3>
 
@@ -29,13 +64,18 @@ function Dashboard() {
 
         <div className={classes.box_container}>
           <div className={classes.formInput_container}>
-            <FormInput
-              label='Technologies'
-              required={true}
-            />
-            <FormTextArea
-              label='Demo Instructions'
-            />
+            {type === 'Projects' ? (
+              <>
+                <FormInput
+                  label='Technologies'
+                  required={true}
+                />
+                <FormTextArea
+                  label='Demo Instructions'
+                />
+              </> 
+            ) : null}
+            
           </div>
         </div>
         <div style={{display: 'flex' , justifyContent: 'center'}}>
@@ -45,15 +85,19 @@ function Dashboard() {
 
         <div className={classes.box_container}>
           <div className={classes.formInput_container}>
-            <FormInput
-              label='Demo'
-            />
-            <FormInput
-              label='Github'
-            />
-            <FormInput
-              label='Figma'
-            />
+          {type === 'Projects' ? (
+              <>
+                <FormInput
+                  label='Demo'
+                />
+                <FormInput
+                  label='Github'
+                />
+                <FormInput
+                  label='Figma'
+                />
+              </> 
+            ) : null}
           </div>
         </div>
 

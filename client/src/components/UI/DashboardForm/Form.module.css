@@ -28,6 +28,17 @@
   flex-direction: column;
 }
 
+.selectType_container {
+  display: flex;
+  justify-content: flex-start;
+  width: 45%;
+  margin: auto;
+  background-color: transparent;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+
 .formCategory_container {
   padding-top: 0.6rem;
 }
@@ -132,6 +143,16 @@
 }
 
 
+.selectType_container > select {
+  padding: 0.6rem 1rem;  
+  font-family: 'Montserrat';
+  font-size: 0.9rem;
+  font-weight: 500;
+  border-radius: 8px;
+  margin-left: 1rem;
+}
+
+
 
 
 
@@ -146,6 +167,17 @@
     width: 90%;
     margin: auto;
     padding: 1rem;
+  }
+
+
+  .selectType_container {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .selectType_container > select {
+    padding: 0.6rem 0.5rem;  
+    margin-left: 0.5rem;
   }
 
 
@@ -198,6 +230,15 @@
     padding: 1rem;
   }
 
+  .selectType_container {
+    width: 90%;
+    margin-bottom: 2rem;
+  }
+
+  .selectType_container > select {
+    padding: 0.6rem 0.5rem;  
+    margin-left: 2rem;
+  }
 
   .formInput_container {
     width: 100%;
@@ -250,6 +291,17 @@
   }
 
 
+  .selectType_container {
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .selectType_container > select {
+    padding: 0.6rem 0.5rem;  
+    margin-left: 2rem;
+  }
+
+
   .formInput_container {
     width: 100%;
   }
@@ -299,6 +351,16 @@
     padding: 1rem;
   }
 
+  .selectType_container {
+    width: 70%;
+    margin-bottom: 2rem;
+  }
+
+  .selectType_container > select {
+    padding: 0.6rem 0.5rem;  
+    margin-left: 2rem;
+  }
+
 
   .formInput_container {
     width: 100%;
@@ -341,6 +403,9 @@
 
 
 
+
+
+/* HEIGHT */
 @media (max-height: 800px) {
   .section {
     height: 100%;
