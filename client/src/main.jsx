@@ -9,7 +9,9 @@ import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
 import Achievements from './pages/Achievements/Achievements.jsx';
 import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.jsx';
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
+
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
+import { action as dashboardAction} from './pages/Dashboard/Dashboard.jsx';
 
 
 import { 
@@ -49,7 +51,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard />
+        element: <Dashboard />,
+        action: dashboardAction
       }
     ]
   }
