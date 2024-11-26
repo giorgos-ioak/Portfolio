@@ -5,11 +5,14 @@ import dotenv from 'dotenv';
 
 import { getProjects, getSkills, getAchievements, getProjectTechnologies } from './middleware/mySQL/index.js';
 
+import dataRoutes from './routes/data.js';
+
 
 
 const app = express();
 dotenv.config();
 app.use(cors());
+app.use(express.json());
 
 
 
@@ -31,6 +34,12 @@ db.connect((err) => {
   }
   console.log('Connected to the MySQL database.');
 });
+
+
+
+
+// ENDPOINTS
+app.use('/', dataRoutes);
 
 
 
