@@ -3,8 +3,6 @@ import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
-import { getProjects, getSkills, getAchievements, getProjectTechnologies } from './middleware/mySQL/index.js';
-
 import dataRoutes from './routes/data.js';
 
 
@@ -38,37 +36,10 @@ db.connect((err) => {
 
 
 
-// ENDPOINTS
+
+// ROUTES
 app.use('/', dataRoutes);
 
-
-
-
-
-
-app.get('/dbData', async(req,res) => {
-  try {
-    const projects = await getProjects();
-    const skills = await getSkills();
-    const achievements = await getAchievements();
-
-    res.json({ projects, skills, achievements });
-  } catch(err) {
-    res.status(500).json({error: err});
-  }
-});
-
-
-app.get('/projectTech/:projectId', async(req, res) => {
-  try {
-    const { projectId } = req.params;
-    const technologies = await getProjectTechnologies(projectId);
-
-    res.json({ technologies });
-  } catch(err) {
-    res.status(500).json({ error: err });
-  }
-});
 
 
 

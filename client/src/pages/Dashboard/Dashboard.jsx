@@ -5,15 +5,69 @@ import FormInput from '../../components/UI/DashboardForm/FormInput/FormInput.jsx
 import Divider from '../../components/UI/Divider/Divider.jsx';
 
 import { useState } from 'react';
-import { Form, redirect } from 'react-router-dom';
+import { useNavigate  } from 'react-router-dom';
 
 
 
 function Dashboard() {
+  const navigate = useNavigate();
   const [type, setType] = useState('');
 
   function handleTypeChange(event) {
     setType(event.target.value);
+  }
+
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+  
+      console.log(data);  
+
+      let response;
+
+
+      if(type === 'Projects') {
+        response = await fetch('http://localhost:3000/createNewProject', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+
+      } else if(type === 'Achievements') {
+        response = await fetch('http://localhost:3000/createNewAchievement', {
+          method: 'POST',
+          body: JSON.stringify(data),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+      } 
+
+
+      response = await fetch('http://localhost:3000/createNewSkill', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json"
+        }
+      });
+
+  
+      if(!response.ok) {
+        throw new Error(`Response status: ${response.status}`)
+      }
+  
+      return navigate('/');
+  
+    } catch(err) {
+      console.error(err.message);
+    }
   }
 
   return (
@@ -43,9 +97,8 @@ function Dashboard() {
         </select>
       </div>
 
-      <Form 
-        method='post'
-        action='/dashboard'
+      <form 
+        onSubmit={handleSubmit}
         className={classes.form}
       >
         <h3 
@@ -75,7 +128,7 @@ function Dashboard() {
                       required={true}
                     />
                     <FormTextArea
-                      label='Description'
+                      label='description'
                       name='description'
                       required={true}
                     />
@@ -97,7 +150,7 @@ function Dashboard() {
                       required={true}
                     />
                     <FormTextArea
-                      label='Demo Instructions'
+                      label='demoInstructions'
                       name='demoInstructions'
                       required={false}
                     />
@@ -176,36 +229,9 @@ function Dashboard() {
             </div>
           </>
         )}
-      </Form>
+      </form>
     </section>
   )
 }
 
 export default Dashboard;
-
-
-export async function action({ request }) {
-  try {
-    const formData = await request.formData();
-    const data = Object.fromEntries(formData);
-
-    console.log(data);  
-
-    const response = await fetch('http://localhost:3000/createNewData', {
-      method: 'POST',
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-
-    if(!response.ok) {
-      throw new Error(`Response status: ${response.status}`)
-    }
-
-    return redirect('/');
-
-  } catch(err) {
-    console.error(err.message);
-  }
-};
