@@ -11,7 +11,6 @@ import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.js
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
-import { action as dashboardAction} from './pages/Dashboard/Dashboard.jsx';
 
 
 import { 
@@ -51,8 +50,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard />,
-        action: dashboardAction
+        element: <Dashboard />
       }
     ]
   }
