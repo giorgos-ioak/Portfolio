@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { createNewProject, getDbData, getProjectTech, createNewSkill, createNewAchievement } from '../controllers/data.js';
+import { createNewProject, getDbData, getProjectTech, createNewSkill, createNewAchievement, postProjectTechnologies } from '../controllers/data.js';
 
 const router = express.Router();
 
@@ -15,6 +15,9 @@ router.get('/projectTech/:projectId', getProjectTech);
 
 // POST - create new Project.
 router.post('/createNewProject', createNewProject);
+
+// POST - post new Project technologies.
+router.post('/postProjectTechnologies/:projectId', postProjectTechnologies);
 
 // POST - create new Skill.
 router.post('/createNewSkill', createNewSkill);

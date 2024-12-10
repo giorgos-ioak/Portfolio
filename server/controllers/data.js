@@ -31,15 +31,39 @@ export async function getProjectTech(req, res) {
 
 
 // POST FUNCTIONS.
+export async function postProjectTechnologies(req, res) {
+  const { projectId } = req.params;
+  const data = req.body;
+
+  const sqlQuery ='INSERT INTO project_technologies (technology, project_id) VALUES ?';
+
+  // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
+  const values = data.map((technology) => [technology, projectId]);
+
+
+  db.query(sqlQuery, [values], (err, result) => {
+    if(err) {
+      console.error(err);
+      return;
+    }
+
+    res.status(201).json({ message: 'Project Technologies inserted successfully', insertedRows: result.affectedRows })
+  });
+};
+
+
+
+
 export function createNewProject(req, res) {
   const { demo, demoInstructions, description, figma, github, title } = req.body;
 
   let sqlQuery = 'INSERT INTO projects (title, _description';
   
-
   let values = [title, description];
   let placeholders = ['?', '?'];
 
+
+  // Adding Inputs WHETHER they are REQUIRED or NOT (From the form).
   if (demoInstructions !== null && demoInstructions !== undefined) {
     sqlQuery += ', demo_instructions'; // Add the column name
     placeholders.push('?'); // Add the placeholder
@@ -65,37 +89,29 @@ export function createNewProject(req, res) {
   }
 
 
+  // Closing the query string.
   sqlQuery += ') VALUES (' + placeholders.join(', ') + ')';
 
 
-
-
-
+  // Executing the query.
   db.query(sqlQuery, values, (err, result) => {
     if (err) {
       console.error(err);
       return;
     }
-    console.log('Data inserted successfully');
+
+    const projectId = result.insertId;
+
+    // Returning the projectId for inserting the project's technologies afterwards.
+    res.status(201).json({ message: 'Data received successfully', projectId });
   });
-  
-  res.status(201).json({ message: 'Data received successfully' });
 };  
-
-
-
-
-
 
 
 
 export function createNewSkill(req, res) {
 
 };  
-
-
-
-
 
 
 export function createNewAchievement(req, res) {
