@@ -24,14 +24,14 @@ function Dashboard() {
     try {
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
-  
-      console.log(data);  
+      
+      const technologies = data.technologies.split(',');
 
-      let response;
+      let response1 , response2;
 
 
       if(type === 'Projects') {
-        response = await fetch('http://localhost:3000/createNewProject', {
+        response1 = await fetch('http://localhost:3000/createNewProject', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {
@@ -39,8 +39,23 @@ function Dashboard() {
           }
         });
 
+        const result = await response1.json();
+        const projectId = result.projectId;
+
+        response2 = await fetch(`http://localhost:3000/postProjectTechnologies/${projectId}`, {
+          method: 'POST',
+          body: JSON.stringify(technologies),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+
+        if(!response2.ok) {
+          throw new Error(`Technologies insertion failed with status: ${response2.status}`);
+        }
+
       } else if(type === 'Achievements') {
-        response = await fetch('http://localhost:3000/createNewAchievement', {
+        response1 = await fetch('http://localhost:3000/createNewAchievement', {
           method: 'POST',
           body: JSON.stringify(data),
           headers: {
@@ -50,7 +65,7 @@ function Dashboard() {
       } 
 
 
-      response = await fetch('http://localhost:3000/createNewSkill', {
+      response1 = await fetch('http://localhost:3000/createNewSkill', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -59,8 +74,8 @@ function Dashboard() {
       });
 
   
-      if(!response.ok) {
-        throw new Error(`Response status: ${response.status}`)
+      if(!response1.ok) {
+        throw new Error(`Response status: ${response1.status}`)
       }
   
       return navigate('/');
