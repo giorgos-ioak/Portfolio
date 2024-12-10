@@ -24,13 +24,17 @@ function Dashboard() {
     try {
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
-      
-      const technologies = data.technologies.split(',');
 
+      console.log(data);
+      
       let response1 , response2;
 
 
+      // TYPE = PROJECT
       if(type === 'Projects') {
+        // Creating an array with all technologies separated by commma.
+        const technologies = data.technologies.split(',');
+
         response1 = await fetch('http://localhost:3000/createNewProject', {
           method: 'POST',
           body: JSON.stringify(data),
@@ -50,10 +54,18 @@ function Dashboard() {
           }
         });
 
+        if(!response1.ok) {
+          throw new Error(`Response1 status: ${response1.status}`)
+        }
+
         if(!response2.ok) {
           throw new Error(`Technologies insertion failed with status: ${response2.status}`);
         }
 
+        return navigate('/');
+
+
+      // TYPE = ACHIEVEMENT
       } else if(type === 'Achievements') {
         response1 = await fetch('http://localhost:3000/createNewAchievement', {
           method: 'POST',
@@ -62,9 +74,17 @@ function Dashboard() {
             "Content-Type": "application/json"
           }
         });
+
+
+        if(!response1.ok) {
+          throw new Error(`Response status: ${response1.status}`)
+        }
+
+        return navigate('/');
       } 
 
 
+      // TYPE = SKILLS
       response1 = await fetch('http://localhost:3000/createNewSkill', {
         method: 'POST',
         body: JSON.stringify(data),
@@ -226,6 +246,11 @@ function Dashboard() {
                     <FormInput
                       label="Skills (,)"
                       name='skills'
+                      required={true}
+                    />
+                    <FormInput
+                      label='Category'
+                      name='category'
                       required={true}
                     />
                   </div>

@@ -21,6 +21,46 @@ function SkillSection() {
   const skills = useSelector((state) => state.databaseData.value?.skills);
 
 
+  // Declaring the arrays containing the technologies of each category.
+  let frameworkCategory = [];
+  let languagesCategory = [];
+  let libraryCategory = [];
+  let databaseCategory = [];
+
+  
+  // Adding technologies to the FRAMEWORK category.
+  skills?.map((skill) => {
+    if(skill.category === 'Framework') {
+      frameworkCategory.push(skill.technology);
+    }
+  });
+
+  
+  // Adding technologies to the LANGUAGES category.
+  skills?.map((skill) => {
+    if(skill.category === 'Programming Language') {
+      languagesCategory.push(skill.technology);
+    }
+  });
+
+
+  // Adding technologies to the DATABASE category.
+  skills?.map((skill) => {
+    if(skill.category === 'Database') {
+      databaseCategory.push(skill.technology);
+    }
+  });
+
+
+  // Adding technologies to the LIBRARIES category.
+  skills?.map((skill) => {
+    if(skill.category === 'Library-Platform') {
+      libraryCategory.push(skill.technology);
+    }
+  });
+
+
+
   return (
     <>
       <section className={classes.skillSection}>
@@ -33,10 +73,7 @@ function SkillSection() {
         <MainContainer className='mainContainer_SkillSection'>
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
-              items={[
-                skills?.[0].technology,
-                skills?.[1].technology,
-              ]} 
+              items={languagesCategory} 
               title='Languages' 
               titleSvgIcon={computer} 
               itemSvgIcon={dot}
@@ -44,10 +81,7 @@ function SkillSection() {
             />
 
             <SkillsContainer 
-              items={[
-                skills?.[2].technology,
-                skills?.[3].technology,
-              ]} 
+              items={databaseCategory} 
               title='Databases' 
               titleSvgIcon={database} 
               itemSvgIcon={dot}
@@ -57,12 +91,7 @@ function SkillSection() {
 
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
-              items={[
-                skills?.[5].technology,
-                skills?.[6].technology,
-                skills?.[7].technology,
-                skills?.[8].technology,
-              ]} 
+              items={libraryCategory} 
 
               title='Libraries & Platforms' 
               titleSvgIcon={libraries_platforms} 
@@ -71,9 +100,7 @@ function SkillSection() {
             />
 
             <SkillsContainer 
-              items={[
-                skills?.[4].technology,
-              ]} 
+              items={frameworkCategory} 
               title='Frameworks' 
               titleSvgIcon={frameworks} 
               itemSvgIcon={dot}
