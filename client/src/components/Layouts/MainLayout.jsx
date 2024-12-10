@@ -16,6 +16,7 @@ function MainLayout() {
   const dispatch = useDispatch();
 
 
+  // USE-EFFECT HOOK
   useEffect(() => {
     dispatch(storeData(data));
 

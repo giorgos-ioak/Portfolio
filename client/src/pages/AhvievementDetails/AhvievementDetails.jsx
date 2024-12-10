@@ -15,9 +15,7 @@ function AhvievementDetails() {
 
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const achievement = achievements?.filter(obj => obj.achievement_id === Number(achievementId));
-
-  console.log(achievement);
-
+  
 
   return (
     <section className={classes.section}>

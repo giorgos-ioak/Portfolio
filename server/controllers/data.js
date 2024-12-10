@@ -110,10 +110,57 @@ export function createNewProject(req, res) {
 
 
 export function createNewSkill(req, res) {
+  const data = req.body;
 
+  const skills = data.skills.split(',');
+  const category = data.category;
+  
+  const sqlQuery = 'INSERT INTO skills (category, technology) VALUES ?;';
+  const values = skills.map((skill) => [category, skill]);
+
+  
+  // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
+  db.query(sqlQuery, [values], (err, result) => {
+    if(err) {
+      console.error(err);
+      return;
+    }
+
+    res.status(201).json({ message: 'Skills inserted successfully' });
+  });
 };  
 
 
 export function createNewAchievement(req, res) {
+  const data = req.body;
 
+  const title = data.title;
+  const description = data.description;
+  const certificate = data.certificate;
+  
+  let sqlQuery = 'INSERT INTO achievements (title, _description';
+  
+  let values = [title, description];
+  let placeholders = ['?', '?'];
+
+  // Adding Inputs WHETHER they are REQUIRED or NOT (From the form).
+  if (certificate !== null && certificate !== undefined) {
+    sqlQuery += ', certificate_btn'; // Add the column name
+    placeholders.push('?'); // Add the placeholder
+    values.push(certificate); // Add the value
+  } 
+
+  // Closing the query string.
+  sqlQuery += ') VALUES (' + placeholders.join(', ') + ')';
+
+  
+  // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
+  db.query(sqlQuery, values, (err, result) => {
+    if(err) {
+      console.error(err);
+      return;
+    }
+
+    res.status(201).json({ message: 'Achievement inserted successfully' });
+  });
 };  
