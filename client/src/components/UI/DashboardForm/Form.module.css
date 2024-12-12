@@ -1,6 +1,6 @@
 .section {
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
-  height: 160vh;
+  height: 180vh;
   padding: 4rem 0 2rem 0;
 }
 
@@ -30,8 +30,10 @@
 
 .selectType_container {
   display: flex;
+  flex-direction: column;
   justify-content: flex-start;
   width: 45%;
+  gap: 1rem;
   margin: auto;
   background-color: transparent;
   border-radius: 8px;
@@ -60,6 +62,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 4rem 0rem 2rem 0rem;
+}
+
+
+.defaultContainer {
+  width: 45%;
+  margin: auto;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem 3rem 2rem 3rem;
 }
 
 
@@ -143,7 +154,7 @@
 }
 
 
-.selectType_container > select {
+select {
   padding: 0.6rem 1rem;  
   font-family: 'Montserrat';
   font-size: 0.9rem;

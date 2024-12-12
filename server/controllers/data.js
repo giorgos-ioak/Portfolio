@@ -113,7 +113,7 @@ export function createNewSkill(req, res) {
   const data = req.body;
 
   const skills = data.skills.split(',');
-  const category = data.category;
+  const category = data.skillCategory;
   
   const sqlQuery = 'INSERT INTO skills (category, technology) VALUES ?;';
   const values = skills.map((skill) => [category, skill]);
