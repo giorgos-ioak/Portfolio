@@ -1,13 +1,15 @@
 import classes from '../Form.module.css';
 
 
-function FormTextArea({ label }) {
+function FormTextArea({ label, name, value, onChange }) {
   return (
     <div className={classes.select_container}>
       {label && <label className={classes.label}>{label}</label>}
       <textarea 
+        {...(value !== undefined ? { value } : {})}
+        {...(onChange ? { onChange } : {})} 
         type='text' 
-        name={label} 
+        name={name} 
         required
       />
     </div>
