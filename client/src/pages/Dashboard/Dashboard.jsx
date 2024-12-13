@@ -13,13 +13,24 @@ function Dashboard() {
 
   const [type, setType] = useState('');
   const [setting, setSetting] = useState('');
+
   const [skillCategory, setSkillCategory] = useState('');
 
+  // Selected ID.
+  const [editedProjectId, setEditedProjectId] = useState(null);
+  const [editedSkillId, setEditedSkillId] = useState(null);
+  const [editedAchievementId, setEditedAchievementId] = useState(null);
+
+  console.log('Project ID', editedProjectId);
+
+  function handleEditedProjectId(id) {
+    setEditedProjectId(id);
+  }
 
   let method = '';
   setting === 'Create' ? method = 'POST' : setting === 'Edit' ? method = 'PUT' : setting === 'Delete' ? method = 'DELETE' : undefined;
 
-
+  console.log(method);
 
   function handleTypeChange(event) {
     setType(event.target.value);
@@ -37,6 +48,8 @@ function Dashboard() {
   async function handleSubmit(e) {
     e.preventDefault();
 
+    console.log('Edited Project ID:', editedProjectId);
+
     try {
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
@@ -51,35 +64,42 @@ function Dashboard() {
         // Creating an array with all technologies separated by commma.
         const technologies = data.technologies.split(',');
 
-        response1 = await fetch('http://localhost:3000/createNewProject', {
-          method: 'POST',
+        const createProject = 'http://localhost:3000/createNewProject';
+        const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
+        const deleteProject = '';
+
+        response1 = await fetch( method === 'POST' ? createProject : method === 'PUT' ? editProject : deleteProject , {
+          method: method,
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json"
           }
         });
 
-        const result = await response1.json();
-        const projectId = result.projectId;
 
-        response2 = await fetch(`http://localhost:3000/postProjectTechnologies/${projectId}`, {
-          method: 'POST',
-          body: JSON.stringify(technologies),
-          headers: {
-            "Content-Type": "application/json"
+        if(method === 'POST') {
+          const result = await response1.json();
+          const projectId = result.projectId;
+  
+          response2 = await fetch(`http://localhost:3000/postProjectTechnologies/${projectId}`, {
+            method: 'POST',
+            body: JSON.stringify(technologies),
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+
+          if(!response2.ok) {
+            throw new Error(`Technologies insertion failed with status: ${response2.status}`);
           }
-        });
+        }
+        
 
         if(!response1.ok) {
           throw new Error(`Response1 status: ${response1.status}`)
         }
 
-        if(!response2.ok) {
-          throw new Error(`Technologies insertion failed with status: ${response2.status}`);
-        }
-
         return navigate('/');
-
 
       // TYPE = ACHIEVEMENT
       } else if(type === 'Achievements') {
@@ -199,10 +219,11 @@ function Dashboard() {
               handleSkillCategoryChange = {handleSkillCategoryChange}
             />
         ) : setting === 'Edit' ? (
-          <EditForm 
-            submitFn = {handleSubmit}
-            type = {type}
-          />
+            <EditForm 
+              submitFn = {handleSubmit}
+              type = {type}
+              onEditedProjectChange={handleEditedProjectId}
+            />
         ) : null
       }
     </section>

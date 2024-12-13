@@ -44,7 +44,7 @@ function EditAchievements() {
           opacity: '1'
         }}
       >
-        Choose a Skill:
+        Achievement:
       </label>
 
       <select 
@@ -52,7 +52,7 @@ function EditAchievements() {
         defaultValue=''
       >
         <option value='' disabled>
-          Choose a skill
+          Choose an option
         </option>
         {achievements.map((achievement) => (
           <option 
