@@ -7,15 +7,12 @@ import FormInput from '../FormInput/FormInput.jsx';
 import FormTextArea from '../FormTextArea/FormTextArea.jsx';
 import Divider from '../../Divider/Divider.jsx';
 
-function EditProjects({ onEditedProjectChange }) {
+function EditProjects({ onEditedID }) {
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
   const [project, setProject] = useState('');
   const [editedProject, setEditedProject] = useState({});
   const [projectId, setProjectId] = useState(null);
-
-
-  console.log('Project:', editedProject);
 
 
   useEffect(() => {
@@ -58,8 +55,8 @@ function EditProjects({ onEditedProjectChange }) {
     setEditedProject(currentProject?.[0]);
     setProjectId(currentProject?.[0]?.project_id);
 
-    if (onEditedProjectChange) {
-      onEditedProjectChange(currentProject?.[0]?.project_id);
+    if (onEditedID) {
+      onEditedID(currentProject?.[0]?.project_id);
     }
   };
 
