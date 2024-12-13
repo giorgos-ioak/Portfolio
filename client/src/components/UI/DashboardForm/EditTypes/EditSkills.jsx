@@ -5,22 +5,24 @@ import { useSelector } from 'react-redux';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
-function EditSkills() {
+function EditSkills({ onEditedID }) {
   const skills = useSelector((state) => state.databaseData.value?.skills);
 
   const [skill, setSkill] = useState('');
   const [editedSkill, setEditedSkill] = useState({});
 
-  console.log(editedSkill);
-
 
   function handleSkillChange(e) {
     // Setting the selectedSkill variable because state changes after the fuction's execution and therefor the skill value is the previous one.
     const selectedSkill = e.target.value;
-    setSkill(selectedSkill);
 
     const currentSkill = skills.filter((item) => item.technology === selectedSkill);
+    setSkill(selectedSkill);
     setEditedSkill(currentSkill?.[0]);
+
+    if (onEditedID) {
+      onEditedID(currentSkill?.[0].skill_id);
+    }
   };
 
 

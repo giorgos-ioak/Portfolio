@@ -4,7 +4,7 @@ import EditSkills from './EditTypes/EditSkills.jsx';
 import EditProjects from './EditTypes/EditProjects.jsx';
 import EditAchievements from './EditTypes/EditAchievements.jsx';
 
-function EditForm({ submitFn, type, onEditedProjectChange  }) {
+function EditForm({ submitFn, type, onEditedID  }) {
   return (
       <form 
         onSubmit={submitFn}
@@ -28,17 +28,21 @@ function EditForm({ submitFn, type, onEditedProjectChange  }) {
         }
 
         {type === 'Skills' && (
-          <EditSkills />
+          <EditSkills 
+            onEditedID={onEditedID}
+          />
         )}
 
         {type === 'Projects' && (
           <EditProjects 
-            onEditedProjectChange={onEditedProjectChange}
+            onEditedID={onEditedID}
           />
         )}
 
         {type === 'Achievements' && (
-          <EditAchievements />
+          <EditAchievements 
+            onEditedID={onEditedID}
+          />
         )}
             
               

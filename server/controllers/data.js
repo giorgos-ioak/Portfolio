@@ -187,3 +187,33 @@ export async function editProject(req ,res) {
     res.status(500).json({ error: 'Database error', details: err.message });
   }
 }
+
+export async function editSkill(req ,res) {
+  const { technology, category } = req.body;
+  const { skillId } = req.params;
+
+  const sqlQuery = `UPDATE skills SET category = ?, technology = ? WHERE skill_id = ?`;
+  const values = [category, technology, skillId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: 'Skill updated successfully' });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}
+
+export async function editAchievement(req ,res) {
+  const { title, _description, certificate_btn } = req.body;
+  const { achievementId } = req.params;
+
+  const sqlQuery = `UPDATE achievements SET title = ?, _description = ?, certificate_btn = ? WHERE achievement_id = ?`;
+  const values = [title, _description, certificate_btn, achievementId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: 'Achievement updated successfully' });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}

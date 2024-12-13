@@ -21,17 +21,16 @@ function Dashboard() {
   const [editedSkillId, setEditedSkillId] = useState(null);
   const [editedAchievementId, setEditedAchievementId] = useState(null);
 
-  console.log('Project ID', editedProjectId);
 
-  function handleEditedProjectId(id) {
-    setEditedProjectId(id);
+  function handleEditedID(id) {
+    type === 'Projects' ? setEditedProjectId(id) : type === 'Skills' ? setEditedSkillId(id) : setEditedAchievementId(id);
   }
 
   let method = '';
   setting === 'Create' ? method = 'POST' : setting === 'Edit' ? method = 'PUT' : setting === 'Delete' ? method = 'DELETE' : undefined;
 
-  console.log(method);
 
+//// HANDLE CHANGE FUNCTIONS
   function handleTypeChange(event) {
     setType(event.target.value);
   }
@@ -45,10 +44,10 @@ function Dashboard() {
   }
 
 
+
+//// SUBMIT
   async function handleSubmit(e) {
     e.preventDefault();
-
-    console.log('Edited Project ID:', editedProjectId);
 
     try {
       const formData = new FormData(e.target);
@@ -103,8 +102,12 @@ function Dashboard() {
 
       // TYPE = ACHIEVEMENT
       } else if(type === 'Achievements') {
-        response1 = await fetch('http://localhost:3000/createNewAchievement', {
-          method: 'POST',
+        const createAchievement = 'http://localhost:3000/createNewAchievement';
+        const editAchievement = `http://localhost:3000/editAchievement/${editedAchievementId}`;
+        const deleteAchievement = '';
+
+        response1 = await fetch(method === 'POST' ? createAchievement : method === 'PUT' ? editAchievement : deleteAchievement, {
+          method: method,
           body: JSON.stringify(data),
           headers: {
             "Content-Type": "application/json"
@@ -121,8 +124,12 @@ function Dashboard() {
 
 
       // TYPE = SKILLS
-      response1 = await fetch('http://localhost:3000/createNewSkill', {
-        method: 'POST',
+      const createSkill = 'http://localhost:3000/createNewSkill';
+      const editSkill = `http://localhost:3000/editSkill/${editedSkillId}`;
+      const deleteSkill = '';
+
+      response1 = await fetch(method === 'POST' ? createSkill : method === 'PUT' ? editSkill : deleteSkill, {
+        method: method,
         body: JSON.stringify({...data, skillCategory}),
         headers: {
           "Content-Type": "application/json"
@@ -222,7 +229,7 @@ function Dashboard() {
             <EditForm 
               submitFn = {handleSubmit}
               type = {type}
-              onEditedProjectChange={handleEditedProjectId}
+              onEditedID={handleEditedID}
             />
         ) : null
       }

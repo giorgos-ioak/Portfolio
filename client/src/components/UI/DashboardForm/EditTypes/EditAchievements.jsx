@@ -5,22 +5,24 @@ import { useSelector } from 'react-redux';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
-function EditAchievements() {
+function EditAchievements({ onEditedID }) {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   const [achievement, setAchievement] = useState('');
   const [editedAchievement, setEditedAchievement] = useState({});
 
-  console.log(achievements)
-
 
   function handleAchievementChange(e) {
     // Setting the selectedSkill variable because state changes after the fuction's execution and therefor the skill value is the previous one.
     const selectedAchievement = e.target.value;
-    setAchievement(selectedAchievement);
-
     const currentAchievement = achievements.filter((item) => item.title === selectedAchievement);
+
+    setAchievement(selectedAchievement);
     setEditedAchievement(currentAchievement?.[0]);
+
+    if (onEditedID) {
+      onEditedID(currentAchievement?.[0].achievement_id);
+    }
   };
 
   function handleChange(e) {
