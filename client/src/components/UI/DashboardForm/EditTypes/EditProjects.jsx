@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from '../Form.module.css';
 
 import { useSelector } from 'react-redux';
@@ -7,15 +7,47 @@ import FormInput from '../FormInput/FormInput.jsx';
 import FormTextArea from '../FormTextArea/FormTextArea.jsx';
 import Divider from '../../Divider/Divider.jsx';
 
-function EditProjects() {
+function EditProjects({ onEditedProjectChange }) {
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
   const [project, setProject] = useState('');
   const [editedProject, setEditedProject] = useState({});
+  const [projectId, setProjectId] = useState(null);
 
-  // console.log('project: ', project);
-  console.log(editedProject);
-  
+
+  console.log('Project:', editedProject);
+
+
+  useEffect(() => {
+    async function getProjectTechData() {
+      try {
+        const response = await fetch(`http://localhost:3000/projectTech/${projectId}`);
+    
+        if(!response.ok) {
+          throw new Error(`There was an HTTP Error with a status code of: ${response.status}.`);
+        }
+
+        const data = await response.json();
+
+        const technologiesArray = data.technologies.map((obj) => {
+          return obj.technology;
+        });
+
+        const stringTechnologies = technologiesArray.join();
+
+        setEditedProject((prev) => ({
+          ...prev,
+          technologies: stringTechnologies,
+        }));
+
+      } catch(err) {
+        return { error: true, message: err.message };
+      }
+    };
+
+    getProjectTechData();
+  } , [projectId]);
+
 
   function handleProjectChange(e) {
     // Setting the selectedSkill variable because state changes after the fuction's execution and therefor the project value is the previous one.
@@ -24,6 +56,11 @@ function EditProjects() {
     const currentProject = projects.filter((item) => item.title === selectedProject);
     setProject(currentProject?.[0]); 
     setEditedProject(currentProject?.[0]);
+    setProjectId(currentProject?.[0]?.project_id);
+
+    if (onEditedProjectChange) {
+      onEditedProjectChange(currentProject?.[0]?.project_id);
+    }
   };
 
 
@@ -33,7 +70,7 @@ function EditProjects() {
     setEditedProject((prev) => ({
       ...prev,
       [name]: value
-    }))
+    }));
   }
 
   return (

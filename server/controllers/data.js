@@ -17,6 +17,7 @@ export async function getDbData(req, res) {
 };
 
 
+
 export async function getProjectTech(req, res) {
   try {
     const { projectId } = req.params;
@@ -41,20 +42,17 @@ export async function postProjectTechnologies(req, res) {
   const values = data.map((technology) => [technology, projectId]);
 
 
-  db.query(sqlQuery, [values], (err, result) => {
-    if(err) {
-      console.error(err);
-      return;
-    }
-
+  try {
+    const [result] = await db.promise().query(sqlQuery, [values]);
     res.status(201).json({ message: 'Project Technologies inserted successfully', insertedRows: result.affectedRows })
-  });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
 };
 
 
 
-
-export function createNewProject(req, res) {
+export async function createNewProject(req, res) {
   const { demo, demoInstructions, description, figma, github, title } = req.body;
 
   let sqlQuery = 'INSERT INTO projects (title, _description';
@@ -93,23 +91,20 @@ export function createNewProject(req, res) {
   sqlQuery += ') VALUES (' + placeholders.join(', ') + ')';
 
 
-  // Executing the query.
-  db.query(sqlQuery, values, (err, result) => {
-    if (err) {
-      console.error(err);
-      return;
-    }
-
+  try {
+    const [result] = await db.promise().query(sqlQuery, values);
     const projectId = result.insertId;
-
+  
     // Returning the projectId for inserting the project's technologies afterwards.
     res.status(201).json({ message: 'Data received successfully', projectId });
-  });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
 };  
 
 
 
-export function createNewSkill(req, res) {
+export async function createNewSkill(req, res) {
   const data = req.body;
 
   const skills = data.skills.split(',');
@@ -118,20 +113,18 @@ export function createNewSkill(req, res) {
   const sqlQuery = 'INSERT INTO skills (category, technology) VALUES ?;';
   const values = skills.map((skill) => [category, skill]);
 
-  
-  // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
-  db.query(sqlQuery, [values], (err, result) => {
-    if(err) {
-      console.error(err);
-      return;
-    }
-
+  try {
+    // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
+    await db.promise().query(sqlQuery, [values]);
     res.status(201).json({ message: 'Skills inserted successfully' });
-  });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
 };  
 
 
-export function createNewAchievement(req, res) {
+
+export async function createNewAchievement(req, res) {
   const data = req.body;
 
   const title = data.title;
@@ -153,14 +146,44 @@ export function createNewAchievement(req, res) {
   // Closing the query string.
   sqlQuery += ') VALUES (' + placeholders.join(', ') + ')';
 
-  
-  // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
-  db.query(sqlQuery, values, (err, result) => {
-    if(err) {
-      console.error(err);
-      return;
-    }
-
+  try {
+    // For inserting multiple rows in the table, we need to create an array which includes sub-arrays whose number is the number of rows we want to insert.
+    await db.promise().query(sqlQuery, values);
     res.status(201).json({ message: 'Achievement inserted successfully' });
-  });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
 };  
+
+
+
+// PUT FUNCTIONS.
+export async function editProject(req ,res) {
+  const {technologies, ...rest} = req.body;
+  const { projectId } = req.params;
+
+  const projectColumns = Object.keys(rest);
+  const projectColumnsValues = Object.values(rest);
+  const technologiesColumnValues = technologies.split(',');
+
+  const firstClause = projectColumns.map((col) => `${col} = ?`).join(', ');
+
+  const sqlQuery1 = `UPDATE projects SET ${firstClause} WHERE project_id = ?`;
+
+  try {
+    await db.promise().query(sqlQuery1, [...projectColumnsValues, projectId]);
+
+    // Removing existing technologies from the project.
+    const deleteQuery = `DELETE FROM project_technologies WHERE project_id = ?`;
+    await db.promise().query(deleteQuery, [projectId]);
+
+    // Inserting new technologies to the project.
+    const insertQuery = `INSERT INTO project_technologies (technology, project_id) VALUES ?`;
+    const values = technologiesColumnValues.map((tech) => [tech, projectId]);
+    await db.promise().query(insertQuery, [values]);
+
+    res.status(200).json({ message: 'Project updated successfully' });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}
