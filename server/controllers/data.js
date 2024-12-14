@@ -217,3 +217,67 @@ export async function editAchievement(req ,res) {
     res.status(500).json({ error: 'Database error', details: err.message });
   }
 }
+
+
+
+
+// DELETE FUNCTIONS.
+export async function deleteSkill(req ,res) {
+  const { skillId } = req.params;
+
+  const sqlQuery = `DELETE FROM skills WHERE skill_id = ?`;
+  const values = [skillId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: 'Skill deleted successfully', 'Skill ID: ' : skillId });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}
+
+
+
+export async function   deleteProjectTechnologies (req ,res) {
+  const { projectId } = req.params;
+
+  const sqlQuery = `DELETE FROM project_technologies WHERE project_id = ?`;
+  const values = [projectId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: `Project's technologies deleted successfully`, 'Project ID: ' : projectId });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}
+
+
+
+export async function deleteProject(req ,res) {
+  const { projectId } = req.params;
+
+  const sqlQuery = `DELETE FROM projects WHERE project_id = ?`;
+  const values = [projectId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: 'Project deleted successfully', 'Project ID: ' : projectId });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}
+
+export async function deleteAchievement(req ,res) {
+  const { achievementId } = req.params;
+
+  const sqlQuery = `DELETE FROM achievements WHERE achievement_id = ?`;
+  const values = [achievementId];
+
+  try {
+    await db.promise().query(sqlQuery, values);
+    res.status(200).json({ message: 'Achievement deleted successfully', 'Achievement ID: ' : achievementId });
+  } catch(err) {
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+}

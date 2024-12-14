@@ -2,6 +2,7 @@ import classes from '../../components/UI/DashboardForm/Form.module.css';
 
 import CreateForm from '../../components/UI/DashboardForm/CreateForm.jsx';
 import EditForm from '../../components/UI/DashboardForm/EditForm.jsx';
+import DeleteForm from '../../components/UI/DashboardForm/DeleteForm.jsx';
 
 import { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
@@ -52,24 +53,33 @@ function Dashboard() {
     try {
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
-
-      console.log('Data:' , data);
       
-      let response1 , response2;
+      let response, response1 , response2;
 
 
       // TYPE = PROJECT
       if(type === 'Projects') {
-        // Creating an array with all technologies separated by commma.
-        const technologies = data.technologies.split(',');
-
         const createProject = 'http://localhost:3000/createNewProject';
         const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
-        const deleteProject = '';
+        const deleteProject = `http://localhost:3000/deleteProject/${editedProjectId}`;
+
+        if(method === 'DELETE') {
+          response = await fetch(`http://localhost:3000/deleteProjectTechnologies/${editedProjectId}`, {
+            method: 'DELETE',
+            headers: {
+              "Content-Type": "application/json"
+            }
+          });
+
+          if(!response.ok) {
+            throw new Error(`Project Technologies deletion failed with status: ${response.status}`);
+          }
+        }
+
 
         response1 = await fetch( method === 'POST' ? createProject : method === 'PUT' ? editProject : deleteProject , {
           method: method,
-          body: JSON.stringify(data),
+          ...(method !== 'DELETE' && { body: JSON.stringify(data) }),
           headers: {
             "Content-Type": "application/json"
           }
@@ -77,6 +87,8 @@ function Dashboard() {
 
 
         if(method === 'POST') {
+          // Creating an array with all technologies separated by commma.
+          const technologies = data.technologies.split(',');
           const result = await response1.json();
           const projectId = result.projectId;
   
@@ -104,11 +116,11 @@ function Dashboard() {
       } else if(type === 'Achievements') {
         const createAchievement = 'http://localhost:3000/createNewAchievement';
         const editAchievement = `http://localhost:3000/editAchievement/${editedAchievementId}`;
-        const deleteAchievement = '';
+        const deleteAchievement = `http://localhost:3000/deleteAchievement/${editedAchievementId}`;
 
         response1 = await fetch(method === 'POST' ? createAchievement : method === 'PUT' ? editAchievement : deleteAchievement, {
           method: method,
-          body: JSON.stringify(data),
+          ...(method !== 'DELETE' && { body: JSON.stringify(data) }),
           headers: {
             "Content-Type": "application/json"
           }
@@ -126,11 +138,13 @@ function Dashboard() {
       // TYPE = SKILLS
       const createSkill = 'http://localhost:3000/createNewSkill';
       const editSkill = `http://localhost:3000/editSkill/${editedSkillId}`;
-      const deleteSkill = '';
+      const deleteSkill = `http://localhost:3000/deleteSkill/${editedSkillId}`;
+
+      
 
       response1 = await fetch(method === 'POST' ? createSkill : method === 'PUT' ? editSkill : deleteSkill, {
         method: method,
-        body: JSON.stringify({...data, skillCategory}),
+        ...(method !== 'DELETE' && { body: JSON.stringify({ ...data, skillCategory }) }),
         headers: {
           "Content-Type": "application/json"
         }
@@ -227,6 +241,12 @@ function Dashboard() {
             />
         ) : setting === 'Edit' ? (
             <EditForm 
+              submitFn = {handleSubmit}
+              type = {type}
+              onEditedID={handleEditedID}
+            />
+        ) : setting === 'Delete' ? (
+            <DeleteForm 
               submitFn = {handleSubmit}
               type = {type}
               onEditedID={handleEditedID}
