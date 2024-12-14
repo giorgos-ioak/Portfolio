@@ -1,6 +1,20 @@
 import express from 'express';
 
-import { createNewProject, getDbData, getProjectTech, createNewSkill, createNewAchievement, postProjectTechnologies, editProject, editSkill, editAchievement } from '../controllers/data.js';
+import { 
+  createNewProject,
+  getDbData, 
+  getProjectTech, 
+  createNewSkill, 
+  createNewAchievement, 
+  postProjectTechnologies, 
+  editProject, 
+  editSkill, 
+  editAchievement, 
+  deleteSkill,
+  deleteProject,
+  deleteProjectTechnologies,
+  deleteAchievement
+} from '../controllers/data.js';
 
 const router = express.Router();
 
@@ -39,5 +53,19 @@ router.put('/editSkill/:skillId', editSkill);
 
 // PUT - Edit Achievement.
 router.put('/editAchievement/:achievementId', editAchievement);
+
+
+
+
+// DELETE - Delete Project.
+router.delete('/deleteProject/:projectId', deleteProject);
+router.delete('/deleteProjectTechnologies/:projectId', deleteProjectTechnologies);
+
+
+// DELETE - Delete Skill.
+router.delete('/deleteSkill/:skillId', deleteSkill);
+
+// DELETE - Delete Achievement.
+router.delete('/deleteAchievement/:achievementId', deleteAchievement);
 
 export default router;

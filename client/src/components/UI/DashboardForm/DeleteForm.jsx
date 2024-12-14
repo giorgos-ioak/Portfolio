@@ -1,12 +1,12 @@
 import classes from './Form.module.css';
 
-import EditSkills from './EditTypes/EditSkills.jsx';
-import EditProjects from './EditTypes/EditProjects.jsx';
-import EditAchievements from './EditTypes/EditAchievements.jsx';
+import DeleteSkills from './DeleteTypes/DeleteSkills.jsx';
+import DeleteProjects from './DeleteTypes/DeleteProjects.jsx';
+import DeleteAchievements from './DeleteTypes/DeleteAchievements.jsx';
 
-function EditForm({ submitFn, type, onEditedID }) {
+function DeleteForm({ submitFn, type, onEditedID }) {
   return (
-      <form 
+    <form 
         onSubmit={submitFn}
         className={classes.form}
       >
@@ -14,7 +14,7 @@ function EditForm({ submitFn, type, onEditedID }) {
           className={classes.h3} 
           style={{textAlign: 'center'}}
         >
-          Edit {type}
+          Delete {type}
         </h3>
 
         {type === '' ? (
@@ -28,19 +28,19 @@ function EditForm({ submitFn, type, onEditedID }) {
         }
 
         {type === 'Skills' && (
-          <EditSkills 
+          <DeleteSkills 
             onEditedID={onEditedID}
           />
         )}
 
         {type === 'Projects' && (
-          <EditProjects 
+          <DeleteProjects 
             onEditedID={onEditedID}
           />
         )}
 
         {type === 'Achievements' && (
-          <EditAchievements 
+          <DeleteAchievements 
             onEditedID={onEditedID}
           />
         )} 
@@ -48,4 +48,4 @@ function EditForm({ submitFn, type, onEditedID }) {
   )
 }
 
-export default EditForm
+export default DeleteForm;
