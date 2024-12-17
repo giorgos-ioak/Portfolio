@@ -3,7 +3,7 @@ import classes from '../Form.module.css';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
-function EditAchievements({ onEditedID }) {
+function EditAchievements({ onEditedID, isError }) {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   const [achievement, setAchievement] = useState('');
@@ -55,14 +55,28 @@ function EditAchievements({ onEditedID }) {
       </select>
 
       {achievement ? (
-        <div className={classes.submitForm_container}>
-          <button 
-            type="submit" 
-            className={classes.btn}
-          >
-            Delete
-          </button>
-        </div>
+        <>
+          <div className={classes.submitForm_container}>
+            <button 
+              type="submit" 
+              className={classes.btn}
+            >
+              Delete
+            </button>
+          </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to delete Achievement
+            </p>
+          }
+        </>
       ) : null}
     </>
   )

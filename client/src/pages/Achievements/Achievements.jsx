@@ -17,10 +17,12 @@ import Pagination from '../../components/UI/Pagination/Pagination.jsx';
 
 
 function Achievements() {
+  // Retrieving the project's id from the URL params.
   const smallScreen = useMediaQuery('(max-width:500px)');
   const mediumScreen = useMediaQuery('(min-width:501px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
+  // Getting the achievements from the global state.
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const totalAchievements = achievements?.length;
 
@@ -36,7 +38,7 @@ function Achievements() {
   const currentAchievements = achievementsData.slice(firstProjectIndex, lastProjectIndex);
 
 
-  /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
+  /****  Change num of projects per page.  ****/
   function handleAchievementsPerPage() {     
     if(smallScreen) {
       setCurrentPage(1);
@@ -50,7 +52,7 @@ function Achievements() {
 
 
 
-  /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
+  /****  Change pagination page.  ****/
   function handleCurrentPage(currentPage) {     
     setCurrentPage(currentPage);
   };

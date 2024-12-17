@@ -38,20 +38,26 @@ export default MainLayout;
 
 
 
-
-
 export const loader = async() => {
   try {
     const response = await fetch('http://localhost:3000/dbData');
   
     if(!response.ok) {
-      throw new Error(`There was an HTTP error with a status of: ${response.status}.`);
+      throw new Response(JSON.stringify({ message: 'Could not fetch DB data.' }), {
+        status: response.status,
+        statusText: response.statusText || 'Internal Server Error.',
+      });
     }
-
+  
     const data = await response.json();
     return data;
-
   } catch(err) {
-    return {error: true,message: err.message};
+    if(err instanceof Response) {
+      throw err;
+    }
+
+    throw new Response(JSON.stringify({ message: 'Unexpected error occurred.' }), {
+      status: 500,
+    });
   }
 };

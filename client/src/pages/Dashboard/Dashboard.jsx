@@ -12,10 +12,11 @@ import { useNavigate  } from 'react-router-dom';
 function Dashboard() {
   const navigate = useNavigate();
 
+  // STATES
   const [type, setType] = useState('');
   const [setting, setSetting] = useState('');
-
   const [skillCategory, setSkillCategory] = useState('');
+  const [error, setError] = useState(null);
 
   // Selected ID.
   const [editedProjectId, setEditedProjectId] = useState(null);
@@ -23,17 +24,21 @@ function Dashboard() {
   const [editedAchievementId, setEditedAchievementId] = useState(null);
 
 
+  // Method variable initialize.
+  let method = '';
+  setting === 'Create' ? method = 'POST' : setting === 'Edit' ? method = 'PUT' : setting === 'Delete' ? method = 'DELETE' : undefined;
+
+  
+  // Handle change the ID.
   function handleEditedID(id) {
     type === 'Projects' ? setEditedProjectId(id) : type === 'Skills' ? setEditedSkillId(id) : setEditedAchievementId(id);
   }
 
-  let method = '';
-  setting === 'Create' ? method = 'POST' : setting === 'Edit' ? method = 'PUT' : setting === 'Delete' ? method = 'DELETE' : undefined;
 
-
-//// HANDLE CHANGE FUNCTIONS
+  //// Handle change TYPE functions.
   function handleTypeChange(event) {
     setType(event.target.value);
+    setError(false);
   }
 
   function handleSkillCategoryChange(event) {
@@ -42,13 +47,20 @@ function Dashboard() {
 
   function handleSettingChange(event) {
     setSetting(event.target.value);
+    setError(false);
   }
 
 
 
-//// SUBMIT
+  //// Submit Function
   async function handleSubmit(e) {
     e.preventDefault();
+
+  /***** 
+    For Creating a Project, we first create the project and then it's technologies.
+    For Editing a Project, we edit the project on one go.
+    For Deleting a Project, we delete the project's technologies first and then delete the project.
+  *****/
 
     try {
       const formData = new FormData(e.target);
@@ -59,10 +71,17 @@ function Dashboard() {
 
       // TYPE = PROJECT
       if(type === 'Projects') {
+
+        //URLS
         const createProject = 'http://localhost:3000/createNewProject';
         const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
         const deleteProject = `http://localhost:3000/deleteProject/${editedProjectId}`;
 
+        let text;
+        method === 'POST' ? text = 'create' : method === 'PUT' ? text = 'edit' : text = 'delete';
+
+
+        // DELETING PROJECT'S TECHNOLOGIES.
         if(method === 'DELETE') {
           response = await fetch(`http://localhost:3000/deleteProjectTechnologies/${editedProjectId}`, {
             method: 'DELETE',
@@ -72,11 +91,15 @@ function Dashboard() {
           });
 
           if(!response.ok) {
-            throw new Error(`Project Technologies deletion failed with status: ${response.status}`);
+            throw new Response(JSON.stringify({ message: 'Could not delete project technologies.' }), {
+              status: response.status,
+              statusText: response.statusText || 'Internal Server Error.',
+            });
           }
         }
 
 
+        // CREATING or EDITING or DELETING A PROJECT.
         response1 = await fetch( method === 'POST' ? createProject : method === 'PUT' ? editProject : deleteProject , {
           method: method,
           ...(method !== 'DELETE' && { body: JSON.stringify(data) }),
@@ -86,6 +109,8 @@ function Dashboard() {
         });
 
 
+
+        // CREATING THE PROJECT'S TECHNOLOGIES.
         if(method === 'POST') {
           // Creating an array with all technologies separated by commma.
           const technologies = data.technologies.split(',');
@@ -101,13 +126,19 @@ function Dashboard() {
           });
 
           if(!response2.ok) {
-            throw new Error(`Technologies insertion failed with status: ${response2.status}`);
+            throw new Response(JSON.stringify({ message: 'Could not create the technologies.' }), {
+              status: response.status,
+              statusText: response.statusText || 'Internal Server Error.',
+            });
           }
         }
         
 
         if(!response1.ok) {
-          throw new Error(`Response1 status: ${response1.status}`)
+          throw new Response(JSON.stringify({ message: `Could not ${text} the project.` }), {
+            status: response.status,
+            statusText: response.statusText || 'Internal Server Error.',
+          });
         }
 
         return navigate('/');
@@ -128,7 +159,10 @@ function Dashboard() {
 
 
         if(!response1.ok) {
-          throw new Error(`Response status: ${response1.status}`)
+          throw new Response(JSON.stringify({ message: 'Could not perform the operation.' }), {
+            status: response.status,
+            statusText: response.statusText || 'Internal Server Error.',
+          });
         }
 
         return navigate('/');
@@ -136,11 +170,12 @@ function Dashboard() {
 
 
       // TYPE = SKILLS
-      const createSkill = 'http://localhost:3000/createNewSkill';
+      const createSkill = 'http://localhost:3000/createNewSkills';
       const editSkill = `http://localhost:3000/editSkill/${editedSkillId}`;
       const deleteSkill = `http://localhost:3000/deleteSkill/${editedSkillId}`;
 
-      
+      let text;
+      method === 'POST' ? text = 'create' : method === 'PUT' ? text = 'edit' : text = 'delete';
 
       response1 = await fetch(method === 'POST' ? createSkill : method === 'PUT' ? editSkill : deleteSkill, {
         method: method,
@@ -152,13 +187,33 @@ function Dashboard() {
 
   
       if(!response1.ok) {
-        throw new Error(`Response status: ${response1.status}`)
+        throw new Response(JSON.stringify({ message: `Could not ${text} the skill.` }), {
+          status: response.status,
+          statusText: response.statusText || 'Internal Server Error.',
+        });
       }
   
       return navigate('/');
   
     } catch(err) {
-      console.error(err.message);
+      if (err instanceof Response) {
+        // Parse the body
+        const errorData = await err.json(); 
+
+        console.error(`Error ${err.status}: ${errorData.message}`);
+              
+        setError({
+          status: err.status,
+          message: errorData.message
+        });
+      } else {
+        console.error(err.message);
+     
+        setError({
+          status: 'Unknown',
+          message: err.message, 
+        });
+      }
     }
   }
 
@@ -233,7 +288,8 @@ function Dashboard() {
             </p>
           </div>
         ) : setting === 'Create' ? (
-            <CreateForm   
+            <CreateForm
+              isError={error}
               submitFn = {handleSubmit}
               type = {type}
               skillCategory = {skillCategory}
@@ -241,12 +297,14 @@ function Dashboard() {
             />
         ) : setting === 'Edit' ? (
             <EditForm 
+              isError={error}
               submitFn = {handleSubmit}
               type = {type}
               onEditedID={handleEditedID}
             />
         ) : setting === 'Delete' ? (
             <DeleteForm 
+              isError={error}
               submitFn = {handleSubmit}
               type = {type}
               onEditedID={handleEditedID}

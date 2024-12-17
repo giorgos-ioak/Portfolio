@@ -9,6 +9,7 @@ import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
 import Achievements from './pages/Achievements/Achievements.jsx';
 import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.jsx';
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
+import ErrorPage from './components/UI/ErrorPage/ErrorPage.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout />,
+    errorElement: <ErrorPage />,
     loader: dbData,
     children: [
       {
@@ -34,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'projects',
-        element: <Projects />
+        element: <Projects />,
       },
       {
         path: '/projects/:projectId',
-        element: <ProjectDetails />
+        element: <ProjectDetails />      
       },
       {
         path: 'achievements',
@@ -50,7 +52,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <Dashboard />
+        element: <Dashboard />,
       }
     ]
   }

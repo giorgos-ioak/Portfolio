@@ -17,11 +17,13 @@ import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
+  // Setting the queries for different screen sizes.
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
+  // Getting the projects from the global state.
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
 
@@ -36,9 +38,7 @@ function ProjectSection() {
       />
 
       <MainContainer className='mainContainer_ProjectSection'>
-
         <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
-
           {smallScreen && 
             <ProjectContainer 
               project={{

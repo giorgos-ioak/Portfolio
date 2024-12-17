@@ -7,12 +7,13 @@ import arrow from '../../assets/svgIcons/arrow.svg';
 import image from '../../assets/project2Img.jpg';
 
 import Button from '../../components/UI/Button/Button.jsx';
-import { useEffect, useState } from 'react';
 
 
 function AhvievementDetails() {
+  // Retrieving the project's id from the URL params.
   const { achievementId } = useParams();
 
+  // Getting the achievements from the global state.
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const achievement = achievements?.filter(obj => obj.achievement_id === Number(achievementId));
   

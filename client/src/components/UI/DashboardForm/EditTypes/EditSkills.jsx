@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
-function EditSkills({ onEditedID }) {
+function EditSkills({ onEditedID, isError }) {
   const skills = useSelector((state) => state.databaseData.value?.skills);
 
   const [skill, setSkill] = useState('');
@@ -34,7 +34,6 @@ function EditSkills({ onEditedID }) {
       [name]: value
     }))
   }
-
 
 
   return (
@@ -100,6 +99,18 @@ function EditSkills({ onEditedID }) {
               Edit
             </button>
           </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to edit Skill
+            </p>
+          }
         </>
       ) : null}
     </>

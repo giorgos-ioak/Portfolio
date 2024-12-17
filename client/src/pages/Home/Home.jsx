@@ -8,7 +8,7 @@ import GetInTouchSection from "./sections/GetInTouchSection/GetInTouchSection.js
 
 
 
-
+// Contains all the components used for the Home page at the '/' path.
 function Home() {
   return (
     <>

@@ -11,23 +11,32 @@ import { useEffect, useState } from 'react';
 
 
 function ProjectDetails() {
+  // Retrieving the project's id from the URL params.
   const { projectId } = useParams();
-  const [technologies, setTechnologies] = useState([]);
 
-  ////GET PROJECT'S INFO
+  // STATE
+  const [technologies, setTechnologies] = useState(null);
+
+
+
+  // Getting the projects from the global state.
   const projects = useSelector((state) => state.databaseData.value?.projects);
+  // Extract the project with the specific projectId.
   const project = projects?.filter(project => project.project_id === Number(projectId));
 
 
 
+  //// FETCH PROJECT'S TECHNOLOGIES
   useEffect(() => {   
-  ////FETCH PROJECT'S TECHNOLOGIES
-    async function getProjectTechData() {
+    async function getProjectTechnologies() {
       try {
         const response = await fetch(`http://localhost:3000/projectTech/${projectId}`);
     
         if(!response.ok) {
-          throw new Error(`There was an HTTP Error with a status code of: ${response.status}.`);
+          throw new Response(JSON.stringify({ message: 'Could not fetch Project Technologies' }), {
+            status: response.status,
+            statusText: response.statusText || 'Internal Server Error',
+          });
         }
 
         const data = await response.json();
@@ -39,17 +48,23 @@ function ProjectDetails() {
         return setTechnologies(technologiesArray);
 
       } catch(err) {
-        return { error: true, message: err.message };
+        if(err instanceof Response) {
+          throw err;
+        }
+    
+        throw new Response(JSON.stringify({ message: 'Unexpected error occurred.' }), {
+          status: 500,
+        });
       }
     };
 
-    getProjectTechData();
+    getProjectTechnologies();
 
   }, [projectId]);
 
 
 
-
+ 
   
   return (
     <section className={classes.section}>
@@ -91,13 +106,20 @@ function ProjectDetails() {
         <div className={classes.techContainer}>
           <h2 className={classes.h2}>Technologies</h2>
           <ul className={classes.techBox}>
-            {technologies.map((item) => 
+            {technologies ? (technologies.map((item) => 
               <li
                 className={classes.li}
                 key={item}
               >
                 {item}
               </li>
+            )) : (
+              <div 
+                className={classes.li}
+                style={{textAlign: 'center'}}
+              >
+                FAILED TO LOAD...
+              </div>
             )}
           </ul>
         </div>

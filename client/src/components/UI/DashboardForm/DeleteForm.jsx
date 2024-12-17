@@ -4,7 +4,7 @@ import DeleteSkills from './DeleteTypes/DeleteSkills.jsx';
 import DeleteProjects from './DeleteTypes/DeleteProjects.jsx';
 import DeleteAchievements from './DeleteTypes/DeleteAchievements.jsx';
 
-function DeleteForm({ submitFn, type, onEditedID }) {
+function DeleteForm({ submitFn, type, onEditedID, isError }) {
   return (
     <form 
         onSubmit={submitFn}
@@ -29,18 +29,21 @@ function DeleteForm({ submitFn, type, onEditedID }) {
 
         {type === 'Skills' && (
           <DeleteSkills 
+            isError={isError}
             onEditedID={onEditedID}
           />
         )}
 
         {type === 'Projects' && (
           <DeleteProjects 
+            isError={isError}
             onEditedID={onEditedID}
           />
         )}
 
         {type === 'Achievements' && (
           <DeleteAchievements 
+            isError={isError}
             onEditedID={onEditedID}
           />
         )} 

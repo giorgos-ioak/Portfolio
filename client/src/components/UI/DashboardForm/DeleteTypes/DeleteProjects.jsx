@@ -1,13 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import classes from '../Form.module.css';
 
 import { useSelector } from 'react-redux';
 
-import FormInput from '../FormInput/FormInput.jsx';
-import FormTextArea from '../FormTextArea/FormTextArea.jsx';
-import Divider from '../../Divider/Divider.jsx';
 
-function EditProjects({ onEditedID }) {
+
+function EditProjects({ onEditedID, isError }) {
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
   const [project, setProject] = useState('');
@@ -59,14 +57,28 @@ function EditProjects({ onEditedID }) {
 
 
       {project ? (
-        <div className={classes.submitForm_container}>
-          <button 
-            type="submit" 
-            className={classes.btn}
-          >
-            Delete
-          </button>
-        </div>
+        <>
+          <div className={classes.submitForm_container}>
+            <button 
+              type="submit" 
+              className={classes.btn}
+            >
+              Delete
+            </button>
+          </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              {isError.status} - {isError.message}
+            </p>
+          }
+        </>
       ) : null}
     </>
   )

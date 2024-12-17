@@ -7,7 +7,7 @@ import FormInput from '../FormInput/FormInput.jsx';
 import FormTextArea from '../FormTextArea/FormTextArea.jsx';
 import Divider from '../../Divider/Divider.jsx';
 
-function EditProjects({ onEditedID }) {
+function EditProjects({ onEditedID, isError }) {
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
   const [project, setProject] = useState('');
@@ -179,6 +179,18 @@ function EditProjects({ onEditedID }) {
               Edit
             </button>
           </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to edit Project
+            </p>
+          }
         </>
       ) : null}
     </>
