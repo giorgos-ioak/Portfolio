@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
-function EditAchievements({ onEditedID }) {
+function EditAchievements({ onEditedID, isError }) {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   const [achievement, setAchievement] = useState('');
@@ -105,6 +105,18 @@ function EditAchievements({ onEditedID }) {
               Edit
             </button>
           </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to edit Achievement
+            </p>
+          }
         </>
       ) : null}
     </>

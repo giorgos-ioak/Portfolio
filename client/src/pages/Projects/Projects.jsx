@@ -14,16 +14,19 @@ import MainContainer from '../../components/Containers/MainContainer/MainContain
 import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
 import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
 import Pagination from '../../components/UI/Pagination/Pagination.jsx';
+import { Outlet } from 'react-router-dom';
 
 
 
 function Projects() {
+  // Setting the queries for different screen sizes.
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
-
+  // Getting the projects from the global state.
   const projects = useSelector((state) => state.databaseData.value?.projects); 
+  
   const totalProjects = projects?.length;
 
 
@@ -39,7 +42,7 @@ function Projects() {
   const currentProjects = projectData.slice(firstProjectIndex, lastProjectIndex);
 
 
-  /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
+  /****  Change num of projects per page.  ****/
   function handleProjectsPerPage() {     
     if(smallScreen) {
       setProjectsPerPage(projectsPerPage != 1 ? 1 : projectsPerPage);
@@ -55,7 +58,7 @@ function Projects() {
   /*****/
 
 
- /****  CHANGE NUM OF PROJECTS PER PAGE  ****/
+ /****  Change pagination page.  ****/
  function handleCurrentPage(currentPage) {     
   setCurrentPage(currentPage);
  };
@@ -74,6 +77,7 @@ function Projects() {
 
   
   return (
+    <>
       <section className={classes.projectPageSection}>
         <TitleContainer 
           title='My Projects'
@@ -83,8 +87,7 @@ function Projects() {
         />
 
         <MainContainer className='mainContainer_ProjectSection'>
-          <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}>
-              
+          <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}> 
               {
                 <div className={classes.mainContainer}>
 
@@ -112,10 +115,11 @@ function Projects() {
                   }
                 </div>
               }
-
           </SubContainer>      
         </MainContainer>
       </section>
+    </>
+      
   )
 }
 

@@ -16,8 +16,11 @@ import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 function SkillSection() {
+  // Setting the queries for different screen sizes.
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const isSmallScreen = useMediaQuery('(max-width:768px)');
+
+  // Getting the skills from the global state.
   const skills = useSelector((state) => state.databaseData.value?.skills);
 
 
@@ -92,7 +95,6 @@ function SkillSection() {
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <SkillsContainer 
               items={libraryCategory} 
-
               title='Libraries & Platforms' 
               titleSvgIcon={libraries_platforms} 
               itemSvgIcon={dot}

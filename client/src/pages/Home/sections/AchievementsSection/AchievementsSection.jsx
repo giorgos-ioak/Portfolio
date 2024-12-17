@@ -15,9 +15,11 @@ import MainContainer from '../../../../components/Containers/MainContainer/MainC
 
 
 function AchievementsSection() {
+  // Setting the queries for different screen sizes.
   const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:1025px)');
 
+  // Getting the achievements from the global state.
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   return (

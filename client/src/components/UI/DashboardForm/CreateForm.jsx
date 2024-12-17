@@ -4,7 +4,7 @@ import FormTextArea from './FormTextArea/FormTextArea.jsx';
 import Divider from '../Divider/Divider.jsx';
 import FormInput from './FormInput/FormInput.jsx';
 
-function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange }) {
+function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, isError }) {
   return (
       <form 
         onSubmit={submitFn}
@@ -148,6 +148,18 @@ function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange }
                 Submit
               </button>
             </div>
+
+            {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to create {type === 'Skills' ? 'Skill' : type === 'Projects' ? 'Project' : 'Achievement'}
+            </p>
+          }
           </>
         )}
       </form>

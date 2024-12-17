@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 
-function DeleteSkills({ onEditedID }) {
+function DeleteSkills({ onEditedID, isError}) {
   const skills = useSelector((state) => state.databaseData.value?.skills);
 
   const [skill, setSkill] = useState('');
@@ -54,14 +54,28 @@ function DeleteSkills({ onEditedID }) {
       </select>
 
       {skill ? (
-        <div className={classes.submitForm_container}>
-          <button 
-            type="submit" 
-            className={classes.btn}
-          >
-            Delete
-          </button>
-        </div>
+        <>
+          <div className={classes.submitForm_container}>
+            <button 
+              type="submit" 
+              className={classes.btn}
+            >
+              Delete
+            </button>
+          </div>
+
+          {isError && 
+            <p 
+              style={{
+                fontFamily: 'Montserrat',
+                color: 'red',
+                fontWeight: '500'
+              }}
+            >
+              Failed to delete Skill
+            </p>
+          }
+        </>
       ) : null}
     </>
   )
