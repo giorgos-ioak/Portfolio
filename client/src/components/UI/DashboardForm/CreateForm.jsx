@@ -157,9 +157,18 @@ function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, 
                 fontWeight: '500'
               }}
             >
-              Failed to create {type === 'Skills' ? 'Skill' : type === 'Projects' ? 'Project' : 'Achievement'}
+              
+              {type === 'Projects' ? (
+                <>
+                  Failed to create {type === 'Skills' ? 'Skill' : type === 'Projects' ? 'Project' : 'Achievement'}
+                </>
+              ) : (
+                <>
+                  {isError.status} - {isError.message}
+                </>
+              )}
             </p>
-          }
+            }
           </>
         )}
       </form>

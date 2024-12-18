@@ -50,6 +50,7 @@ function EditAchievements({ onEditedID, isError }) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleAchievementChange}
         defaultValue=''
       >
@@ -114,7 +115,7 @@ function EditAchievements({ onEditedID, isError }) {
                 fontWeight: '500'
               }}
             >
-              Failed to edit Achievement
+              {isError.status} - {isError.message}
             </p>
           }
         </>
