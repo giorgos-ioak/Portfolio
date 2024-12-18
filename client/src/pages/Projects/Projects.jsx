@@ -105,7 +105,7 @@ function Projects() {
                     ))}
                   </div>
 
-                  {(smallScreen || mediumScreen) &&
+                  {(smallScreen || mediumScreen || largeScreen) &&
                     <Pagination 
                       totalItems={totalProjects} 
                       itemsPerPage={projectsPerPage ? projectsPerPage : 1}

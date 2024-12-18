@@ -24,7 +24,6 @@ function Pagination({ totalItems, itemsPerPage, pageClick, containerClass }) {
           className={index === currentPageIndex ? classes.btnSelected : classes.btn} 
           key={index}
         >
-          {page}
         </button>
       ))}
     </div>
