@@ -38,6 +38,7 @@ function EditAchievements({ onEditedID, isError }) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleAchievementChange}
         defaultValue=''
       >
@@ -73,7 +74,7 @@ function EditAchievements({ onEditedID, isError }) {
                 fontWeight: '500'
               }}
             >
-              Failed to delete Achievement
+              {isError.status} - {isError.message}
             </p>
           }
         </>

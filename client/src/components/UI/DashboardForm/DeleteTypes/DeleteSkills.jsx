@@ -37,6 +37,7 @@ function DeleteSkills({ onEditedID, isError}) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleSkillChange}
         defaultValue=''
       >
@@ -72,7 +73,7 @@ function DeleteSkills({ onEditedID, isError}) {
                 fontWeight: '500'
               }}
             >
-              Failed to delete Skill
+              {isError.status} - {isError.message}
             </p>
           }
         </>

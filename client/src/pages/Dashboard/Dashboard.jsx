@@ -127,8 +127,8 @@ function Dashboard() {
 
           if(!response2.ok) {
             throw new Response(JSON.stringify({ message: 'Could not create the technologies.' }), {
-              status: response.status,
-              statusText: response.statusText || 'Internal Server Error.',
+              status: response2.status,
+              statusText: response2.statusText || 'Internal Server Error.',
             });
           }
         }
@@ -136,12 +136,16 @@ function Dashboard() {
 
         if(!response1.ok) {
           throw new Response(JSON.stringify({ message: `Could not ${text} the project.` }), {
-            status: response.status,
-            statusText: response.statusText || 'Internal Server Error.',
+            status: response1.status,
+            statusText: response1.statusText || 'Internal Server Error.',
           });
         }
 
-        return navigate('/');
+        // Changing the state for causing a re-render and rendering the default UI 
+        setSetting('');
+
+        // Causing a URL refresh to show the updated state.
+        return navigate('/dashboard');
 
       // TYPE = ACHIEVEMENT
       } else if(type === 'Achievements') {
@@ -160,17 +164,21 @@ function Dashboard() {
 
         if(!response1.ok) {
           throw new Response(JSON.stringify({ message: 'Could not perform the operation.' }), {
-            status: response.status,
-            statusText: response.statusText || 'Internal Server Error.',
+            status: response1.status,
+            statusText: response1.statusText || 'Internal Server Error.',
           });
         }
 
-        return navigate('/');
+        // Changing the state for causing a re-render and rendering the default UI 
+        setSetting('');
+        
+        // Causing a URL refresh to show the updated state.
+        return navigate('/dashboard');
       } 
 
 
       // TYPE = SKILLS
-      const createSkill = 'http://localhost:3000/createNewSkills';
+      const createSkill = 'http://localhost:3000/createNewSkill';
       const editSkill = `http://localhost:3000/editSkill/${editedSkillId}`;
       const deleteSkill = `http://localhost:3000/deleteSkill/${editedSkillId}`;
 
@@ -188,19 +196,23 @@ function Dashboard() {
   
       if(!response1.ok) {
         throw new Response(JSON.stringify({ message: `Could not ${text} the skill.` }), {
-          status: response.status,
-          statusText: response.statusText || 'Internal Server Error.',
+          status: response1.status,
+          statusText: response1.statusText || 'Internal Server Error.',
         });
       }
-  
-      return navigate('/');
+
+      // Changing the state for causing a re-render and rendering the default UI 
+      setSetting('');
+        
+      // Causing a URL refresh to show the updated state.
+      return navigate('/dashboard');
   
     } catch(err) {
       if (err instanceof Response) {
         // Parse the body
         const errorData = await err.json(); 
 
-        console.error(`Error ${err.status}: ${errorData.message}`);
+        console.error(`ERROR ${err.status}: ${errorData.message}`);
               
         setError({
           status: err.status,
@@ -210,7 +222,7 @@ function Dashboard() {
         console.error(err.message);
      
         setError({
-          status: 'Unknown',
+          status: err.status,
           message: err.message, 
         });
       }
@@ -271,7 +283,7 @@ function Dashboard() {
         </div>
       </div>
       
-      {!setting ? (
+      {setting === '' ? (
           <div className={classes.defaultContainer}>
             <h3 
               className={classes.h3} 

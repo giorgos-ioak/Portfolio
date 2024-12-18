@@ -51,6 +51,7 @@ function EditSkills({ onEditedID, isError }) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleSkillChange}
         defaultValue=''
       >
@@ -108,7 +109,7 @@ function EditSkills({ onEditedID, isError }) {
                 fontWeight: '500'
               }}
             >
-              Failed to edit Skill
+              {isError.status} - {isError.message}
             </p>
           }
         </>

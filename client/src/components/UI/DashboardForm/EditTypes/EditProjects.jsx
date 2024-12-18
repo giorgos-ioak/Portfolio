@@ -85,6 +85,7 @@ function EditProjects({ onEditedID, isError }) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleProjectChange}
         defaultValue=''
       >
@@ -188,7 +189,7 @@ function EditProjects({ onEditedID, isError }) {
                 fontWeight: '500'
               }}
             >
-              Failed to edit Project
+              {isError.status} - {isError.message}
             </p>
           }
         </>

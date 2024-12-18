@@ -39,6 +39,7 @@ function EditProjects({ onEditedID, isError }) {
       </label>
 
       <select 
+        style={{ marginLeft: '0', marginTop: '1rem'}}
         onChange={handleProjectChange}
         defaultValue=''
       >
