@@ -4,7 +4,7 @@ import FormTextArea from './FormTextArea/FormTextArea.jsx';
 import Divider from '../Divider/Divider.jsx';
 import FormInput from './FormInput/FormInput.jsx';
 
-function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, isError }) {
+function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, isError, handleFileChange }) {
   return (
       <form 
         onSubmit={submitFn}
@@ -40,6 +40,10 @@ function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, 
                       name='description'
                       required={true}
                     />
+                    <div className={classes.imageContainer}>
+                      Project Image
+                      <input required type='file' onChange={handleFileChange}></input>
+                    </div>
                   </div>
                 </div>
                 <div style={{display: 'flex' , justifyContent: 'center'}}>

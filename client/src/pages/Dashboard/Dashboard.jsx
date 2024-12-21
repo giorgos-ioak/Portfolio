@@ -17,6 +17,7 @@ function Dashboard() {
   const [setting, setSetting] = useState('');
   const [skillCategory, setSkillCategory] = useState('');
   const [error, setError] = useState(null);
+  const [file, setFile] = useState(null);
 
   // Selected ID.
   const [editedProjectId, setEditedProjectId] = useState(null);
@@ -50,6 +51,12 @@ function Dashboard() {
     setError(false);
   }
 
+  function handleFileChange (e) {
+    setFile(e.target.files[0]);
+  }
+
+  console.log(file);
+
 
 
   //// Submit Function
@@ -73,7 +80,7 @@ function Dashboard() {
       if(type === 'Projects') {
 
         //URLS
-        const createProject = 'http://localhost:3000/createNewProject';
+        const createProject = 'http://localhost:3000/createNewProjects';
         const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
         const deleteProject = `http://localhost:3000/deleteProject/${editedProjectId}`;
 
@@ -304,6 +311,7 @@ function Dashboard() {
               isError={error}
               submitFn = {handleSubmit}
               type = {type}
+              handleFileChange = {handleFileChange}
               skillCategory = {skillCategory}
               handleSkillCategoryChange = {handleSkillCategoryChange}
             />
