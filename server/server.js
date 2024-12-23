@@ -3,6 +3,7 @@ import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 
+
 import dataRoutes from './routes/data.js';
 
 

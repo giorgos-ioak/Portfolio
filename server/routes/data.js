@@ -16,6 +16,8 @@ import {
   deleteAchievement
 } from '../controllers/data.js';
 
+import { upload } from '../middleware/multerConfig.js';
+
 const router = express.Router();
 
 
@@ -31,7 +33,7 @@ router.get('/projectTech/:projectId', getProjectTech);
 
 
 // POST - create new Project.
-router.post('/createNewProject', createNewProject);
+router.post('/createNewProject', upload.single('image'), createNewProject);
 
 // POST - post new Project technologies.
 router.post('/postProjectTechnologies/:projectId', postProjectTechnologies);
