@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import arrow from '../../assets/svgIcons/arrow.svg';
-import image from '../../assets/project2Img.jpg';
 
 import Button from '../../components/UI/Button/Button.jsx';
 import { useEffect, useState } from 'react';
@@ -22,9 +21,13 @@ function ProjectDetails() {
   // Getting the projects from the global state.
   const projects = useSelector((state) => state.databaseData.value?.projects);
   // Extract the project with the specific projectId.
-  const project = projects?.filter(project => project.project_id === Number(projectId));
+  const project = projects?.filter(project => project.project_id === Number(projectId)) || [];
+
+  const selectedProject = project[0].
 
 
+  // const filepath = '../../../../server/uploads/' + project[0]?.projectImage;
+  console.log(selectedProject?.projectImage);
 
   //// FETCH PROJECT'S TECHNOLOGIES
   useEffect(() => {   
@@ -69,7 +72,7 @@ function ProjectDetails() {
   return (
     <section className={classes.section}>
       <div className={classes.imgContainer}>
-        <img src={image} className={classes.img}/>
+        <img src='' className={classes.img}/>
       </div>
       
       <div className={classes.mainContainer}>

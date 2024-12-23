@@ -42,7 +42,7 @@ function CreateForm({ submitFn, type, skillCategory, handleSkillCategoryChange, 
                     />
                     <div className={classes.imageContainer}>
                       Project Image
-                      <input required type='file' onChange={handleFileChange}></input>
+                      <input required type='file' name='image' onChange={handleFileChange}></input>
                     </div>
                   </div>
                 </div>

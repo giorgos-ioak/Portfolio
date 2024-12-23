@@ -53,12 +53,26 @@ export async function postProjectTechnologies(req, res) {
 
 
 export async function createNewProject(req, res) {
-  const { demo, demoInstructions, description, figma, github, title } = req.body;
+  const demo = req.body.demo;
+  const demoInstructions = req.body.demoInstructions;
+  const description = req.body.description;
+  const figma = req.body.figma;
+  const github = req.body.github;
+  const title = req.body.title;
+  const file = req.file;
 
-  let sqlQuery = 'INSERT INTO projects (title, _description';
-  
-  let values = [title, description];
-  let placeholders = ['?', '?'];
+  if (!file) {
+    return res.status(400).json({ error: 'File is required' });
+  }
+
+  console.log(req.file);
+
+  const fileName = file.filename;
+  console.log('FILE NAME :', fileName);
+  let sqlQuery = 'INSERT INTO projects (title, _description, projectImage';
+
+  let values = [title, description, fileName];
+  let placeholders = ['?', '?', '?'];
 
 
   // Adding Inputs WHETHER they are REQUIRED or NOT (From the form).

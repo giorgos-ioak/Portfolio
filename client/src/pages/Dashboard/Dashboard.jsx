@@ -80,7 +80,7 @@ function Dashboard() {
       if(type === 'Projects') {
 
         //URLS
-        const createProject = 'http://localhost:3000/createNewProjects';
+        const createProject = 'http://localhost:3000/createNewProject';
         const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
         const deleteProject = `http://localhost:3000/deleteProject/${editedProjectId}`;
 
@@ -109,10 +109,7 @@ function Dashboard() {
         // CREATING or EDITING or DELETING A PROJECT.
         response1 = await fetch( method === 'POST' ? createProject : method === 'PUT' ? editProject : deleteProject , {
           method: method,
-          ...(method !== 'DELETE' && { body: JSON.stringify(data) }),
-          headers: {
-            "Content-Type": "application/json"
-          }
+          ...(method !== 'DELETE' && { body: formData })
         });
 
 

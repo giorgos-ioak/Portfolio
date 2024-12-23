@@ -15,6 +15,8 @@ function MainLayout() {
   const data = useLoaderData();
   const dispatch = useDispatch();
 
+  console.log(data);
+
 
   // USE-EFFECT HOOK
   useEffect(() => {
