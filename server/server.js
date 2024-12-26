@@ -11,6 +11,7 @@ import dataRoutes from './routes/data.js';
 const app = express();
 dotenv.config();
 app.use(cors());
+app.use('/uploads', express.static('uploads'));
 app.use(express.json());
 
 

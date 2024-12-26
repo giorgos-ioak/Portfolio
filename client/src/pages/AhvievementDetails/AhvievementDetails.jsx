@@ -18,6 +18,8 @@ function AhvievementDetails() {
   const achievement = achievements?.filter(obj => obj.achievement_id === Number(achievementId));
   
 
+  
+
   return (
     <section className={classes.section}>
       <div className={classes.imgContainer}>

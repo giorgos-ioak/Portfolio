@@ -23,11 +23,7 @@ function ProjectDetails() {
   // Extract the project with the specific projectId.
   const project = projects?.filter(project => project.project_id === Number(projectId)) || [];
 
-  const selectedProject = project[0].
 
-
-  // const filepath = '../../../../server/uploads/' + project[0]?.projectImage;
-  console.log(selectedProject?.projectImage);
 
   //// FETCH PROJECT'S TECHNOLOGIES
   useEffect(() => {   
@@ -67,12 +63,21 @@ function ProjectDetails() {
 
 
 
- 
+  const imageUrl = project[0]?.projectImage
+  ? `http://localhost:3000/uploads/${project[0]?.projectImage}`
+  : null;
+
+  console.log(`Image URL: http://localhost:3000/uploads/${project[0].projectImage}`);
+
+  const handleOpenNewTab = (url) => {
+    window.open(`${url}`, '_blank');
+  };
+
   
   return (
     <section className={classes.section}>
       <div className={classes.imgContainer}>
-        <img src='' className={classes.img}/>
+        <img src={imageUrl} className={classes.img} alt={project[0].title || 'Project Image'}/>
       </div>
       
       <div className={classes.mainContainer}>
@@ -99,7 +104,7 @@ function ProjectDetails() {
             ) : null}
 
           {project?.[0].figma_button ? (
-            <Button className='redirectBtn'>
+            <Button className='redirectBtn' onClick={() => handleOpenNewTab(project?.[0].figma_button)}>
               Figma
               <img src={arrow} alt='arrowIcon' className={classes.arrowIcon}/>
             </Button>
