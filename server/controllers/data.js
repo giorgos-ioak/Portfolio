@@ -1,6 +1,7 @@
 import { getProjects, getSkills, getAchievements, getProjectTechnologies } from '../middleware/mySQL/index.js';
 
 import { db } from "../server.js";
+import { upload } from '../middleware/multerConfig.js';
 
 
 // GET FUNCTIONS.
@@ -172,34 +173,49 @@ export async function createNewAchievement(req, res) {
 
 
 // PUT FUNCTIONS.
-export async function editProject(req ,res) {
-  const {technologies, ...rest} = req.body;
-  const { projectId } = req.params;
+export async function editProject(req, res) {
+  // Middleware to parse the multipart/form-data.
+  upload.single('image')(req, res, async (err) => {
+    if (err) {
+      return res.status(400).json({ error: 'File upload error', details: err.message });
+    }
 
-  const projectColumns = Object.keys(rest);
-  const projectColumnsValues = Object.values(rest);
-  const technologiesColumnValues = technologies.split(',');
+    console.log('REQ BODY:', req.body);
+    console.log('FILE:', req.file);
 
-  const firstClause = projectColumns.map((col) => `${col} = ?`).join(', ');
+    const { technologies, ...rest } = req.body;
+    const { projectId } = req.params;
 
-  const sqlQuery1 = `UPDATE projects SET ${firstClause} WHERE project_id = ?`;
+    // If a file was uploaded, add its path to the database fields.
+    if (req.file) {
+      rest.filePath = req.file.path; // Assuming you want to store the file path in the database.
+    }
 
-  try {
-    await db.promise().query(sqlQuery1, [...projectColumnsValues, projectId]);
+    const projectColumns = Object.keys(rest);
+    const projectColumnsValues = Object.values(rest);
+    const technologiesColumnValues = technologies.split(',');
 
-    // Removing existing technologies from the project.
-    const deleteQuery = `DELETE FROM project_technologies WHERE project_id = ?`;
-    await db.promise().query(deleteQuery, [projectId]);
+    const firstClause = projectColumns.map((col) => `${col} = ?`).join(', ');
 
-    // Inserting new technologies to the project.
-    const insertQuery = `INSERT INTO project_technologies (technology, project_id) VALUES ?`;
-    const values = technologiesColumnValues.map((tech) => [tech, projectId]);
-    await db.promise().query(insertQuery, [values]);
+    const sqlQuery1 = `UPDATE projects SET ${firstClause} WHERE project_id = ?`;
 
-    res.status(200).json({ message: 'Project updated successfully' });
-  } catch(err) {
-    res.status(500).json({ error: 'Database error', details: err.message });
-  }
+    try {
+      await db.promise().query(sqlQuery1, [...projectColumnsValues, projectId]);
+
+      // Removing existing technologies from the project.
+      const deleteQuery = `DELETE FROM project_technologies WHERE project_id = ?`;
+      await db.promise().query(deleteQuery, [projectId]);
+
+      // Inserting new technologies to the project.
+      const insertQuery = `INSERT INTO project_technologies (technology, project_id) VALUES ?`;
+      const values = technologiesColumnValues.map((tech) => [tech, projectId]);
+      await db.promise().query(insertQuery, [values]);
+
+      res.status(200).json({ message: 'Project updated successfully' });
+    } catch (err) {
+      res.status(500).json({ error: 'Database error', details: err.message });
+    }
+  });
 }
 
 export async function editSkill(req ,res) {
