@@ -7,12 +7,13 @@ import FormInput from '../FormInput/FormInput.jsx';
 import FormTextArea from '../FormTextArea/FormTextArea.jsx';
 import Divider from '../../Divider/Divider.jsx';
 
-function EditProjects({ onEditedID, isError }) {
+function EditProjects({ onEditedID, isError, handleFileChange }) {
   const projects = useSelector((state) => state.databaseData.value?.projects);
 
   const [project, setProject] = useState('');
   const [editedProject, setEditedProject] = useState({});
   const [projectId, setProjectId] = useState(null);
+
 
 
   useEffect(() => {
@@ -70,6 +71,8 @@ function EditProjects({ onEditedID, isError }) {
     }));
   }
 
+  console.log(project);
+
   return (
     <>
       <label 
@@ -124,6 +127,10 @@ function EditProjects({ onEditedID, isError }) {
                 value={editedProject?._description}
                 required={true}
               />
+              <div className={classes.imageContainer}>
+                Project Image
+                <input type='file' name='image' onChange={handleFileChange}></input>
+              </div>
 
               <div style={{display: 'flex' , justifyContent: 'center'}}>
                 <Divider black/>

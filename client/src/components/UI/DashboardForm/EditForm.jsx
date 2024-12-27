@@ -4,7 +4,7 @@ import EditSkills from './EditTypes/EditSkills.jsx';
 import EditProjects from './EditTypes/EditProjects.jsx';
 import EditAchievements from './EditTypes/EditAchievements.jsx';
 
-function EditForm({ submitFn, type, onEditedID, isError }) {
+function EditForm({ submitFn, type, onEditedID, isError, handleFileChange }) {
   return (
       <form 
         onSubmit={submitFn}
@@ -37,6 +37,7 @@ function EditForm({ submitFn, type, onEditedID, isError }) {
         {type === 'Projects' && (
           <EditProjects 
             isError={isError}
+            handleFileChange={handleFileChange}
             onEditedID={onEditedID}
           />
         )}

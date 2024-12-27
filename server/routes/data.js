@@ -48,7 +48,7 @@ router.post('/createNewAchievement', createNewAchievement);
 
 
 // PUT - Edit Project.
-router.put('/editProject/:projectId', editProject);
+router.put('/editProject/:projectId', upload.single('image'), editProject);
 
 // PUT - Edit Skill.
 router.put('/editSkill/:skillId', editSkill);
