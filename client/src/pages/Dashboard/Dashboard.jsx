@@ -318,6 +318,7 @@ function Dashboard() {
               isError={error}
               submitFn = {handleSubmit}
               type = {type}
+              handleFileChange = {handleFileChange}
               onEditedID={handleEditedID}
             />
         ) : setting === 'Delete' ? (

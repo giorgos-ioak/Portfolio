@@ -12,6 +12,11 @@ const app = express();
 dotenv.config();
 app.use(cors());
 app.use('/uploads', express.static('uploads'));
+
+// For handling Form submissions where the data is sent using the POST method & where data is encoded using 
+// application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
+
 app.use(express.json());
 
 
