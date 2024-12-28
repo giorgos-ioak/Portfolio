@@ -45,6 +45,7 @@ function EditForm({ submitFn, type, onEditedID, isError, handleFileChange }) {
         {type === 'Achievements' && (
           <EditAchievements 
             isError={isError}
+            handleFileChange={handleFileChange}
             onEditedID={onEditedID}
           />
         )} 

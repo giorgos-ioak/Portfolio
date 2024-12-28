@@ -160,10 +160,7 @@ function Dashboard() {
 
         response1 = await fetch(method === 'POST' ? createAchievement : method === 'PUT' ? editAchievement : deleteAchievement, {
           method: method,
-          ...(method !== 'DELETE' && { body: JSON.stringify(data) }),
-          headers: {
-            "Content-Type": "application/json"
-          }
+          ...(method !== 'DELETE' && { body: formData })
         });
 
 
