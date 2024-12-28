@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 import FormInput from '../FormInput/FormInput.jsx';
 
-function EditAchievements({ onEditedID, isError }) {
+function EditAchievements({ onEditedID, isError, handleFileChange }) {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
 
   const [achievement, setAchievement] = useState('');
@@ -88,6 +88,10 @@ function EditAchievements({ onEditedID, isError }) {
               onChange={handleChange}
               required={true}
             />
+            <div className={classes.imageContainer}>
+              Image
+              <input type='file' name='image' onChange={handleFileChange}></input>
+            </div>
             <FormInput
               label='Certificate'
               name='certificate_btn'

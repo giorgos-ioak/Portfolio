@@ -128,7 +128,7 @@ function EditProjects({ onEditedID, isError, handleFileChange }) {
                 required={true}
               />
               <div className={classes.imageContainer}>
-                Project Image
+                Image
                 <input type='file' name='image' onChange={handleFileChange}></input>
               </div>
 

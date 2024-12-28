@@ -42,7 +42,7 @@ router.post('/postProjectTechnologies/:projectId', postProjectTechnologies);
 router.post('/createNewSkill', createNewSkill);
 
 // POST - create new Achievement.
-router.post('/createNewAchievement', createNewAchievement);
+router.post('/createNewAchievement', upload.single('image') ,createNewAchievement);
 
 
 
@@ -54,7 +54,7 @@ router.put('/editProject/:projectId', upload.single('image'), editProject);
 router.put('/editSkill/:skillId', editSkill);
 
 // PUT - Edit Achievement.
-router.put('/editAchievement/:achievementId', editAchievement);
+router.put('/editAchievement/:achievementId', upload.single('image'), editAchievement);
 
 
 

@@ -63,9 +63,7 @@ function ProjectDetails() {
 
 
 
-  const imageUrl = project[0]?.projectImage
-  ? `http://localhost:3000/uploads/${project[0]?.projectImage}`
-  : null;
+  const imageUrl = project[0]?.projectImage ? `http://localhost:3000/uploads/${project[0]?.projectImage}` : null;
 
   console.log(`Image URL: http://localhost:3000/uploads/${project[0].projectImage}`);
 
@@ -90,21 +88,21 @@ function ProjectDetails() {
 
         <div className={classes.btnContainer}>
           {project?.[0].demo_button ? ( 
-            <Button className='redirectBtn'>
+            <Button onClick={() => handleOpenNewTab(project?.[0].demo_button)} className='redirectBtn'>
               Demo
               <img src={arrow} alt='arrowIcon' className={classes.arrowIcon}/>
            </Button>
           ) : null}
 
           {project?.[0].github_button ? (
-            <Button className='redirectBtn'>
+            <Button onClick={() => handleOpenNewTab(project?.[0].github_button)} className='redirectBtn'>
               Github
               <img src={arrow} alt='arrowIcon' className={classes.arrowIcon}/>
             </Button>
             ) : null}
 
           {project?.[0].figma_button ? (
-            <Button className='redirectBtn' onClick={() => handleOpenNewTab(project?.[0].figma_button)}>
+            <Button onClick={() => handleOpenNewTab(project?.[0].figma_button)} className='redirectBtn' >
               Figma
               <img src={arrow} alt='arrowIcon' className={classes.arrowIcon}/>
             </Button>

@@ -16,14 +16,19 @@ function AhvievementDetails() {
   // Getting the achievements from the global state.
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const achievement = achievements?.filter(obj => obj.achievement_id === Number(achievementId));
-  
 
+  const imageUrl = achievement[0]?.achievementImage ? `http://localhost:3000/uploads/${achievement[0]?.achievementImage}` : null;
+
+
+  const handleOpenNewTab = (url) => {
+    window.open(`${url}`, '_blank');
+  };
   
 
   return (
     <section className={classes.section}>
       <div className={classes.imgContainer}>
-        <img src={image} className={classes.img}/>
+        <img src={imageUrl} alt={achievement[0].title || 'Achievement Image'} className={classes.img}/>
       </div>
       
       <div className={classes.mainContainer}>
@@ -36,7 +41,7 @@ function AhvievementDetails() {
 
         <div className={classes.btnContainer}>
           {achievement?.[0].certificate_btn ? (
-            <Button className='redirectBtn'>
+            <Button onClick={() => handleOpenNewTab(achievement?.[0].certificate_btn)} className='redirectBtn'>
               Certificate
               <img src={arrow} alt='arrowIcon' className={classes.arrowIcon}/>
             </Button>
