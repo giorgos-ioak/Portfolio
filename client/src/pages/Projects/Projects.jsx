@@ -5,16 +5,15 @@ import { useState, useEffect } from 'react';
 
 import projectSvg from '../../assets/svgIcons/project.svg';
 import project1Img from '../../assets/project1Img.jpg';
-import project2Img from '../../assets/project2Img.jpg';
-import project3Img from '../../assets/project3Img.jpg';
 
 
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx'
 import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
 import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
-import Pagination from '../../components/UI/Pagination/Pagination.jsx';
-import { Outlet } from 'react-router-dom';
+
+import MyPagination from '../../components/UI/Pagination/MyPagination.jsx';
+
 
 
 
@@ -106,11 +105,11 @@ function Projects() {
                   </div>
 
                   {(smallScreen || mediumScreen || largeScreen) &&
-                    <Pagination 
+                    <MyPagination 
                       totalItems={totalProjects} 
-                      itemsPerPage={projectsPerPage ? projectsPerPage : 1}
-                      pageClick={handleCurrentPage}
-                      containerClass='container_project'
+                      itemsPerPage={projectsPerPage ? projectsPerPage : 1} 
+                      pageClick={handleCurrentPage} 
+                      smallScreen={smallScreen} 
                     />
                   }
                 </div>

@@ -9,6 +9,16 @@
   padding-top: 2rem;
 }
 
+.mainContainer_PortfolioInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 85vh;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  padding-top: 2rem;
+}
+
 
 .mainContainer_ProjectSection {
   display: flex;
@@ -64,6 +74,10 @@
     padding-top: 2rem;
   }
 
+  .mainContainer_PortfolioInfo {
+    height: 120vh;
+  }
+
   .mainContainer_AchievementSection {
     height: 45vh;
   }
@@ -95,6 +109,10 @@
     height: 45vh;
   }
 
+  .mainContainer_PortfolioInfo {
+    height: 120vh;
+  }
+
   .mainContainer_AchievementPageSection{
     height: 68vh;
   }
@@ -114,6 +132,10 @@
     height: 72vh;
     margin-top: 1rem;
     padding-top: 2rem;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 95vh;
   }
 
   .mainContainer_AchievementSection {
@@ -143,6 +165,10 @@
     height: 45vh;
   }
 
+  .mainContainer_PortfolioInfo {
+    height: 95vh;
+  }
+
   .mainContainer_ProjectSection {
     height: 72vh;
   }
@@ -160,6 +186,10 @@
 
   .mainContainer_AchievementSection {
     height: 45vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 80vh;
   }
 
   .mainContainer_GetInTouchSection {
@@ -180,6 +210,10 @@
     height: 45vh;
   }
 
+  .mainContainer_PortfolioInfo {
+    height: 90vh;
+  }
+
   .mainContainer_AchievementPageSection{
     height: 65vh;
   }
@@ -197,6 +231,10 @@
     height: 45vh;
     margin-top: 1rem;
     padding-top: 2rem;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 85vh;
   }
 
   .mainContainer_GetInTouchSection {

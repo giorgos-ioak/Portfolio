@@ -4,7 +4,7 @@ function TitleContainer({ title, image, alt, className }) {
   return (
     <div className={`${classes[className]}`}>
       <h2 className={classes.h2}>{title}</h2>
-      <img src={image} alt={alt}/>
+      {image && <img src={image} alt={alt}/>}
     </div>
   )
 }
