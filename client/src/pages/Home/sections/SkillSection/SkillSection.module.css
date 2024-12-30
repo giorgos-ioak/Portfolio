@@ -52,7 +52,6 @@
 
   .h2 {
     font-size: 1rem;
-    text-align: center;
     margin-bottom: 0rem;
   }
   
@@ -67,7 +66,7 @@
   } 
   
   .li {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 140%;
   }
 }
@@ -80,7 +79,6 @@
 
   .h2 {
     font-size: 1rem;
-    text-align: center;
     margin-bottom: 0rem;
   }
   
@@ -95,7 +93,7 @@
   } 
   
   .li {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 140%;
   }
 }
@@ -135,8 +133,7 @@
   }
 
   .h2 {
-    font-size: 1.1rem;
-    text-align: left;
+    font-size: 1rem;
     margin-bottom: 0rem;
   }
   
@@ -151,7 +148,7 @@
   } 
   
   .li {
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 140%;
   }
 }
@@ -164,7 +161,7 @@
   }
 
   .h2 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: left;
     margin-bottom: 0rem;
   }
@@ -192,7 +189,7 @@
   }
 
   .h2 {
-    font-size: 1.3rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
   }
   

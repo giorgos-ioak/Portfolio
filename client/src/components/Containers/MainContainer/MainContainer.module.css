@@ -13,7 +13,17 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 85vh;
+  height: 55vh;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  padding-top: 2rem;
+}
+
+.mainContainer_PortfolioInfo_expanded {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 100vh;
   margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
@@ -75,7 +85,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 120vh;
+    height: 60vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 150vh;
   }
 
   .mainContainer_AchievementSection {
@@ -110,8 +124,13 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 120vh;
+    height: 55vh;
   }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 145vh;
+  }
+
 
   .mainContainer_AchievementPageSection{
     height: 68vh;
@@ -135,7 +154,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 95vh;
+    height: 50vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 135vh;
   }
 
   .mainContainer_AchievementSection {
@@ -166,8 +189,13 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 95vh;
+    height: 55vh;  
   }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 125vh;
+  }
+
 
   .mainContainer_ProjectSection {
     height: 72vh;
@@ -189,7 +217,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 80vh;
+    height: 50vh;  
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 110vh;
   }
 
   .mainContainer_GetInTouchSection {
@@ -211,7 +243,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 90vh;
+    height: 55vh;  
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 110vh;
   }
 
   .mainContainer_AchievementPageSection{
@@ -234,7 +270,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 85vh;
+    height: 50vh;  
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 100vh;
   }
 
   .mainContainer_GetInTouchSection {
