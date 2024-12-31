@@ -40,6 +40,9 @@ function Projects() {
   const firstProjectIndex = lastProjectIndex - projectsPerPage;
   const currentProjects = projectData.slice(firstProjectIndex, lastProjectIndex);
 
+  console.log(currentProjects);
+
+
 
   /****  Change num of projects per page.  ****/
   function handleProjectsPerPage() {     
@@ -98,7 +101,7 @@ function Projects() {
                           text: project?._description,
                           id: project?.project_id
                         }} 
-                        image={project1Img}
+                        image={project?.projectImage ? `http://localhost:3000/uploads/${project?.projectImage}` : null}
                         key={project.project_id}
                       />
                     ))}

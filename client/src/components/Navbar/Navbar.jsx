@@ -1,8 +1,25 @@
 import classes from './Navbar.module.css';
 
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { setState } from '../../app/reducers/auth.js';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Navbar() {
+  // const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
+
+  // const [isLogged, setisLogged] = useState(isLoggedIn);
+
+
+  // useEffect(() => {
+  //   setisLogged(isLoggedIn);
+  // }, [isLoggedIn]);
+
+
+  // console.log('Logged in:', isLoggedIn);  
+
   return (
     <nav className={classes.nav}>
       <Link to='/' className={classes.logo}>
@@ -31,7 +48,16 @@ function Navbar() {
           Achievements
         </Link>
         <a className={classes.nav_link}>Get In Touch</a>
-        <a className={`${classes.nav_link} ${classes.login_button}`}>Login</a> 
+        {!isLoggedIn ? (
+          <Link to='/login'>
+            <button className={`${classes.nav_link} ${classes.login_button}`}>Login</button>
+          </Link>
+        ) : (
+          <Link to='/logout'>
+            <button className={`${classes.nav_link} ${classes.login_button}`}>Logout</button>
+          </Link>
+        )}
+        
       </div>
     </nav>
   );

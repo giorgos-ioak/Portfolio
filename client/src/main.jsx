@@ -10,6 +10,8 @@ import Achievements from './pages/Achievements/Achievements.jsx';
 import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.jsx';
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import ErrorPage from './components/UI/ErrorPage/ErrorPage.jsx';
+import Login from './components/UI/Login/Login.jsx';
+import Logout from './components/UI/Logout/Logout.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: 'login',
+        element: <Login />
+      },
+      {
+        path: 'logout',
+        element: <Logout />
       }
     ]
   }

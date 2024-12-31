@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+
 import Swal from 'sweetalert2';
 
 import classes from './GetInTouchContainer.module.css';
@@ -38,6 +40,14 @@ function GetInTouchContainer() {
   };
 
 
+
+
+
+  const handleRedirect = (url) => {
+    window.open(`${url}`, '_blank');
+  };
+
+
   return (
     <div className={classes.mainContainer}>
       <div className={classes.leftSubContainer}>
@@ -46,10 +56,25 @@ function GetInTouchContainer() {
           <img src={messageIcon}/>
         </div>
         <div className={classes.iconsContainer}>
-          <img src={whatsup} alt='whatsupIcon'/>
-          <img src={facebook} alt='facebookIcon'/>
-          <img src={snapchat} alt='snapchatIcon'/>
-          <img src={gmail} alt='gmailIcon'/>
+          <button
+            style={{
+              border: 'none',
+              cursor: 'pointer',
+            }} 
+            onClick={() => handleRedirect('https://www.linkedin.com/in/giorgos-ioakeimidis-577861200/')}
+          >
+            <LinkedInIcon/>
+          </button>
+
+          <button
+            style={{
+              border: 'none',
+              cursor: 'pointer',
+            }} 
+            onClick={() => handleRedirect('https://github.com/giorgos-ioak')}
+          >
+            <GitHubIcon/>
+          </button>
         </div>
       </div>
 

@@ -2,22 +2,30 @@ import express from 'express';
 import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 
 
 import dataRoutes from './routes/data.js';
+import authRoutes from './routes/auth.js';
 
 
 
 const app = express();
 dotenv.config();
-app.use(cors());
-app.use('/uploads', express.static('uploads'));
 
-// For handling Form submissions where the data is sent using the POST method & where data is encoded using 
-// application/x-www-form-urlencoded
+// Middleware
+app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use('/uploads', express.static('uploads'));
+app.use(cookieParser());
+app.use(express.json());
+/* 
+  For handling Form submissions where the data is sent using the POST method & where data is encoded using 
+  application/x-www-form-urlencoded
+*/
 app.use(express.urlencoded({ extended: true }));
 
-app.use(express.json());
+ 
+
 
 
 
@@ -47,10 +55,17 @@ db.connect((err) => {
 
 // ROUTES
 app.use('/', dataRoutes);
+app.use('/auth', authRoutes);
 
 
+// async function createHash(){
+//   const saltRounds = 10;
+//   const hashedPassword = await bcrypt.hash('giorgosgew', saltRounds);
+//   console.log(hashedPassword);
+//   return hashedPassword;
+// }
 
-
+// createHash();
 
 
 app.listen(3000, () => {
