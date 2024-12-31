@@ -21,7 +21,8 @@ import { upload } from '../middleware/multerConfig.js';
 const router = express.Router();
 
 
-/*****   ENDPOINTS  *****/
+/**********/
+
 
 // GET - skills && projects && achievements data from the DB.
 router.get('/dbData', getDbData);
@@ -29,6 +30,8 @@ router.get('/dbData', getDbData);
 // GET - individual project's technologies.
 router.get('/projectTech/:projectId', getProjectTech);
 
+
+/**********/
 
 
 
@@ -45,6 +48,9 @@ router.post('/createNewSkill', createNewSkill);
 router.post('/createNewAchievement', upload.single('image') ,createNewAchievement);
 
 
+/**********/
+
+
 
 
 // PUT - Edit Project.
@@ -58,11 +64,14 @@ router.put('/editAchievement/:achievementId', upload.single('image'), editAchiev
 
 
 
+/**********/
+
+
+
 
 // DELETE - Delete Project.
 router.delete('/deleteProject/:projectId', deleteProject);
 router.delete('/deleteProjectTechnologies/:projectId', deleteProjectTechnologies);
-
 
 // DELETE - Delete Skill.
 router.delete('/deleteSkill/:skillId', deleteSkill);
@@ -70,4 +79,6 @@ router.delete('/deleteSkill/:skillId', deleteSkill);
 // DELETE - Delete Achievement.
 router.delete('/deleteAchievement/:achievementId', deleteAchievement);
 
+
 export default router;
+
