@@ -12,7 +12,6 @@ import libraries_platforms from '../../../../assets/libraries_platforms.png';
 import SkillsContainer from '../../../../components/Containers/SkillContainer/SkillsContainer.jsx';
 import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
 import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 function SkillSection() {
@@ -110,10 +109,6 @@ function SkillSection() {
             />
           </SubContainer>
         </MainContainer>
-        
-        {!verySmallScreen && 
-          <RedBlock className='redBlock_SkillSection'/>
-        }
       </section>
     </>
     

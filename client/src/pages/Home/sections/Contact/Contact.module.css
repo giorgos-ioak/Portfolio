@@ -1,4 +1,4 @@
-.getInTouchSection {
+.contactSection {
   margin-top: 12rem;
 }
 
@@ -17,7 +17,7 @@
 
 /*****  WIDTH   *****/
 @media (max-width: 370px) {
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   
@@ -32,7 +32,7 @@
 
 
 @media (min-width: 371px) and (max-width: 500px) {
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   
@@ -45,7 +45,7 @@
 }
 
 @media (min-width: 501px) and (max-width: 600px) {
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   
@@ -61,7 +61,7 @@
 
 
 @media (min-width: 601px) and (max-width: 768px) { 
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   
@@ -77,7 +77,7 @@
 
 
 @media (min-width: 769px) and (max-width: 900px) {
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   
@@ -92,7 +92,7 @@
 
 
 @media (min-width: 901px) and (max-width: 1024px) {
-  .getInTouchSection {
+  .contactSection {
     margin-top: 8rem;
   }
   

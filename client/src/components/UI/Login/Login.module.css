@@ -7,8 +7,9 @@
 
 .form label {
   display: block;
+  font-family: 'Montserrat';
   margin-bottom: 0.2rem;
-  font-family: 'Monsterrat';
+  text-align: left;
   font-size: 0.9rem;
   color: black;
   font-weight: 600;
@@ -32,9 +33,18 @@
   gap: 3rem;
 }
 
+.error {
+  color: red;
+  font-family: 'Montserrat';
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
 .cancelBtn {
   color: black;
-  font-family: 'Monsterrat';
+  font-family: 'Montserrat';
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
   text-decoration: none;
@@ -42,7 +52,7 @@
 
 .submitBtn {
   cursor: pointer;
-  font-family: 'Monsterrat';
+  font-family: 'Montserrat';
   padding: 0.5rem 1.5rem;
   border: none;
   border-radius: 4px;

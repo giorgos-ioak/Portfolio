@@ -1,6 +1,7 @@
 import classes from './Login.module.css'; 
 
 import Modal from "../Modal/Modal.jsx";
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';  
 
@@ -10,6 +11,8 @@ import { login } from '../../../app/reducers/auth.js';
 function Login() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const [error, setError] = useState('');
 
   
   async function handleSubmit(e) {
@@ -27,20 +30,15 @@ function Login() {
       });
 
       if(!response.ok) {
-        throw new Response(JSON.stringify({ message: `Failed to login.` }), {
-          status: response.status,
-          statusText: response.statusText || 'Internal Server Error.',
-        });
+        const error = await response.json();
+        setError(error.message || 'Login failed.');
+        return;
       } 
-
-      const result = await response.json();
-
-      console.log(result);
       
       dispatch(login());
       navigate('/');
     } catch(err) {
-      return {error: err.message};
+      setError('Something went wrong. Please try again.');
     } 
   }
 
@@ -54,6 +52,12 @@ function Login() {
 
         <label htmlFor='password'>Password</label>
         <input type="password" id='password' name='password' required/>
+
+        {error && (
+          <div className={classes.error}>
+            {error}
+          </div>
+        )}
 
         <div className={classes.actions}>
           <Link className={classes.cancelBtn} to=".." type="button">

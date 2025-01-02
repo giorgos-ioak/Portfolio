@@ -1,29 +1,22 @@
 import { useState } from 'react';
 import { useMediaQuery } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import classes from '../SkillSection/SkillSection.module.css';
 
 import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer';
-import RedBlock from '../../../../components/UI/RedBlock/RedBlock';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer';
 import SubContainer from '../../../../components/Containers/SubContainer/SubContainer';
 
 
 import Accordion from '@mui/material/Accordion';
-import AccordionActions from '@mui/material/AccordionActions';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
 import Box from '@mui/material/Box';
 
 export default function PortfolioInfo() {
   // Setting the queries for different screen sizes.
-  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const isSmallScreen = useMediaQuery('(max-width:768px)');
   
   const [expanded, setExpanded] = useState(null);
@@ -89,7 +82,7 @@ export default function PortfolioInfo() {
                       component="span"
                       sx={{
                         fontSize: { xs: '0.95rem', sm: '1rem' },
-                        fontWeight: '500',
+                        fontWeight: '400',
                       }}
                     >
                       SQL
@@ -133,7 +126,7 @@ export default function PortfolioInfo() {
                       component="span"
                       sx={{
                         fontSize: { xs: '0.95rem', sm: '1rem' },
-                        fontWeight: '500',
+                        fontWeight: '400',
                       }}
                     >
                       Backend
@@ -181,7 +174,7 @@ export default function PortfolioInfo() {
                       component="span"
                       sx={{
                         fontSize: { xs: '0.95rem', sm: '1rem' },
-                        fontWeight: '500',
+                        fontWeight: '400',
                       }}
                     >
                       Frontend

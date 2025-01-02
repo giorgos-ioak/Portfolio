@@ -36,10 +36,7 @@ function Logout() {
   return (
     <Modal>
       <form method='post' onSubmit={handleSubmit} className={classes.form}>
-        <label style={{
-          textAlign: "center",
-          marginBottom: '2rem'
-        }}>
+        <label style={{marginBottom: '2rem'}}>
           Are you sure you want to Log Out?
         </label>
 

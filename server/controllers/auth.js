@@ -15,7 +15,7 @@ export async function login(req, res) {
     const [user] = await db.promise().query(sqlQuery, values);
 
     if(user.length === 0) {
-      return res.status(401).json({ message: 'Invalid username or password.' });
+      return res.status(401).json({ message: 'Invalid username.' });
     }
 
 
@@ -34,11 +34,10 @@ export async function login(req, res) {
       httpOnly: true, // Prevent access via JavaScript (secure against XSS)
       secure: false,  // Set to `true` in production (requires HTTPS)
       sameSite: 'Lax', // Helps prevent CSRF attacks
-      maxAge: 24 * 60 * 60 * 1000
+      maxAge: 2 * 60 * 60 * 1000
     });
 
-    // Send the token
-    res.status(200).json({ token });
+    res.status(200).json({ message: 'Logged in.' });
 
   } catch(err) {
     console.error('Error during login:', err);
@@ -60,24 +59,3 @@ export async function logout(req, res) {
 
 
 
-export async function verifyToken(req, res) {
-  const token = req.cookies.jwt;
-
-  if(!token) {
-    return res.status(401).json({ message: 'Unauthorized' });
-  }
-
-  try {
-    const decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-
-    if(!decodedToken) {
-      return res.status(401).json({ loggedIn: false });
-    }
-
-    res.status(200).json({ loggedIn: true });
-
-  } catch(err) {
-    console.error('Error during authentication:', err);
-    res.status(500).json({ message: 'Internal server error.' });
-  } 
-};

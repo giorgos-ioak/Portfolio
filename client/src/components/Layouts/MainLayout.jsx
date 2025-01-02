@@ -1,8 +1,10 @@
 import { Outlet } from "react-router-dom";
 import { useLoaderData, useLocation } from "react-router-dom";
+
 import { storeData } from "../../app/reducers/databaseData.js";
-import { setState } from "../../app/reducers/auth.js";
-import { useDispatch, useSelector } from "react-redux";
+import { setState } from "../../app/reducers/auth.js";  
+
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 import Navbar from "../Navbar/Navbar.jsx";
@@ -13,24 +15,40 @@ import Navbar from "../Navbar/Navbar.jsx";
 function MainLayout() {
   const { pathname } = useLocation();
 
-  const { data, result } = useLoaderData();
+  const data = useLoaderData();
   const dispatch = useDispatch();
 
 
 
   // USE-EFFECT HOOK
   useEffect(() => {
-    // let loggedIn = null;
-
-    // // If the token is invalid, the user is not logged in
-    // verified.message === 'Unauthorized' ? loggedIn = false : loggedIn = true;
-
-
-    dispatch(setState(result.loggedIn));
     dispatch(storeData(data));
     
     window.scrollTo(0, 0);
-  }, [dispatch, data, result, pathname]);
+  }, [dispatch, data, pathname]);
+
+
+  // Verify JWT token and update auth state
+  useEffect(() => {
+    async function verifyAuth() {
+      try {
+        const response = await fetch("http://localhost:3000/auth/verifyToken", {
+          credentials: "include",
+        });
+
+        if (response.ok) {
+          dispatch(setState(true));
+        } else {
+          dispatch(setState(false));
+        }
+      } catch (err) {
+        console.error("Error verifying authentication:", err);
+        dispatch(setState(false)); 
+      }
+    }
+
+    verifyAuth();
+  }, [dispatch]);
 
 
   return (
@@ -62,16 +80,7 @@ export const loader = async() => {
     const data = await response1.json();
 
 
-    // Verify token
-    const response = await fetch("http://localhost:3000/auth/verifyToken", {
-      method: "GET",
-      credentials: "include", // Include cookies
-    });
-
-    const result = await response.json();
-
-
-    return { data,result };
+    return data;
   } catch(err) {
     if(err instanceof Response) {
       throw err;

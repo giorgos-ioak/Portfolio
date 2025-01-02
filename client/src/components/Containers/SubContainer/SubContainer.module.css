@@ -26,7 +26,7 @@
 }
 
 
-.subContainer_GetInTouchSection {
+.subContainer_ContactSection {
   display: flex;
   flex-direction: column;
   width: 60%;
@@ -66,7 +66,7 @@
     width: 90%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 90%;
   }
 
@@ -91,7 +91,7 @@
     width: 80%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 90%;
   }
 
@@ -115,7 +115,7 @@
     width: 75%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 75%;
   }
 
@@ -141,7 +141,7 @@
     width: 70%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 70%;
   }
 
@@ -167,7 +167,7 @@
     width: 70%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 70%;
   }
 
@@ -192,7 +192,7 @@
     width: 70%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 70%;
   }
 
@@ -217,7 +217,7 @@
     width: 65%;
   }
 
-  .subContainer_GetInTouchSection {
+  .subContainer_ContactSection {
     width: 65%;
   }
 

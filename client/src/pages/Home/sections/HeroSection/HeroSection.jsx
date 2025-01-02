@@ -5,8 +5,6 @@ import image from '../../../../assets/robotFace.jpg';
 function HeroSection() {
   return (
     <section className={classes.heroSection}>
-      <div className={classes.redBlock}></div>
-
       <div className={classes.container}>
         <div>
           <h1 className={classes.h1}>Hi I'm George,</h1>
