@@ -9,13 +9,13 @@
 
 .h1 {
   font-family: 'Montserrat';
-  font-size: 4.5rem;
+  font-size: 4rem;
   font-weight: 500;
 }
 
 .h3 {
   font-family: 'Montserrat';
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-top: 3rem;
 }
@@ -23,8 +23,8 @@
 
 
 .img {
-  width: 20rem;
-  height: 20rem;
+  width: 16rem;
+  height: 16rem;
   border-radius: 50%;
 }
 
@@ -61,8 +61,8 @@
   }
 
   .img {
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
@@ -83,8 +83,8 @@
   }
 
   .img {
-    width: 7rem;
-    height: 7rem;
+    width: 6rem;
+    height: 6rem;
   }
 }
 
@@ -98,13 +98,13 @@
   }
   
   .h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 1rem;
   }
 
   .img {
-    width: 8rem;
-    height: 8rem;
+    width: 6rem;
+    height: 6rem;
   }
 }
 
@@ -121,13 +121,13 @@
   }
   
   .h3 {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 1rem;
   }
 
   .img {
-    width: 9rem;
-    height: 9rem;
+    width: 7rem;
+    height: 7rem;
   }
 }
 
@@ -143,13 +143,13 @@
   }
   
   .h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     margin-top: 1rem;
   }
 
   .img {
-    width: 10rem;
-    height: 10rem;
+    width: 8rem;
+    height: 8rem;
   }
 }
 
@@ -164,13 +164,13 @@
   }
   
   .h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     margin-top: 1rem;
   }
 
   .img {
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
   }
 }
 
@@ -185,12 +185,12 @@
   }
   
   .h3 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-top: 2rem;
   }
 
   .img {
-    width: 15rem;
-    height: 15rem;
+    width: 11rem;
+    height: 11rem;
   }
 }

@@ -63,7 +63,7 @@ function Login() {
           <Link className={classes.cancelBtn} to=".." type="button">
             Cancel
           </Link>
-          <button className={classes.submitBtn}>Log In</button>
+          <button className={classes.submitBtn}>LogIn</button>
         </div>
       </form>
     </Modal>

@@ -58,16 +58,8 @@ app.use('/', dataRoutes);
 app.use('/auth', authRoutes);
 
 
-// async function createHash(){
-//   const saltRounds = 10;
-//   const hashedPassword = await bcrypt.hash('giorgosgew', saltRounds);
-//   console.log(hashedPassword);
-//   return hashedPassword;
-// }
 
-// createHash();
-
-
+// START SERVER
 app.listen(3000, () => {
   console.log("Server started successfully");
 });

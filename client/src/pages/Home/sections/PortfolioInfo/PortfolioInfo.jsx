@@ -21,10 +21,6 @@ export default function PortfolioInfo() {
   
   const [expanded, setExpanded] = useState(null);
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
-  };
-
   const handleAccordionChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : null); // Set the current panel or close all
   };
@@ -44,7 +40,7 @@ export default function PortfolioInfo() {
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
             <div>
               <h2 className={classes.h2}>
-                This Portfolio is not just a basic or static website.<br/><br/> It is a robust <strong>full-stack web application</strong> built using a mySQL database, a backend server, and a dynamic frontend client.
+                This Portfolio is not just a basic or static website.<br/><br/> It is a robust <strong>full-stack web application</strong> built using a mySQL database, a backend server, and a dynamic frontend client.<br/><br/> You can find the code for this application on my <a href="https://github.com/giorgos-ioak/Portfolio" target="_blank" style={{color: 'red',textDecoration: 'none'}}>GitHub</a> repository.
               </h2>
 
               <Box 
@@ -145,6 +141,9 @@ export default function PortfolioInfo() {
                       </li>
                       <li className={classes.li}>
                         <strong>File System Management:</strong> The <code>fs</code> module is employed to manage server-side files, including creation, deletion, and organization of project assets and resources.
+                      </li>
+                      <li className={classes.li}>
+                        <strong>Authentication and Authorization:</strong> Secure user authentication is implemented using <code>bcrypt</code> for password hashing and <code>jsonwebtoken (JWT)</code> for managing user sessions and protecting sensitive API endpoints.
                       </li>
                     </ul>
                     <p className={classes.p}>
