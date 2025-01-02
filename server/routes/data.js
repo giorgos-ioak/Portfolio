@@ -17,6 +17,7 @@ import {
 } from '../controllers/data.js';
 
 import { upload } from '../middleware/multerConfig.js';
+import { isAuthenticated } from '../middleware/auth.js';
 
 const router = express.Router();
 
@@ -36,16 +37,16 @@ router.get('/projectTech/:projectId', getProjectTech);
 
 
 // POST - create new Project.
-router.post('/createNewProject', upload.single('image'), createNewProject);
+router.post('/createNewProject', isAuthenticated, upload.single('image'), createNewProject);
 
 // POST - post new Project technologies.
-router.post('/postProjectTechnologies/:projectId', postProjectTechnologies);
+router.post('/postProjectTechnologies/:projectId', isAuthenticated, postProjectTechnologies);
 
 // POST - create new Skill.
-router.post('/createNewSkill', createNewSkill);
+router.post('/createNewSkill', isAuthenticated, createNewSkill);
 
 // POST - create new Achievement.
-router.post('/createNewAchievement', upload.single('image') ,createNewAchievement);
+router.post('/createNewAchievement', isAuthenticated, upload.single('image') ,createNewAchievement);
 
 
 /**********/
@@ -54,13 +55,13 @@ router.post('/createNewAchievement', upload.single('image') ,createNewAchievemen
 
 
 // PUT - Edit Project.
-router.put('/editProject/:projectId', upload.single('image'), editProject);
+router.put('/editProject/:projectId', isAuthenticated, upload.single('image'), editProject);
 
 // PUT - Edit Skill.
-router.put('/editSkill/:skillId', editSkill);
+router.put('/editSkill/:skillId', isAuthenticated, editSkill);
 
 // PUT - Edit Achievement.
-router.put('/editAchievement/:achievementId', upload.single('image'), editAchievement);
+router.put('/editAchievement/:achievementId', isAuthenticated, upload.single('image'), editAchievement);
 
 
 
@@ -70,14 +71,14 @@ router.put('/editAchievement/:achievementId', upload.single('image'), editAchiev
 
 
 // DELETE - Delete Project.
-router.delete('/deleteProject/:projectId', deleteProject);
-router.delete('/deleteProjectTechnologies/:projectId', deleteProjectTechnologies);
+router.delete('/deleteProject/:projectId', isAuthenticated, deleteProject);
+router.delete('/deleteProjectTechnologies/:projectId', isAuthenticated, deleteProjectTechnologies);
 
 // DELETE - Delete Skill.
-router.delete('/deleteSkill/:skillId', deleteSkill);
+router.delete('/deleteSkill/:skillId', isAuthenticated, deleteSkill);
 
 // DELETE - Delete Achievement.
-router.delete('/deleteAchievement/:achievementId', deleteAchievement);
+router.delete('/deleteAchievement/:achievementId', isAuthenticated, deleteAchievement);
 
 
 export default router;

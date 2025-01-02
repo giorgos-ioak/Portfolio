@@ -9,14 +9,12 @@ import Button from '../../../../components/UI/Button/Button.jsx';
 import Achievement from '../../../../components/Containers/AchievementContainer/Achievement.jsx';
 import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
 import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 
 
 function AchievementsSection() {
   // Setting the queries for different screen sizes.
-  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:1025px)');
 
   // Getting the achievements from the global state.
@@ -64,11 +62,6 @@ function AchievementsSection() {
             <Button className='viewMoreBtn'>View More</Button>
           </Link>
         </div>
-
-        {!verySmallScreen && 
-          <RedBlock className='redBlock_AchievementSection'/>
-        }
-
       </MainContainer>
     </section>
   )

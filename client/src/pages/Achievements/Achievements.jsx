@@ -14,7 +14,7 @@ import MyPagination from '../../components/UI/Pagination/MyPagination.jsx';
 
 
 function Achievements() {
-  // Retrieving the project's id from the URL params.
+  // Media Queries
   const smallScreen = useMediaQuery('(max-width:500px)');
   const mediumScreen = useMediaQuery('(min-width:501px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');

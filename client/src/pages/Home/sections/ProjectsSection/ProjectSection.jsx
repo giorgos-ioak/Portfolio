@@ -13,7 +13,6 @@ import ProjectContainer from '../../../../components/Containers/ProjectContainer
 import Button from '../../../../components/UI/Button/Button.jsx';
 import SubContainer from '../../../../components/Containers/SubContainer/SubContainer.jsx';
 import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer.jsx';
-import RedBlock from '../../../../components/UI/RedBlock/RedBlock.jsx';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer.jsx';
 
 function ProjectSection() {
@@ -111,10 +110,6 @@ function ProjectSection() {
         </div>   
 
       </MainContainer>
-
-      {!verySmallScreen && 
-        <RedBlock className='redBlock_ProjectSection'/>
-      }
     </section>
   )
 }

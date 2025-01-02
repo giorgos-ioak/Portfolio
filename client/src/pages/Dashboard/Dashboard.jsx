@@ -93,6 +93,7 @@ function Dashboard() {
         if(method === 'DELETE') {
           response = await fetch(`http://localhost:3000/deleteProjectTechnologies/${editedProjectId}`, {
             method: 'DELETE',
+            credentials: 'include',
             headers: {
               "Content-Type": "application/json"
             }
@@ -110,6 +111,7 @@ function Dashboard() {
         // CREATING or EDITING or DELETING A PROJECT.
         response1 = await fetch( method === 'POST' ? createProject : method === 'PUT' ? editProject : deleteProject , {
           method: method,
+          credentials: 'include',
           ...(method !== 'DELETE' && { body: formData })
         });
 
@@ -124,6 +126,7 @@ function Dashboard() {
   
           response2 = await fetch(`http://localhost:3000/postProjectTechnologies/${projectId}`, {
             method: 'POST',
+            credentials: 'include',
             body: JSON.stringify(technologies),
             headers: {
               "Content-Type": "application/json"
@@ -160,6 +163,7 @@ function Dashboard() {
 
         response1 = await fetch(method === 'POST' ? createAchievement : method === 'PUT' ? editAchievement : deleteAchievement, {
           method: method,
+          credentials: 'include',
           ...(method !== 'DELETE' && { body: formData })
         });
 
@@ -189,6 +193,7 @@ function Dashboard() {
 
       response1 = await fetch(method === 'POST' ? createSkill : method === 'PUT' ? editSkill : deleteSkill, {
         method: method,
+        credentials: 'include',
         ...(method !== 'DELETE' && { body: JSON.stringify({ ...data, skillCategory }) }),
         headers: {
           "Content-Type": "application/json"

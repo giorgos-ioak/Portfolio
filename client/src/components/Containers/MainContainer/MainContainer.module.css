@@ -63,10 +63,11 @@
 
 
 
-.mainContainer_GetInTouchSection {
+.mainContainer_ContactSection {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  margin-top: 3rem;
   height: 60vh;
 }
 
@@ -101,7 +102,7 @@
   }
   
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 60vh;
   }
 
@@ -136,7 +137,7 @@
     height: 68vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 60vh;
   }
 
@@ -224,7 +225,7 @@
     height: 110vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 55vh;
   }
 }
@@ -255,7 +256,7 @@
   }
 
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 55vh;
   }
 }
@@ -277,7 +278,7 @@
     height: 100vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 60vh;
   }
 }
@@ -304,7 +305,7 @@
     height: 80vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 110vh;
   }
 }
@@ -322,7 +323,7 @@
     height: 70vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 100vh;
   }
 }
@@ -340,7 +341,7 @@
     height: 62vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 90vh;
   }
 }
@@ -358,7 +359,7 @@
     height: 55vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 75vh;
   }
 }
@@ -375,7 +376,7 @@
     height: 49vh;
   }
 
-  .mainContainer_GetInTouchSection {
+  .mainContainer_ContactSection {
     height: 67vh;
   }
 }
