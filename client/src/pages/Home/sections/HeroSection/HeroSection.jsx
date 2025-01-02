@@ -7,8 +7,8 @@ function HeroSection() {
     <section className={classes.heroSection}>
       <div className={classes.container}>
         <div>
-          <h1 className={classes.h1}>Hi I'm George,</h1>
-          <h3 className={classes.h3}>A Web Developer.</h3>
+          <h1 className={classes.h1}>Hi, I'm Giorgos</h1>
+          <h3 className={classes.h3}>A Full-Stack Software Developer.</h3>
           </div>
         <img src={image} className={classes.img} alt='profilePicture'/>
       </div>

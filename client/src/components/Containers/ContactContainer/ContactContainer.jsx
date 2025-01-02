@@ -38,7 +38,7 @@ function ContactContainer() {
 
 
 
-  const handleRedirect = (url) => {
+  function handleRedirect(url) {
     window.open(`${url}`, '_blank');
   };
 

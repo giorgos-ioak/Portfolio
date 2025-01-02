@@ -1,5 +1,7 @@
 import classes from './Navbar.module.css';
 
+import WebhookIcon from '@mui/icons-material/Webhook';
+
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -9,7 +11,7 @@ function Navbar() {
   return (
     <nav className={classes.nav}>
       <Link to='/' className={classes.logo}>
-        LOGO
+        <WebhookIcon fontSize='large'/>
       </Link>
       <input type="checkbox" id="sidebar-active" className={classes.checkbox}/>
       <label htmlFor="sidebar-active" className={classes.open_sidebar_button}>
@@ -33,9 +35,15 @@ function Navbar() {
         <Link to='/achievements' className={classes.nav_link}>
           Achievements
         </Link>
-        <Link to='/contact' className={classes.nav_link}>
-          Contact
-        </Link>
+        {isLoggedIn ? (
+          <Link to='/dashboard' className={classes.nav_link}>
+            Dashboard
+          </Link>
+        ) : (
+          <Link to='/contact' className={classes.nav_link}>
+            Contact
+          </Link>
+        )}
         {!isLoggedIn ? (
           <Link to='/login' className={`${classes.nav_link} ${classes.login_button}`}>
             Login

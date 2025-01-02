@@ -14,10 +14,10 @@ function SummarySection() {
         />
 
         <p className={classes.p}>
-          I'm Giorgos, a Freelance Software Developer and I have 2 Years of Experience, in creating
-          dynamic and responsive web applications.<br/> <br/>
-          I have used a variety of technologies. My GitHub projects highlight my proficiency with
-          JavaScript, React.js, Node.js, Express.js, Redux Toolkit and React Router among others.
+        I am a 24 year old highly motivated and detail-oriented <strong>Full-Stack Software Developer</strong> based in Thessaloniki, Greece.<br/>I have experience designing and building dynamic, responsive, and user-friendly web applications.<br/><br/>
+
+        My technical expertise includes JavaScript, C#, React.js, Node.js, Express.js, Redux Toolkit, React Router and .NET Framework.
+        <br/><br/>My GitHub portfolio showcases a diverse range of projects that demonstrate my ability to develop robust <strong>full stack</strong> applications. I am committed to staying at the forefront of emerging technologies and delivering impactful solutions for clients.
         </p>
     </section>
   )

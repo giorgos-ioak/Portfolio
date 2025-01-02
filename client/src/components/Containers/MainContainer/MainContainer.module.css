@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 100vh;
+  height: 115vh;
   margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
@@ -80,17 +80,17 @@
 @media (max-width: 370px) {
   .mainContainer_SkillSection {
     gap: 1.5rem;
-    height: 72vh;
+    height: 80vh;
     margin-top: 1rem;
     padding-top: 2rem;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 60vh;
+    height: 65vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 150vh;
+    height: 190vh;
   }
 
   .mainContainer_AchievementSection {
@@ -112,10 +112,46 @@
 }
 
 
-@media (min-width: 371px) and (max-width: 500px) {
+@media (min-width: 371px) and (max-width: 450px) {
   .mainContainer_SkillSection {
     gap: 1.5rem;
-    height: 72vh;
+    height: 80vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+
+
+  .mainContainer_PortfolioInfo {
+    height: 70vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 190vh;
+  }
+
+  .mainContainer_AchievementPageSection{
+    height: 68vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 60vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 70vh;
+  }
+}
+
+
+
+@media (min-width: 451px) and (max-width: 500px) {
+  .mainContainer_SkillSection {
+    gap: 1.5rem;
+    height: 80vh;
     margin-top: 1rem;
     padding-top: 2rem;
   }
@@ -125,11 +161,11 @@
   }
 
   .mainContainer_PortfolioInfo {
-    height: 55vh;
+    height: 65vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 145vh;
+    height: 165vh;
   }
 
 
@@ -149,17 +185,17 @@
 @media (min-width: 501px) and (max-width: 600px) {
   .mainContainer_SkillSection {
     gap: 1.5rem;
-    height: 72vh;
+    height: 80vh;
     margin-top: 1rem;
     padding-top: 2rem;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 50vh;
+    height: 65vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 135vh;
+    height: 160vh;
   }
 
   .mainContainer_AchievementSection {
@@ -180,7 +216,35 @@
 @media (min-width: 601px) and (max-width: 768px) {
   .mainContainer_SkillSection {
     gap: 1.5rem;
+    height: 80vh;
+    margin-top: 1rem;
+    padding-top: 2rem;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 45vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 60vh;  
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 140vh;
+  }
+
+
+  .mainContainer_ProjectSection {
     height: 72vh;
+  }
+}
+
+
+
+@media (min-width: 769px) and (max-width: 900px) {
+  .mainContainer_SkillSection {
+    gap: 3rem;
+    height: 50vh;
     margin-top: 1rem;
     padding-top: 2rem;
   }
@@ -195,34 +259,6 @@
 
   .mainContainer_PortfolioInfo_expanded {
     height: 125vh;
-  }
-
-
-  .mainContainer_ProjectSection {
-    height: 72vh;
-  }
-}
-
-
-
-@media (min-width: 769px) and (max-width: 900px) {
-  .mainContainer_SkillSection {
-    gap: 3rem;
-    height: 45vh;
-    margin-top: 1rem;
-    padding-top: 2rem;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 45vh;
-  }
-
-  .mainContainer_PortfolioInfo {
-    height: 50vh;  
-  }
-
-  .mainContainer_PortfolioInfo_expanded {
-    height: 110vh;
   }
 
   .mainContainer_ContactSection {
@@ -248,7 +284,7 @@
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 110vh;
+    height: 120vh;
   }
 
   .mainContainer_AchievementPageSection{
@@ -265,17 +301,17 @@
 @media (min-width: 1025px) and (max-width: 1444px) {
   .mainContainer_SkillSection {
     gap: 3rem;
-    height: 45vh;
+    height: 50vh;
     margin-top: 1rem;
     padding-top: 2rem;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 50vh;  
+    height: 55vh;  
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 100vh;
+    height: 115vh;
   }
 
   .mainContainer_ContactSection {

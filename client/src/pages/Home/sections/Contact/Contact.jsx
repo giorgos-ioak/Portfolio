@@ -6,7 +6,7 @@ import ContactContainer from '../../../../components/Containers/ContactContainer
 
 function Contact() {
   return (
-    <section className={classes.getInTouchSection}>
+    <section className={classes.contactSection}>
       <MainContainer className='mainContainer_ContactSection'>
         <SubContainer className='subContainer_ContactSection'>
           <ContactContainer />
