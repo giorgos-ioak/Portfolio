@@ -32,7 +32,7 @@ export async function login(req, res) {
     // Set the cookie
     res.cookie('jwt', token, {
       httpOnly: true, // Prevent access via JavaScript (secure against XSS)
-      secure: false,  // Set to `true` in production (requires HTTPS)
+      secure: true,  // Set to `true` in production (requires HTTPS)
       sameSite: 'Lax', // Helps prevent CSRF attacks
       maxAge: 2 * 60 * 60 * 1000
     });
