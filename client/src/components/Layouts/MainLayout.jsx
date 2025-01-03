@@ -70,7 +70,7 @@ export default MainLayout;
 export const loader = async() => {
   try {
     // Fetch data from the database
-    const response1 = await fetch(`https://portfolio-backend-rh82.onrender.com/dbData`);
+    const response1 = await fetch(`https://portfolio-backend-0kjz.onrender.com/dbData`);
   
     if(!response1.ok) {
       throw new Response(JSON.stringify({ message: 'Could not fetch DB data.' }), {
