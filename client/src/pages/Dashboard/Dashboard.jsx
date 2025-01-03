@@ -7,6 +7,8 @@ import DeleteForm from '../../components/UI/DashboardForm/DeleteForm.jsx';
 import { useState } from 'react';
 import { useNavigate  } from 'react-router-dom';
 
+import { API_BASE_URL } from '../../app/apiConfig.js';
+
 
 
 function Dashboard() {
@@ -81,9 +83,9 @@ function Dashboard() {
       if(type === 'Projects') {
 
         //URLS
-        const createProject = 'http://localhost:3000/createNewProject';
-        const editProject = `http://localhost:3000/editProject/${editedProjectId}`;
-        const deleteProject = `http://localhost:3000/deleteProject/${editedProjectId}`;
+        const createProject = `${API_BASE_URL}/createNewProject`;
+        const editProject = `${API_BASE_URL}/editProject/${editedProjectId}`;
+        const deleteProject = `${API_BASE_URL}/deleteProject/${editedProjectId}`;
 
         let text;
         method === 'POST' ? text = 'create' : method === 'PUT' ? text = 'edit' : text = 'delete';
@@ -91,7 +93,7 @@ function Dashboard() {
 
         // DELETING PROJECT'S TECHNOLOGIES.
         if(method === 'DELETE') {
-          response = await fetch(`http://localhost:3000/deleteProjectTechnologies/${editedProjectId}`, {
+          response = await fetch(`${API_BASE_URL}/deleteProjectTechnologies/${editedProjectId}`, {
             method: 'DELETE',
             credentials: 'include',
             headers: {
@@ -124,7 +126,7 @@ function Dashboard() {
           const result = await response1.json();
           const projectId = result.projectId;
   
-          response2 = await fetch(`http://localhost:3000/postProjectTechnologies/${projectId}`, {
+          response2 = await fetch(`${API_BASE_URL}/postProjectTechnologies/${projectId}`, {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify(technologies),
@@ -157,9 +159,9 @@ function Dashboard() {
 
       // TYPE = ACHIEVEMENT
       } else if(type === 'Achievements') {
-        const createAchievement = 'http://localhost:3000/createNewAchievement';
-        const editAchievement = `http://localhost:3000/editAchievement/${editedAchievementId}`;
-        const deleteAchievement = `http://localhost:3000/deleteAchievement/${editedAchievementId}`;
+        const createAchievement = `${API_BASE_URL}/createNewAchievement`;
+        const editAchievement = `${API_BASE_URL}/editAchievement/${editedAchievementId}`;
+        const deleteAchievement = `${API_BASE_URL}/deleteAchievement/${editedAchievementId}`;
 
         response1 = await fetch(method === 'POST' ? createAchievement : method === 'PUT' ? editAchievement : deleteAchievement, {
           method: method,
@@ -184,9 +186,9 @@ function Dashboard() {
 
 
       // TYPE = SKILLS
-      const createSkill = 'http://localhost:3000/createNewSkill';
-      const editSkill = `http://localhost:3000/editSkill/${editedSkillId}`;
-      const deleteSkill = `http://localhost:3000/deleteSkill/${editedSkillId}`;
+      const createSkill = `${API_BASE_URL}/createNewSkill`;
+      const editSkill = `${API_BASE_URL}/editSkill/${editedSkillId}`;
+      const deleteSkill = `${API_BASE_URL}/deleteSkill/${editedSkillId}`;
 
       let text;
       method === 'POST' ? text = 'create' : method === 'PUT' ? text = 'edit' : text = 'delete';
