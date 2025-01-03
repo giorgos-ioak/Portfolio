@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useLoaderData, useLocation } from "react-router-dom";
 
-import { API_BASE_URL } from "../../app/apiConfig.js"; 
+import { BACKEND_URL } from "../../app/apiConfig.js"; 
 
 import { storeData } from "../../app/reducers/databaseData.js";
 import { setState } from "../../app/reducers/auth.js";  
@@ -34,7 +34,7 @@ function MainLayout() {
   useEffect(() => {
     async function verifyAuth() {
       try {
-        const response = await fetch(`${API_BASE_URL}/auth/verifyToken`, {
+        const response = await fetch(`${BACKEND_URL}/auth/verifyToken`, {
           credentials: "include",
         });
 
@@ -70,7 +70,7 @@ export default MainLayout;
 export const loader = async() => {
   try {
     // Fetch data from the database
-    const response1 = await fetch(`https://portfolio-backend-0kjz.onrender.com/dbData`);
+    const response1 = await fetch(`${BACKEND_URL}/dbData`);
   
     if(!response1.ok) {
       throw new Response(JSON.stringify({ message: 'Could not fetch DB data.' }), {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import classes from '../Form.module.css';
 
-import { API_BASE_URL } from '../../../../app/apiConfig.js';
+import { BACKEND_URL } from '../../../../app/apiConfig.js';
 
 import { useSelector } from 'react-redux';
 
@@ -21,7 +21,7 @@ function EditProjects({ onEditedID, isError, handleFileChange }) {
   useEffect(() => {
     async function getProjectTechData() {
       try {
-        const response = await fetch(`${API_BASE_URL}/projectTech/${projectId}`);
+        const response = await fetch(`${BACKEND_URL}/projectTech/${projectId}`);
     
         if(!response.ok) {
           throw new Error(`There was an HTTP Error with a status code of: ${response.status}.`);

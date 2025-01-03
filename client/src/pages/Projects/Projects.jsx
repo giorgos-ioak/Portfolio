@@ -12,7 +12,7 @@ import ProjectContainer from '../../components/Containers/ProjectContainer/Proje
 
 import MyPagination from '../../components/UI/Pagination/MyPagination.jsx';
 
-import { API_BASE_URL } from '../../app/apiConfig.js';
+import { BACKEND_URL } from '../../app/apiConfig.js';
 
 
 
@@ -100,7 +100,7 @@ function Projects() {
                           text: project?._description,
                           id: project?.project_id
                         }} 
-                        image={project?.projectImage ? `${API_BASE_URL}/uploads/${project?.projectImage}` : null}
+                        image={project?.projectImage ? `${BACKEND_URL}/uploads/${project?.projectImage}` : null}
                         key={project.project_id}
                       />
                     ))}
