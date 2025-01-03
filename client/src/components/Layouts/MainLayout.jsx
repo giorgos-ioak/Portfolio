@@ -21,9 +21,6 @@ function MainLayout() {
   const dispatch = useDispatch();
 
 
-  console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
-
-
 
   // USE-EFFECT HOOK
   useEffect(() => {
