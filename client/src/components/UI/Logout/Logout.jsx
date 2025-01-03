@@ -4,6 +4,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from '../../../app/reducers/auth.js';
 
+import { API_BASE_URL } from '../../../app/apiConfig.js';
+
 function Logout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -13,7 +15,7 @@ function Logout() {
     try {
       e.preventDefault();
 
-      const response = await fetch('http://localhost:3000/auth/logout', {
+      const response = await fetch(`${API_BASE_URL}/auth/logout`, {
         credentials: 'include'
       });
 

@@ -3,8 +3,9 @@ import classes from './AhvievementDetails.module.css';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
+import { API_BASE_URL } from '../../app/apiConfig.js';
+
 import arrow from '../../assets/svgIcons/arrow.svg';
-import image from '../../assets/project2Img.jpg';
 
 import Button from '../../components/UI/Button/Button.jsx';
 
@@ -17,7 +18,7 @@ function AhvievementDetails() {
   const achievements = useSelector((state) => state.databaseData.value?.achievements);
   const achievement = achievements?.filter(obj => obj.achievement_id === Number(achievementId));
 
-  const imageUrl = achievement[0]?.achievementImage ? `http://localhost:3000/uploads/${achievement[0]?.achievementImage}` : null;
+  const imageUrl = achievement[0]?.achievementImage ? `${API_BASE_URL}/uploads/${achievement[0]?.achievementImage}` : null;
 
 
   const handleOpenNewTab = (url) => {

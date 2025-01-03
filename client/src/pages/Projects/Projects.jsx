@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 import projectSvg from '../../assets/svgIcons/project.svg';
-import project1Img from '../../assets/project1Img.jpg';
-
 
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx'
@@ -13,6 +11,8 @@ import SubContainer from '../../components/Containers/SubContainer/SubContainer.
 import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
 
 import MyPagination from '../../components/UI/Pagination/MyPagination.jsx';
+
+import { API_BASE_URL } from '../../app/apiConfig.js';
 
 
 
@@ -100,7 +100,7 @@ function Projects() {
                           text: project?._description,
                           id: project?.project_id
                         }} 
-                        image={project?.projectImage ? `http://localhost:3000/uploads/${project?.projectImage}` : null}
+                        image={project?.projectImage ? `${API_BASE_URL}/uploads/${project?.projectImage}` : null}
                         key={project.project_id}
                       />
                     ))}

@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 
 import arrow from '../../assets/svgIcons/arrow.svg';
 
+import { API_BASE_URL } from '../..//app/apiConfig.js';
+
 import Button from '../../components/UI/Button/Button.jsx';
 import { useEffect, useState } from 'react';
 
@@ -29,7 +31,7 @@ function ProjectDetails() {
   useEffect(() => {   
     async function getProjectTechnologies() {
       try {
-        const response = await fetch(`http://localhost:3000/projectTech/${projectId}`);
+        const response = await fetch(`${API_BASE_URL}/projectTech/${projectId}`);
     
         if(!response.ok) {
           throw new Response(JSON.stringify({ message: 'Could not fetch Project Technologies' }), {
@@ -63,7 +65,7 @@ function ProjectDetails() {
 
 
 
-  const imageUrl = project[0]?.projectImage ? `http://localhost:3000/uploads/${project[0]?.projectImage}` : null;
+  const imageUrl = project[0]?.projectImage ? `${API_BASE_URL}/uploads/${project[0]?.projectImage}` : null;
 
   const handleOpenNewTab = (url) => {
     window.open(`${url}`, '_blank');
