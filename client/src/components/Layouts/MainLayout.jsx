@@ -21,6 +21,9 @@ function MainLayout() {
   const dispatch = useDispatch();
 
 
+  console.log('Backend URL:', process.env.REACT_APP_BACKEND_URL);
+
+
 
   // USE-EFFECT HOOK
   useEffect(() => {
@@ -34,7 +37,7 @@ function MainLayout() {
   useEffect(() => {
     async function verifyAuth() {
       try {
-        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/verifyToken`, {
+        const response = await fetch(`${BACKEND_URL}/auth/verifyToken`, {
           credentials: "include",
         });
 
@@ -70,7 +73,7 @@ export default MainLayout;
 export const loader = async() => {
   try {
     // Fetch data from the database
-    const response1 = await fetch(`${process.env.REACT_APP_BACKEND_URL}/dbData`);
+    const response1 = await fetch(`${BACKEND_URL}/dbData`);
   
     if(!response1.ok) {
       throw new Response(JSON.stringify({ message: 'Could not fetch DB data.' }), {
