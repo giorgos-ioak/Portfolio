@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { logout } from '../../../app/reducers/auth.js';
 
-import { API_BASE_URL } from '../../../app/apiConfig.js';
+import { BACKEND_URL } from '../../../app/apiConfig.js';
 
 function Logout() {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ function Logout() {
     try {
       e.preventDefault();
 
-      const response = await fetch(`${API_BASE_URL}/auth/logout`, {
+      const response = await fetch(`${BACKEND_URL}/auth/logout`, {
         credentials: 'include'
       });
 

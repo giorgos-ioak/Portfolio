@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 
 import { login } from '../../../app/reducers/auth.js';
 
-import { API_BASE_URL } from '../../../app/apiConfig.js';
+import { BACKEND_URL } from '../../../app/apiConfig.js';
 
 
 function Login() {
@@ -24,7 +24,7 @@ function Login() {
       const formData = new FormData(e.target);
       const data = Object.fromEntries(formData);
 
-      const response = await fetch(`${API_BASE_URL}/auth/login`, {
+      const response = await fetch(`${BACKEND_URL}/auth/login`, {
         method: 'POST',
         credentials: 'include',
         headers: {'Content-Type': 'application/json'},
