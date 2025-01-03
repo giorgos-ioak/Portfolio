@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useMediaQuery } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import classes from '../SkillSection/SkillSection.module.css';
+import portfolio from '../../../../assets/svgIcons/portfolio.svg';
 
 import TitleContainer from '../../../../components/Containers/TitleContainer/TitleContainer';
 import MainContainer from '../../../../components/Containers/MainContainer/MainContainer';
@@ -29,6 +30,7 @@ export default function PortfolioInfo() {
     <>
     <section className={classes.skillSection}>
         <TitleContainer 
+          image={portfolio}
           title='This Portfolio'
           className='titleContainer'
         />
