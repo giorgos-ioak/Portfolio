@@ -65,8 +65,6 @@ function ProjectDetails() {
 
   const imageUrl = project[0]?.projectImage ? `http://localhost:3000/uploads/${project[0]?.projectImage}` : null;
 
-  console.log(`Image URL: http://localhost:3000/uploads/${project[0].projectImage}`);
-
   const handleOpenNewTab = (url) => {
     window.open(`${url}`, '_blank');
   };
