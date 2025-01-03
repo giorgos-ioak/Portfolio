@@ -40,14 +40,21 @@ function Information() {
              display: 'flex',
              justifyContent: 'center',
              alignItems: 'center',
-             flexDirection: 'column' 
+             flexDirection: 'column'
             }}
           >
             <TabContext value={value}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList onChange={handleChange} aria-label="lab API tabs example">
-                  <Tab label="Education" value="1" sx={{fontWeight: 'bold'}}/>
-                  <Tab label="CV" value="2" sx={{fontWeight: 'bold'}}/>
+              <Box sx={{ borderBottom: 0, borderColor: 'black' }}>
+                <TabList 
+                  onChange={handleChange} 
+                  aria-label="lab API tabs example" 
+                  sx={{
+                    backgroundColor: '#f5f5f5',
+                    borderRadius: '5px'
+                  }}
+                >
+                  <Tab label="Education" value="1" sx={{fontWeight: '500', color: 'black'}}/>
+                  <Tab label="CV" value="2" sx={{fontWeight: '500', color: 'black'}}/>
                 </TabList>
               </Box>
               <TabPanel value="1">
