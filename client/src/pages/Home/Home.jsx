@@ -5,7 +5,7 @@ import ProjectSection from "./sections/ProjectsSection/ProjectSection.jsx";
 import AchievementsSection from "./sections/AchievementsSection/AchievementsSection.jsx";
 import Contact from "./sections/Contact/Contact.jsx";
 import PortfolioInfo from './sections/PortfolioInfo/PortfolioInfo.jsx';
-
+import Information from './sections/Information/Information.jsx';
 
 
 
@@ -16,6 +16,7 @@ function Home() {
       <HeroSection />
       <SummarySection />
       <SkillSection />
+      <Information />
       <PortfolioInfo />
       <ProjectSection />
       <AchievementsSection />

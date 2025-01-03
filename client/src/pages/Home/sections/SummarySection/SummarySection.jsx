@@ -16,8 +16,15 @@ function SummarySection() {
         <p className={classes.p}>
         I am a 24 year old highly motivated and detail-oriented <strong>Full-Stack Software Developer</strong> based in Thessaloniki, Greece.<br/>I have experience designing and building dynamic, responsive, and user-friendly web applications.<br/><br/>
 
-        My technical expertise includes JavaScript, C#, React.js, Node.js, Express.js, Redux Toolkit, React Router and .NET Framework.
-        <br/><br/>My GitHub portfolio showcases a diverse range of projects that demonstrate my ability to develop robust <strong>full stack</strong> applications. I am committed to staying at the forefront of emerging technologies and delivering impactful solutions for clients.
+        My technical expertise includes JavaScript, C#, React.js, Node.js, Express.js, and .NET Framework.
+        <br/><br/>My GitHub portfolio showcases a diverse range of projects that demonstrate my ability to develop robust <strong>full stack</strong> applications. I stay updated with new technologies to create effective and reliable digital solutions for clients.
+
+
+
+
+
+
+
         </p>
     </section>
   )

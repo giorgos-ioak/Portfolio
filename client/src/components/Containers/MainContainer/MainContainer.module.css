@@ -19,6 +19,16 @@
   padding-top: 2rem;
 }
 
+.mainContainer_Information {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  height: 55vh;
+  margin-top: 2rem;
+  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  padding-top: 2rem;
+}
+
 .mainContainer_PortfolioInfo_expanded {
   display: flex;
   flex-direction: column;
@@ -89,6 +99,10 @@
     height: 65vh;
   }
 
+  .mainContainer_Information {
+    height: 80vh;
+  }
+
   .mainContainer_PortfolioInfo_expanded {
     height: 190vh;
   }
@@ -129,6 +143,11 @@
     height: 70vh;
   }
 
+  .mainContainer_Information {
+    height: 85vh;
+  }
+
+
   .mainContainer_PortfolioInfo_expanded {
     height: 190vh;
   }
@@ -164,6 +183,10 @@
     height: 65vh;
   }
 
+  .mainContainer_Information {
+    height: 78vh;
+  }
+
   .mainContainer_PortfolioInfo_expanded {
     height: 165vh;
   }
@@ -192,6 +215,10 @@
 
   .mainContainer_PortfolioInfo {
     height: 65vh;
+  }
+
+  .mainContainer_Information {
+    height: 75vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -229,6 +256,10 @@
     height: 60vh;  
   }
 
+  .mainContainer_Information {
+    height: 65vh;
+  }
+
   .mainContainer_PortfolioInfo_expanded {
     height: 140vh;
   }
@@ -257,6 +288,10 @@
     height: 55vh;  
   }
 
+  .mainContainer_Information {
+    height: 60vh;
+  }
+
   .mainContainer_PortfolioInfo_expanded {
     height: 125vh;
   }
@@ -281,6 +316,10 @@
 
   .mainContainer_PortfolioInfo {
     height: 55vh;  
+  }
+
+  .mainContainer_Information {
+    height: 60vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -308,6 +347,10 @@
 
   .mainContainer_PortfolioInfo {
     height: 55vh;  
+  }
+
+  .mainContainer_Information {
+    height: 60vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
