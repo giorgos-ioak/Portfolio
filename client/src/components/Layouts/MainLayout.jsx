@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useLoaderData, useLocation } from "react-router-dom";
 
-// import { BACKEND_URL } from "../../app/apiConfig.js"; 
+import { BACKEND_URL } from "../../app/apiConfig.js"; 
 
 import { storeData } from "../../app/reducers/databaseData.js";
 import { setState } from "../../app/reducers/auth.js";  
