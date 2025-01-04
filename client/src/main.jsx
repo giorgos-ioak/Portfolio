@@ -1,8 +1,8 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/index.css';
 
-import MainLayout from './components/Layouts/MainLayout.jsx';
+import MainLayoutWrapper from './components/Layouts/MainLayoutWrapper.jsx';
 import Home from './pages/Home/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
@@ -29,7 +29,11 @@ import { store } from './app/store.js';
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
+    element:(
+      <Suspense fallback={<Loading />}>
+        <MainLayoutWrapper />
+      </Suspense> 
+    ),
     errorElement: <ErrorPage />,
     loader: dbData,
     children: [
