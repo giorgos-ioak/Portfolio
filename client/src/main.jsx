@@ -13,6 +13,7 @@ import ErrorPage from './components/UI/ErrorPage/ErrorPage.jsx';
 import Login from './components/UI/Login/Login.jsx';
 import Logout from './components/UI/Logout/Logout.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import Loading from './components/UI/Loading/Loading.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
