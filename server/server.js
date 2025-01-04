@@ -4,6 +4,7 @@ import mysql from 'mysql2';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
 
 import dataRoutes from './routes/data.js';
@@ -13,6 +14,12 @@ import authRoutes from './routes/auth.js';
 
 const app = express();
 dotenv.config();
+
+
+// Define __dirname for ES modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 // Middleware
 app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
