@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 import projectSvg from '../../../../assets/svgIcons/project.svg';
-import project1Img from '../../../../assets/project1Img.jpg';
-import project2Img from '../../../../assets/project2Img.jpg';
-import project3Img from '../../../../assets/project3Img.jpg';
 
 import ProjectContainer from '../../../../components/Containers/ProjectContainer/ProjectContainer.jsx';
 import Button from '../../../../components/UI/Button/Button.jsx';
@@ -45,7 +42,7 @@ function ProjectSection() {
                 text: projects?.[0]._description,
                 id: projects?.[0].project_id
               }} 
-              image={project1Img}
+              image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
             />
           }
 
@@ -57,7 +54,7 @@ function ProjectSection() {
                   text: projects?.[0]._description,
                   id: projects?.[0].project_id
                 }} 
-                image={project1Img}
+                image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -66,7 +63,7 @@ function ProjectSection() {
                   text: projects?.[1]._description,
                   id: projects?.[1].project_id
                 }}
-                image={project2Img}
+                image={projects?.[1].projectImage ? `http://localhost:3000/uploads/${projects?.[1].projectImage}` : null}
               />
             </>
           }
@@ -79,7 +76,7 @@ function ProjectSection() {
                   text: projects?.[0]._description,
                   id: projects?.[0].project_id
                 }}
-                image={project1Img}
+                image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -88,7 +85,7 @@ function ProjectSection() {
                   text: projects?.[1]._description,
                   id: projects?.[1].project_id
                 }}
-                image={project2Img}
+                image={projects?.[1].projectImage ? `http://localhost:3000/uploads/${projects?.[1].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -97,7 +94,7 @@ function ProjectSection() {
                   text: projects?.[2]._description,
                   id: projects?.[2].project_id
                 }} 
-                image={project3Img}
+                image={projects?.[2].projectImage ? `http://localhost:3000/uploads/${projects?.[2].projectImage}` : null}
               />
             </>
           }
