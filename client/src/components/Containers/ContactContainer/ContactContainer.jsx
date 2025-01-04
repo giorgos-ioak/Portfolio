@@ -12,7 +12,8 @@ function ContactContainer() {
     event.preventDefault();
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "7512dd43-84c5-48b0-9e82-d7ad7be681af");
+    formData.append("access_key", import.meta.env.VITE_ACCESS_KEY);
+    
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
