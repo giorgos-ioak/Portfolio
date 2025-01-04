@@ -387,11 +387,23 @@
   .mainContainer_ContactSection {
     height: 110vh;
   }
+
+  .mainContainer_Information {
+    height: 120vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 100vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 250vh;
+  }
 }
 
 @media (min-height: 541px) and (max-height: 600px)  {
   .mainContainer_SkillSection {
-    height: 120vh;
+    height: 130vh;
   }
 
   .mainContainer_ProjectSection {
@@ -405,11 +417,23 @@
   .mainContainer_ContactSection {
     height: 100vh;
   }
+
+  .mainContainer_Information {
+    height: 120vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 100vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 250vh;
+  }
 }
 
 @media (min-height: 601px) and (max-height: 700px)  {
   .mainContainer_SkillSection {
-    height: 100vh;
+    height: 115vh;
   }
 
   .mainContainer_ProjectSection {
@@ -423,15 +447,27 @@
   .mainContainer_ContactSection {
     height: 90vh;
   }
+
+  .mainContainer_Information {
+    height: 105vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 90vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 225vh;
+  }
 }
 
 @media (min-height: 701px) and (max-height: 800px)  {
   .mainContainer_SkillSection {
-    height: 88vh;
+    height: 100vh;
   }
 
   .mainContainer_ProjectSection {
-    height: 78vh;
+    height: 82vh;
   }
 
   .mainContainer_AchievementSection {
@@ -441,6 +477,18 @@
   .mainContainer_ContactSection {
     height: 75vh;
   }
+
+  .mainContainer_Information {
+    height: 92vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 82vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 190vh;
+  }
 }
 
 
@@ -448,7 +496,7 @@
 /* For medium to large screen heights (laptops, desktops) */
 @media (min-height: 801px) and (max-height: 900px)  {
   .mainContainer_SkillSection {
-    height: 78vh;
+    height: 90vh;
   }
 
   .mainContainer_AchievementSection {
@@ -457,6 +505,22 @@
 
   .mainContainer_ContactSection {
     height: 67vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 72vh;
+  }
+
+  .mainContainer_Information {
+    height: 85vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 70vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 170vh;
   }
 }
 
