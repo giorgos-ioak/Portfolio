@@ -3,6 +3,7 @@ import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
+import path from 'path';
 
 
 import dataRoutes from './routes/data.js';
@@ -50,12 +51,20 @@ db.connect((err) => {
 });
 
 
+// Server Static FIles from the React App
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 
 
 // ROUTES
 app.use('/', dataRoutes);
 app.use('/auth', authRoutes);
+
+
+//Fallback route for React Router
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
 
 
 const PORT = process.env.PORT || 3000;
