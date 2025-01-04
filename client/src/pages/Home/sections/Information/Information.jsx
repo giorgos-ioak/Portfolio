@@ -45,16 +45,29 @@ function Information() {
           >
             <TabContext value={value}>
               <Box sx={{ borderBottom: 0, borderColor: 'black' }}>
-                <TabList 
-                  onChange={handleChange} 
-                  aria-label="lab API tabs example" 
-                  sx={{
-                    backgroundColor: '#f5f5f5',
-                    borderRadius: '5px'
-                  }}
-                >
-                  <Tab label="Education" value="1" sx={{fontWeight: '500', color: 'black'}}/>
-                  <Tab label="CV" value="2" sx={{fontWeight: '500', color: 'black'}}/>
+                <TabList onChange={handleChange} aria-label="lab API tabs example">
+                  <Tab 
+                    label="Education" 
+                    value="1" 
+                    sx={{
+                      fontWeight: '400',
+                      color: 'black',
+                      '&.Mui-selected': {
+                        fontWeight: '800'
+                      }
+                      }}
+                    />
+                  <Tab 
+                    label="CV" 
+                    value="2" 
+                    sx={{
+                      fontWeight: '400',
+                      color: 'black',
+                      '&.Mui-selected': {
+                        fontWeight: '800'
+                      }
+                    }}
+                  />
                 </TabList>
               </Box>
               <TabPanel value="1">

@@ -1,11 +1,30 @@
-import styles from './Loading.module.css';
+import CircularProgress from '@mui/material/CircularProgress';
+import Box from '@mui/material/Box';
+import { Typography } from '@mui/material';
 
-function Loading() {
+export default function Loading() {
   return (
-    <div className={styles.loadingContainer}>
-      <div className={styles.loader}></div>
-    </div>
-  )
+    <Box sx={{ 
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '2rem',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '2rem'
+      }}
+    >
+      <CircularProgress />
+      <Typography 
+        variant="h6" 
+        gutterBottom
+        sx={{ 
+          textAlign: 'center',
+          fontFamily: 'Montserrat',
+          fontWeight: '500'
+        }}
+      >
+        Loading. Please wait..
+      </Typography>
+    </Box>
+  );
 }
-
-export default Loading;

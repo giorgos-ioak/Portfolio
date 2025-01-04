@@ -1,8 +1,9 @@
-import { StrictMode } from 'react';
+import { StrictMode, Suspense, lazy } from 'react';
 import { createRoot } from 'react-dom/client';
+
 import './styles/index.css';
 
-import MainLayout from './components/Layouts/MainLayout.jsx';
+import MainLayoutWrapper from './components/Layouts/MainLayoutWrapper.jsx';
 import Home from './pages/Home/Home.jsx';
 import Projects from './pages/Projects/Projects.jsx';
 import ProjectDetails from './pages/ProjectDetails/ProjectDetails.jsx';
@@ -13,6 +14,7 @@ import ErrorPage from './components/UI/ErrorPage/ErrorPage.jsx';
 import Login from './components/UI/Login/Login.jsx';
 import Logout from './components/UI/Logout/Logout.jsx';
 import Contact from './pages/Contact/Contact.jsx';
+import Loading from './components/UI/Loading/Loading.jsx';
 
 import { loader as dbData } from './components/Layouts/MainLayout.jsx';
 
@@ -26,10 +28,17 @@ import { store } from './app/store.js';
 
 
 
+
+
+
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
+    element:(
+      <Suspense fallback={<Loading />}>
+        <MainLayoutWrapper />
+      </Suspense> 
+    ),
     errorElement: <ErrorPage />,
     loader: dbData,
     children: [

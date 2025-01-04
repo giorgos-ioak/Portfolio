@@ -17,13 +17,14 @@ import MainContainer from '../../../../components/Containers/MainContainer/MainC
 
 function ProjectSection() {
   // Setting the queries for different screen sizes.
-  const verySmallScreen = useMediaQuery('(max-width:370px)');
   const smallScreen = useMediaQuery('(max-width:600px)');
   const mediumScreen = useMediaQuery('(min-width:601px) and (max-width:1280px)');
   const largeScreen = useMediaQuery('(min-width:1281px)');
 
   // Getting the projects from the global state.
   const projects = useSelector((state) => state.databaseData.value?.projects);
+
+  console.log(projects);
 
 
   
@@ -45,7 +46,7 @@ function ProjectSection() {
                 text: projects?.[0]._description,
                 id: projects?.[0].project_id
               }} 
-              image={project1Img}
+              image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
             />
           }
 
@@ -57,7 +58,7 @@ function ProjectSection() {
                   text: projects?.[0]._description,
                   id: projects?.[0].project_id
                 }} 
-                image={project1Img}
+                image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -66,7 +67,7 @@ function ProjectSection() {
                   text: projects?.[1]._description,
                   id: projects?.[1].project_id
                 }}
-                image={project2Img}
+                image={projects?.[1].projectImage ? `http://localhost:3000/uploads/${projects?.[1].projectImage}` : null}
               />
             </>
           }
@@ -79,7 +80,7 @@ function ProjectSection() {
                   text: projects?.[0]._description,
                   id: projects?.[0].project_id
                 }}
-                image={project1Img}
+                image={projects?.[0].projectImage ? `http://localhost:3000/uploads/${projects?.[0].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -88,7 +89,7 @@ function ProjectSection() {
                   text: projects?.[1]._description,
                   id: projects?.[1].project_id
                 }}
-                image={project2Img}
+                image={projects?.[1].projectImage ? `http://localhost:3000/uploads/${projects?.[1].projectImage}` : null}
               />
 
               <ProjectContainer 
@@ -97,7 +98,7 @@ function ProjectSection() {
                   text: projects?.[2]._description,
                   id: projects?.[2].project_id
                 }} 
-                image={project3Img}
+                image={projects?.[2].projectImage ? `http://localhost:3000/uploads/${projects?.[2].projectImage}` : null}
               />
             </>
           }
