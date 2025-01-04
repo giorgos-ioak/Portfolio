@@ -371,6 +371,68 @@
 
 /*****  HEIGHT   *****/
 /* For small to medium screen heights (mobile portrait, small tablets) */
+@media (min-height: 400px) and (max-height: 449px)  {
+  .mainContainer_SkillSection {
+    height: 180vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 135vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 85vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 10vh;
+  }
+
+  .mainContainer_Information {
+    height: 130vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 135vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 310vh;
+  }
+}
+
+
+@media (min-height: 450px) and (max-height: 500px)  {
+  .mainContainer_SkillSection {
+    height: 155vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 118vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 80vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 110vh;
+  }
+
+  .mainContainer_Information {
+    height: 120vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 120vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 280vh;
+  }
+}
+
+
 @media (min-height: 501px) and (max-height: 540px)  {
   .mainContainer_SkillSection {
     height: 135vh;
