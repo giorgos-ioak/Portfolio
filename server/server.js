@@ -3,9 +3,6 @@ import cors from 'cors';
 import mysql from 'mysql2';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
 
 import dataRoutes from './routes/data.js';
 import authRoutes from './routes/auth.js';
@@ -16,9 +13,6 @@ const app = express();
 dotenv.config();
 
 
-// Define __dirname for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 
 // Middleware
@@ -58,23 +52,15 @@ db.connect((err) => {
 });
 
 
-// Server Static FIles from the React App
-app.use(express.static(path.join(__dirname, 'client/build')));
-
-
 
 // ROUTES
 app.use('/', dataRoutes);
 app.use('/auth', authRoutes);
 
 
-//Fallback route for React Router
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
-});
-
 
 const PORT = process.env.PORT || 3000;
+
 
 // START SERVER
 app.listen(PORT, () => {
