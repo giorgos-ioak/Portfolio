@@ -29,9 +29,6 @@ app.use(express.urlencoded({ extended: true }));
  
 
 
-const URL_DB = process.env.MYSQL_URL;
-
-
 /// CONFIGURE mySQL CONNECTION
 export const db = mysql.createConnection({ uri: process.env.MYSQL_URL });
 
@@ -60,5 +57,4 @@ const PORT = process.env.PORT || 3000;
 // START SERVER
 app.listen(PORT, () => {
   console.log("Server started successfully ");
-  console.log("Connecting to database with URL:", process.env.MYSQL_URL);
 });
