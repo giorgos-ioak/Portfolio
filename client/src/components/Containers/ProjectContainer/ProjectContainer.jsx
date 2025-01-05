@@ -10,10 +10,10 @@ function ProjectContainer({ project, image }) {
 
   return (
     <div className={classes.mainContainer}>
-      <div className={classes.imgContainer} >
-        <img 
-          className={`${classes.img} ${isLoaded ? 'loaded' : ''}`} 
-          src={image} 
+      <div className={`${classes.imgContainer} ${!isLoaded ? 'placeholder' : ''}`}>
+        <img
+          className={`${classes.img} ${isLoaded ? 'loaded' : ''}`}
+          src={image}
           alt="projectImage"
           onLoad={() => setIsLoaded(true)} // Mark image as loaded
         />
