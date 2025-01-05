@@ -91,7 +91,6 @@ function Projects() {
           <SubContainer className={smallScreen ? 'subContainerSmall_ProjectSection' : 'subContainer_ProjectSection'}> 
               {
                 <div className={classes.mainContainer}>
-
                   <div className={classes.innerContainer}>
                     {currentProjects.map((project) => (
                       <ProjectContainer 

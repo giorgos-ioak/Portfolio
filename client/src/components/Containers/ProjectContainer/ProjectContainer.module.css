@@ -10,33 +10,11 @@
 }
 
 
-.imgContainer {
-  width: 100%;
-  height: 240px;
-  position: relative;
-  background-color: #f0f0f0;
-  border-radius: 1rem 1rem 0 0;
-  overflow: hidden;
-}
-
-
-.imgContainer.placeholder {
-  background-color: #f0f0f0; /* Placeholder background color */
-}
-
-
 .img {
   width: 100%;
   height: 240px;
   object-fit: cover;
-  border-radius: 1rem 1rem 0 0;
-  opacity: 0; /* Hidden by default */
-  transition: opacity 0.3s ease-in-out; /* Smooth transition */
-}
-
-
-.img.loaded {
-  opacity: 1; /* Make visible when loaded */
+  border-radius: 1rem 1rem 0 0 ;
 }
 
 
@@ -51,7 +29,6 @@
   height: 100%;
   justify-content: space-between;
 }
-
 
 .label {
   font-family: 'Roboto';
