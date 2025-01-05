@@ -29,16 +29,11 @@ app.use(express.urlencoded({ extended: true }));
  
 
 
-
+const URL_DB = process.env.MYSQL_URL;
 
 
 /// CONFIGURE mySQL CONNECTION
-export const db = mysql.createConnection({
-  host: process.env.DB_HOST, 
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_DATABASE
-});
+export const db = mysql.createConnection({URL_DB});
 
 
 
