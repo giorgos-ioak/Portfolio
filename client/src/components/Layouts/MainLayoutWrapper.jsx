@@ -4,7 +4,7 @@ import Loading from "../UI/Loading/Loading.jsx";
 
 const MainLayout = lazy(() => import("./MainLayout.jsx"));
 
-const MainLayoutWrapper = () => {
+function MainLayoutWrapper(){
   const { data } = useLoaderData();
 
   return (

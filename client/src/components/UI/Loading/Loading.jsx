@@ -23,7 +23,7 @@ export default function Loading() {
           fontWeight: '500'
         }}
       >
-        Loading. Please wait..
+        Loading..
       </Typography>
     </Box>
   );
