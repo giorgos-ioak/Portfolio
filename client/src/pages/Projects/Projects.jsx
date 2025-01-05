@@ -1,17 +1,16 @@
 import classes from './Projects.module.css';
 import { useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { useState, useEffect, lazy, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 
 import projectSvg from '../../assets/svgIcons/project.svg';
 
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx'
 import SubContainer from '../../components/Containers/SubContainer/SubContainer.jsx';
-const ProjectContainer = lazy(() => import('../../components/Containers/ProjectContainer/ProjectContainer.jsx'));
+import ProjectContainer from '../../components/Containers/ProjectContainer/ProjectContainer.jsx';
 
 import MyPagination from '../../components/UI/Pagination/MyPagination.jsx';
-import Loading from '../../components/UI/Loading/Loading.jsx';
 
 import { BACKEND_URL } from '../../app/apiConfig.js';
 
@@ -94,19 +93,17 @@ function Projects() {
                 <div className={classes.mainContainer}>
 
                   <div className={classes.innerContainer}>
-                    <Suspense fallback={<Loading />}>
-                      {currentProjects.map((project) => (
-                        <ProjectContainer 
-                          project={{
-                            label: project?.title,
-                            text: project?._description,
-                            id: project?.project_id
-                          }} 
-                          image={project?.projectImage ? `${BACKEND_URL}/uploads/${project?.projectImage}` : null}
-                          key={project.project_id}
-                        />
-                      ))}
-                    </Suspense>
+                    {currentProjects.map((project) => (
+                      <ProjectContainer 
+                        project={{
+                          label: project?.title,
+                          text: project?._description,
+                          id: project?.project_id
+                        }} 
+                        image={project?.projectImage ? `${BACKEND_URL}/uploads/${project?.projectImage}` : null}
+                        key={project.project_id}
+                      />
+                    ))}
                   </div>
 
                   {(smallScreen || mediumScreen || largeScreen) &&

@@ -2,11 +2,22 @@ import classes from './ProjectContainer.module.css';
 import { Link } from 'react-router-dom';
 import Button from '../../UI/Button/Button';
 
+import { useState } from 'react';
+
 
 function ProjectContainer({ project, image }) { 
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
     <div className={classes.mainContainer}>
-      <img className={classes.img} src={image} alt='projectImage'/>
+      <div className={classes.imgContainer} >
+        <img 
+          className={`${classes.img} ${isLoaded ? 'loaded' : ''}`} 
+          src={image} 
+          alt="projectImage"
+          onLoad={() => setIsLoaded(true)} // Mark image as loaded
+        />
+      </div>
       
       <div className={classes.itemContainer}>
         <div className={classes.project}>
