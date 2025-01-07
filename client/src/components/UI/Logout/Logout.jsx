@@ -16,7 +16,7 @@ function Logout() {
       e.preventDefault();
 
       const response = await fetch(`${BACKEND_URL}/auth/logout`, {
-        credentials: 'same-origin'
+        credentials: 'include'
       });
 
       if(!response.ok) {

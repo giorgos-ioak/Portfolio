@@ -33,7 +33,9 @@ export async function login(req, res) {
     res.cookie('jwt', token, {
       httpOnly: true, // Prevent access via JavaScript (secure against XSS)
       secure: true,  // Set to `true` in production (requires HTTPS)
-      sameSite: 'None', // Helps prevent CSRF attacks
+      sameSite: 'None', // Helps prevent CSRF attacks,
+      domain: `${process.env.BACKEND_URL}`,
+      path: '/',
       maxAge: 2 * 60 * 60 * 1000
     });
 
@@ -51,7 +53,12 @@ export async function login(req, res) {
 
 export async function logout(req, res) {
   // Clear the cookie
-  res.clearCookie('jwt');
+  res.clearCookie('jwt', {
+    domain: `${BACKEND_URL}`, // Backend domain
+    path: '/', // Same path as when set
+    secure: true, // Matches the secure attribute
+    sameSite: 'None', // Matches the SameSite attribute
+  });
 
   res.status(200).json({ message: 'Logged out.' });
 };
