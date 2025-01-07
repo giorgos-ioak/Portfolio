@@ -40,8 +40,6 @@ function Projects() {
   const firstProjectIndex = lastProjectIndex - projectsPerPage;
   const currentProjects = projectData.slice(firstProjectIndex, lastProjectIndex);
 
-  console.log(currentProjects);
-
 
 
   /****  Change num of projects per page.  ****/
