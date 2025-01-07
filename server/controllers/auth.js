@@ -54,7 +54,7 @@ export async function login(req, res) {
 export async function logout(req, res) {
   // Clear the cookie
   res.clearCookie('jwt', {
-    domain: `${BACKEND_URL}`, // Backend domain
+    domain: `${process.env.BACKEND_URL}`, // Backend domain
     path: '/', // Same path as when set
     secure: true, // Matches the secure attribute
     sameSite: 'None', // Matches the SameSite attribute
