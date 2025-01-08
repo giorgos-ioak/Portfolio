@@ -12,7 +12,7 @@ function Contact() {
       <MainContainer className='mainContainer_ContactSection'>
         <SubContainer className='subContainer_ContactSection'>
           <ContactContainer />
-          <p className={classes.p}>Copyright 2024 © All Rights Reserved</p>
+          <p className={classes.p}>Copyright 2025 © All Rights Reserved</p>
         </SubContainer>
       </MainContainer>
     </section>
