@@ -9,6 +9,7 @@ import { BACKEND_URL } from '../..//app/apiConfig.js';
 
 import Button from '../../components/UI/Button/Button.jsx';
 import { useEffect, useState } from 'react';
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 function ProjectDetails() {
@@ -124,7 +125,7 @@ function ProjectDetails() {
                 className={classes.li}
                 style={{textAlign: 'center'}}
               >
-                FAILED TO LOAD...
+                Loading.. <CircularProgress />
               </div>
             )}
           </ul>
