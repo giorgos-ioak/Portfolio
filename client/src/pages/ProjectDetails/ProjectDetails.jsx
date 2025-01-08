@@ -125,7 +125,7 @@ function ProjectDetails() {
                 className={classes.li}
                 style={{textAlign: 'center'}}
               >
-                Loading.. <CircularProgress />
+                <CircularProgress />
               </div>
             )}
           </ul>
