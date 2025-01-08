@@ -40,7 +40,11 @@ export default function PortfolioInfo() {
           }
         >
           <SubContainer className={isSmallScreen ? 'subContainerSmall' : 'subContainer'}>
-            <div>
+            <div style={{
+              backgroundColor: 'white',
+              padding: '1.5rem',
+              borderRadius: '8px'
+            }}>
               <h2 className={classes.h2}>
                 This Portfolio is not just a basic or static website.<br/><br/> It is a robust <strong>full-stack web application</strong> built using a mySQL database, a backend server, and a dynamic frontend client.<br/><br/> You can find the code for this application on my <a href="https://github.com/giorgos-ioak/Portfolio" target="_blank" style={{color: 'red',textDecoration: 'none'}}>GitHub</a> repository.
               </h2>
@@ -53,10 +57,7 @@ export default function PortfolioInfo() {
                   gap: '1rem',
                   flexDirection: 'column',
                   justifyContent: 'center', 
-                  alignItems: 'center',
-                  backgroundColor: 'white',
-                  padding: '1rem',
-                  borderRadius: '0.5rem'
+                  alignItems: 'center'
                 }}
               >
                 <Accordion

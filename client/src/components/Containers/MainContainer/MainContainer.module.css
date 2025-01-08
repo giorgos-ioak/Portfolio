@@ -23,7 +23,7 @@
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  height: 55vh;
+  height: 60vh;
   margin-top: 2rem;
   background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
   padding-top: 2rem;
@@ -100,7 +100,7 @@
   }
 
   .mainContainer_Information {
-    height: 80vh;
+    height: 90vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -144,7 +144,7 @@
   }
 
   .mainContainer_Information {
-    height: 85vh;
+    height: 92vh;
   }
 
 
@@ -184,7 +184,7 @@
   }
 
   .mainContainer_Information {
-    height: 78vh;
+    height: 80vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -218,7 +218,7 @@
   }
 
   .mainContainer_Information {
-    height: 75vh;
+    height: 80vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -257,7 +257,7 @@
   }
 
   .mainContainer_Information {
-    height: 65vh;
+    height: 72vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -289,7 +289,7 @@
   }
 
   .mainContainer_Information {
-    height: 60vh;
+    height: 65vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -319,7 +319,7 @@
   }
 
   .mainContainer_Information {
-    height: 60vh;
+    height: 62vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -350,7 +350,7 @@
   }
 
   .mainContainer_Information {
-    height: 60vh;
+    height: 62vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -389,7 +389,7 @@
   }
 
   .mainContainer_Information {
-    height: 130vh;
+    height: 190vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -420,7 +420,7 @@
   }
 
   .mainContainer_Information {
-    height: 120vh;
+    height: 172vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -451,7 +451,7 @@
   }
 
   .mainContainer_Information {
-    height: 120vh;
+    height: 155vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -481,7 +481,7 @@
   }
 
   .mainContainer_Information {
-    height: 120vh;
+    height: 141vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -511,7 +511,7 @@
   }
 
   .mainContainer_Information {
-    height: 105vh;
+    height: 130vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -541,7 +541,7 @@
   }
 
   .mainContainer_Information {
-    height: 92vh;
+    height: 115vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -574,7 +574,7 @@
   }
 
   .mainContainer_Information {
-    height: 85vh;
+    height: 100vh;
   }
 
   .mainContainer_PortfolioInfo {

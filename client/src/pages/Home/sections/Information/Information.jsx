@@ -40,7 +40,10 @@ function Information() {
              display: 'flex',
              justifyContent: 'center',
              alignItems: 'center',
-             flexDirection: 'column'
+             flexDirection: 'column',
+             backgroundColor: 'white',
+             padding: '0.3rem',
+             borderRadius: '9px'
             }}
           >
             <TabContext value={value}>
@@ -71,7 +74,8 @@ function Information() {
                 </TabList>
               </Box>
               <TabPanel value="1">
-              <Box sx={{ marginTop: 2 }}>
+              <Box sx={{ marginTop: 2 }}
+              >
                 <p className={classes.p}>
                   I have pursued the following educational qualifications that have shaped my technical and professional skills:
                 </p>
