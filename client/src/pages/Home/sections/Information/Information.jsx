@@ -121,7 +121,6 @@ function Information() {
                   <a 
                     href="https://drive.google.com/file/d/1EzrGeO998ArNxS3OkwPJ_mvq_Z2pfFwA/view?usp=drive_link" 
                     target="_blank" 
-                    rel="noopener noreferrer"
                     style={{ textDecoration: 'none' }}
                   >
                     <button 
