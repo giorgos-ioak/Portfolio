@@ -5,9 +5,6 @@ import { Link } from 'react-router-dom';
 
 
 import projectSvg from '../../../../assets/svgIcons/project.svg';
-import project1Img from '../../../../assets/project1Img.jpg';
-import project2Img from '../../../../assets/project2Img.jpg';
-import project3Img from '../../../../assets/project3Img.jpg';
 
 import ProjectContainer from '../../../../components/Containers/ProjectContainer/ProjectContainer.jsx';
 import Button from '../../../../components/UI/Button/Button.jsx';

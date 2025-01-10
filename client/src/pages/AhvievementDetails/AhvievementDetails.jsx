@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
 import arrow from '../../assets/svgIcons/arrow.svg';
-import image from '../../assets/project2Img.jpg';
 
 import Button from '../../components/UI/Button/Button.jsx';
 

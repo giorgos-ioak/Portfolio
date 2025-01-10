@@ -4,8 +4,6 @@ import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 
 import projectSvg from '../../assets/svgIcons/project.svg';
-import project1Img from '../../assets/project1Img.jpg';
-
 
 import TitleContainer from '../../components/Containers/TitleContainer/TitleContainer.jsx';
 import MainContainer from '../../components/Containers/MainContainer/MainContainer.jsx'
