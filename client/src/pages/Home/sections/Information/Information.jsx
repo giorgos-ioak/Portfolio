@@ -102,7 +102,46 @@ function Information() {
               </TabPanel>
 
               <TabPanel value="2">
-                Item Two
+                <Box 
+                  sx={{ 
+                    marginTop: 2, 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center', 
+                    padding: '1rem', 
+                    backgroundColor: '#f9f9f9', 
+                    borderRadius: '8px', 
+                    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+                    textAlign: 'center'
+                  }}
+                >
+                  <p style={{ margin: '1rem 0', fontSize: '1rem', color: '#555' }}>
+                    Click the button below to view or download my CV.
+                  </p>
+                  <a 
+                    href="https://drive.google.com/file/d/1EzrGeO998ArNxS3OkwPJ_mvq_Z2pfFwA/view?usp=drive_link" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <button 
+                      style={{
+                        backgroundColor: '#1976d2',
+                        color: '#fff',
+                        border: 'none',
+                        padding: '0.8rem 1.5rem',
+                        borderRadius: '5px',
+                        fontSize: '1rem',
+                        cursor: 'pointer',
+                        transition: 'background-color 0.3s ease'
+                      }}
+                      onMouseOver={(e) => (e.target.style.backgroundColor = '#155a9e')}
+                      onMouseOut={(e) => (e.target.style.backgroundColor = '#1976d2')}
+                    >
+                      View CV
+                    </button>
+                  </a>
+                </Box>
               </TabPanel>
             </TabContext>
           </Box>
