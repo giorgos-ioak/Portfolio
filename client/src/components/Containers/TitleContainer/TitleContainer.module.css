@@ -2,7 +2,7 @@
   width: 60%;
   margin: auto;
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
 }
 
 
@@ -10,7 +10,7 @@
 .h2 {
   font-family: 'Montserrat';
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 2rem;
 }
 
 
