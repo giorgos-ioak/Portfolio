@@ -50,13 +50,13 @@
 
 .label {
   font-family: 'Montserrat';
-  color: rgba(114, 170, 255);
+  color: rgb(25, 118, 210);
   font-weight: 700;
   font-size: 1.2rem;
 }
 
 .btn {
-  background-color: rgb(114, 170, 255);
+  background-color: rgb(25, 118, 210);
   border: none;
   font-family: 'Montserrat';
   font-weight: 600;
@@ -71,7 +71,7 @@
 
 
 .btn:hover {
-  color: black;
+  background-color: black;
   transition: 0.3s ease-out;
 }
 

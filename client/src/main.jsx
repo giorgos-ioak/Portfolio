@@ -11,6 +11,8 @@ import AchievementDetails from './pages/AhvievementDetails/AhvievementDetails.js
 import Dashboard from './pages/Dashboard/Dashboard.jsx';
 import ErrorPage from './components/UI/ErrorPage/ErrorPage.jsx';
 import Login from './components/UI/Login/Login.jsx';
+import PortfolioInfo from './pages/Home/sections/PortfolioInfo/PortfolioInfo.jsx';
+import MyCV from './pages/myCV/MyCV.jsx';
 import Logout from './components/UI/Logout/Logout.jsx';
 import Contact from './pages/Contact/Contact.jsx';
 import Loading from './components/UI/Loading/Loading.jsx';
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
       {
         path: 'dashboard',
         element: <Dashboard />,
+      },
+      {
+        path: 'portfolio',
+        element: <PortfolioInfo />,
+      },
+      {
+        path: 'cv',
+        element: <MyCV />,
       },
       {
         path: 'contact',

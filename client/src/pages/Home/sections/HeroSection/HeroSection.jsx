@@ -12,6 +12,19 @@ function HeroSection() {
           </div>
         <img src={image} className={classes.img} alt='profilePicture'/>
       </div>
+      <svg
+        className={classes.curvedLine}
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 100 10"
+        preserveAspectRatio="none"
+      >
+        <path
+          d="M0,10 Q50,0 100,10"
+          fill="none"
+          stroke="red"
+          strokeWidth="2"
+        />
+      </svg>
     </section>
   )
 }

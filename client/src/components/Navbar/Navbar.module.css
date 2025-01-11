@@ -53,15 +53,15 @@
 
 .login_button {
   color: white;
-  background-color: rgb(114, 170, 255);
+  background-color: rgb(25, 118, 210);
   border: none;
   padding: 0.6rem 1.8rem;
   font-weight: 600;
 }
 
 .login_button:hover {
-  color: black;
-  background-color: rgb(114, 170, 255);
+  background-color: black;
+  transition: 0.3s ease-out;
 }
 
 .checkbox {
@@ -79,7 +79,7 @@
 
 
 /*****  WIDTH   *****/
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
   .nav {
     height: 4.5rem;
     padding: 0 2rem;
@@ -141,88 +141,6 @@
     left: 0;
     z-index: 9;
     background: rgba(0, 0, 0, 0.5);
-  }
-}
-
-
-
-@media (min-width: 601px) and (max-width: 768px) {
-  .nav {
-    height: 4.5rem;
-    padding: 0 2rem;
-  }
-  
-  
-  .open_sidebar_button {
-    position: absolute; 
-    right: 2rem;
-    z-index: 11; 
-    cursor: pointer; 
-  }
-
-  .links_container {
-    flex-direction: column;
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    gap: 1rem;
-    right: -100%;
-    z-index: 10;
-    width: 50vw;
-    height: 100vh;
-    background-color: #fff;
-    box-shadow: -5px 0 5px rgba(0, 0, 0, 0.25);
-    transition: right 0.75s ease-out;
-  }
-
-  .nav_link {
-    padding: 1rem;
-    text-align: center;
-    width: 100%;
-  }
-
-  .login_button {
-    padding: 0.6rem 1.2rem;
-    align-self: center;
-    width: 40%;
-  }
-
-  .open_sidebar_button, .close_sidebar_button {
-    display: block;
-    cursor: pointer;
-  }
-
-  input[type="checkbox"]:checked ~ .links_container {
-    right: 0;
-  }
-
-  input[type="checkbox"]:checked ~ .open_sidebar_button {
-    display: none;
-  }
-
-  input[type="checkbox"]:checked ~ .overlay {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.5);
-  }
-}
-
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .nav {
-    padding: 0 3rem;
-  }
-
-  .links_container {
-    gap: 1rem;
-  }
-  
-  .nav_link {
-    font-size: 0.9rem;
   }
 }
 

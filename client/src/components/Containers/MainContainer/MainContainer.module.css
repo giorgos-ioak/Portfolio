@@ -5,9 +5,11 @@
   gap: 3rem;
   height: 60vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
+
+
 
 .mainContainer_PortfolioInfo {
   display: flex;
@@ -15,7 +17,7 @@
   gap: 3rem;
   height: 55vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -25,7 +27,7 @@
   gap: 3rem;
   height: 60vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -35,7 +37,7 @@
   gap: 3rem;
   height: 115vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -46,7 +48,7 @@
   gap: 3rem;
   height: 75vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -57,7 +59,7 @@
   gap: 3rem;
   height: 65vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 
@@ -67,7 +69,7 @@
   gap: 3rem;
   height: 65vh;
   margin-top: 2rem;
-  background: linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);
+  background: linear-gradient(135deg, hsla(210, 55%, 58%, 1) 0%, hsla(250, 60%, 63%, 1) 100%);
   padding-top: 2rem;
 }
 

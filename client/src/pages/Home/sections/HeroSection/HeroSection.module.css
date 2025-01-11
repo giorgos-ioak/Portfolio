@@ -33,15 +33,18 @@
   width: 60%;
   margin: auto;
   padding-top: 5rem;
+  position: relative;
 }
 
 
 
-
-
-
-
-
+.curvedLine {
+  display: block;
+  width: 55%;
+  height: 0.5rem;
+  margin-top: 2rem;
+  padding: 0;
+}
 
 
 
@@ -71,7 +74,6 @@
   .heroSection {
     width: 80%;
   }
-
 
   .h1 {
     font-size: 1.8rem;

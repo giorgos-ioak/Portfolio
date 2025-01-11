@@ -35,6 +35,12 @@ function Navbar() {
         <Link to='/achievements' className={classes.nav_link}>
           Achievements
         </Link>
+        <Link to='/portfolio' className={classes.nav_link}>
+          This Portfolio
+        </Link>
+        <Link to='/cv' className={classes.nav_link}>
+          My CV
+        </Link>
         {isLoggedIn ? (
           <Link to='/dashboard' className={classes.nav_link}>
             Dashboard
