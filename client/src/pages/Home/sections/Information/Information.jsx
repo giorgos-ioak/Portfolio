@@ -125,17 +125,17 @@ function Information() {
                   >
                     <button 
                       style={{
-                        backgroundColor: '#1976d2',
-                        color: '#fff',
+                        backgroundColor: 'rgb(25, 118, 210)',
+                        color: 'white',
                         border: 'none',
                         padding: '0.8rem 1.5rem',
                         borderRadius: '5px',
                         fontSize: '1rem',
                         cursor: 'pointer',
-                        transition: 'background-color 0.3s ease'
+                        transition: '0.3s ease'
                       }}
-                      onMouseOver={(e) => (e.target.style.backgroundColor = '#155a9e')}
-                      onMouseOut={(e) => (e.target.style.backgroundColor = '#1976d2')}
+                      onMouseOver={(e) => (e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.9)')}
+                      onMouseOut={(e) => (e.target.style.backgroundColor = 'rgb(25, 118, 210)')}
                     >
                       View CV
                     </button>

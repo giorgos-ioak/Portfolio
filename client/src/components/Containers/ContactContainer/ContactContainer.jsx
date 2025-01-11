@@ -68,7 +68,7 @@ function ContactContainer() {
             }} 
             onClick={() => handleRedirect('https://github.com/giorgos-ioak')}
           >
-            <GitHubIcon/>
+            <GitHubIcon />
           </button>
         </div>
       </div>
