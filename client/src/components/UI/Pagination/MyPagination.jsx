@@ -25,8 +25,8 @@ function MyPagination({ totalItems, itemsPerPage, pageClick, smallScreen }) {
       <Pagination 
         sx={{
           '& .MuiPaginationItem-root': {
-            backgroundColor: '#f5f5f5', 
             color: 'black',
+            marginRight: '0.2rem',
             '&:hover': {
               backgroundColor: '#333333',
               color: 'white',
@@ -40,6 +40,7 @@ function MyPagination({ totalItems, itemsPerPage, pageClick, smallScreen }) {
         }}
         count={totalPages} 
         page={currentPage} 
+        shape='rounded'
         onChange={handlePageChange}
         siblingCount={smallScreen ? 0 : 1} 
         boundaryCount={smallScreen ? 1 : 2}
