@@ -55,7 +55,7 @@ function Information() {
                 Click the button below to view or download my CV.
               </p>
               <a 
-                href="https://drive.google.com/file/d/1EzrGeO998ArNxS3OkwPJ_mvq_Z2pfFwA/view?usp=drive_link" 
+                href="https://drive.google.com/file/d/11T-87ZdkH9BbBUME9KBO4z-xtnXVwUu_/view?usp=sharing" 
                 target="_blank" 
                 style={{ textDecoration: 'none' }}
               >
