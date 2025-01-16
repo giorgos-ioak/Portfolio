@@ -18,13 +18,6 @@ function SummarySection() {
 
         My technical expertise includes JavaScript, C#, React.js, Node.js, Express.js, and .NET Framework.
         <br/><br/>My GitHub portfolio showcases a diverse range of projects that demonstrate my ability to develop robust <strong>full stack</strong> applications. I stay updated with new technologies to create effective and reliable digital solutions for clients.
-
-
-
-
-
-
-
         </p>
     </section>
   )
