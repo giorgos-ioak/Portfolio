@@ -10,6 +10,8 @@
 }
 
 
+/*linear-gradient(135deg, hsla(216, 100%, 72%, 1) 0%, hsla(215, 100%, 87%, 1) 100%);*/
+
 
 .mainContainer_PortfolioInfo {
   display: flex;
@@ -375,15 +377,15 @@
 /* For small to medium screen heights (mobile portrait, small tablets) */
 @media (min-height: 400px) and (max-height: 449px)  {
   .mainContainer_SkillSection {
-    height: 180vh;
+    height: 140vh;
   }
 
   .mainContainer_ProjectSection {
-    height: 135vh;
+    height: 160vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 85vh;
+    height: 138vh;
   }
 
   .mainContainer_ContactSection {
@@ -391,7 +393,7 @@
   }
 
   .mainContainer_Information {
-    height: 190vh;
+    height: 140vh;
   }
 
   .mainContainer_PortfolioInfo {
@@ -399,22 +401,22 @@
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 415vh;
+    height: 280vh;
   }
 }
 
 
 @media (min-height: 450px) and (max-height: 500px)  {
   .mainContainer_SkillSection {
-    height: 155vh;
+    height: 130vh;
   }
 
   .mainContainer_ProjectSection {
-    height: 118vh;
+    height: 145vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 80vh;
+    height: 125vh;
   }
 
   .mainContainer_ContactSection {
@@ -422,132 +424,11 @@
   }
 
   .mainContainer_Information {
-    height: 172vh;
+    height: 130vh;
   }
 
   .mainContainer_PortfolioInfo {
     height: 120vh;
-  }
-
-  .mainContainer_PortfolioInfo_expanded {
-    height: 385vh;
-  }
-}
-
-
-@media (min-height: 501px) and (max-height: 540px)  {
-  .mainContainer_SkillSection {
-    height: 135vh;
-  }
-
-  .mainContainer_ProjectSection {
-    height: 115vh;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 80vh;
-  }
-
-  .mainContainer_ContactSection {
-    height: 110vh;
-  }
-
-  .mainContainer_Information {
-    height: 155vh;
-  }
-
-  .mainContainer_PortfolioInfo {
-    height: 100vh;
-  }
-
-  .mainContainer_PortfolioInfo_expanded {
-    height: 345vh;
-  }
-}
-
-@media (min-height: 541px) and (max-height: 600px)  {
-  .mainContainer_SkillSection {
-    height: 130vh;
-  }
-
-  .mainContainer_ProjectSection {
-    height: 105vh;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 70vh;
-  }
-
-  .mainContainer_ContactSection {
-    height: 100vh;
-  }
-
-  .mainContainer_Information {
-    height: 141vh;
-  }
-
-  .mainContainer_PortfolioInfo {
-    height: 100vh;
-  }
-
-  .mainContainer_PortfolioInfo_expanded {
-    height: 320vh;
-  }
-}
-
-@media (min-height: 601px) and (max-height: 700px)  {
-  .mainContainer_SkillSection {
-    height: 115vh;
-  }
-
-  .mainContainer_ProjectSection {
-    height: 92vh;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 62vh;
-  }
-
-  .mainContainer_ContactSection {
-    height: 90vh;
-  }
-
-  .mainContainer_Information {
-    height: 130vh;
-  }
-
-  .mainContainer_PortfolioInfo {
-    height: 90vh;
-  }
-
-  .mainContainer_PortfolioInfo_expanded {
-    height: 290vh;
-  }
-}
-
-@media (min-height: 701px) and (max-height: 800px)  {
-  .mainContainer_SkillSection {
-    height: 100vh;
-  }
-
-  .mainContainer_ProjectSection {
-    height: 82vh;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 55vh;
-  }
-
-  .mainContainer_ContactSection {
-    height: 75vh;
-  }
-
-  .mainContainer_Information {
-    height: 115vh;
-  }
-
-  .mainContainer_PortfolioInfo {
-    height: 82vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
@@ -556,23 +437,51 @@
 }
 
 
-
-/* For medium to large screen heights (laptops, desktops) */
-@media (min-height: 801px) and (max-height: 900px)  {
+@media (min-height: 501px) and (max-height: 540px)  {
   .mainContainer_SkillSection {
-    height: 90vh;
-  }
-
-  .mainContainer_AchievementSection {
-    height: 49vh;
-  }
-
-  .mainContainer_ContactSection {
-    height: 67vh;
+    height: 120vh;
   }
 
   .mainContainer_ProjectSection {
-    height: 72vh;
+    height: 130vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 110vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 110vh;
+  }
+
+  .mainContainer_Information {
+    height: 110vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 100vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 220vh;
+  }
+}
+
+@media (min-height: 541px) and (max-height: 600px)  {
+  .mainContainer_SkillSection {
+    height: 110vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 120vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 105vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 100vh;
   }
 
   .mainContainer_Information {
@@ -580,10 +489,106 @@
   }
 
   .mainContainer_PortfolioInfo {
+    height: 100vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 200vh;
+  }
+}
+
+@media (min-height: 601px) and (max-height: 700px)  {
+  .mainContainer_SkillSection {
+    height: 95vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 105vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 92vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 90vh;
+  }
+
+  .mainContainer_Information {
+    height: 90vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 90vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 180vh;
+  }
+}
+
+@media (min-height: 701px) and (max-height: 800px)  {
+  .mainContainer_SkillSection {
+    height: 80vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 90vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 80vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 75vh;
+  }
+
+  .mainContainer_Information {
+    height: 80vh;
+  }
+
+  .mainContainer_PortfolioInfo {
+    height: 82vh;
+  }
+
+  .mainContainer_PortfolioInfo_expanded {
+    height: 150vh;
+  }
+}
+
+
+
+/* For medium to large screen heights (laptops, desktops) */
+@media (min-height: 801px) and (max-height: 900px)  {
+  .mainContainer_SkillSection {
+    height: 70vh;
+  }
+
+  .mainContainer_AchievementSection {
+    height: 70vh;
+  }
+
+  .mainContainer_ContactSection {
+    height: 67vh;
+  }
+
+  .mainContainer_ProjectSection {
+    height: 80vh;
+  }
+
+  .mainContainer_Information {
+    height: 70vh;
+  }
+
+  .mainContainer_PortfolioInfo {
     height: 70vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 220vh;
+    height: 140vh;
   }
 }
+
+
+
