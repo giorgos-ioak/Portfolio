@@ -381,11 +381,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 160vh;
+    height: 164vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 138vh;
+    height: 142vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 144vh;
   }
 
   .mainContainer_ContactSection {
@@ -412,11 +416,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 145vh;
+    height: 149vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 125vh;
+    height: 129vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 130vh;
   }
 
   .mainContainer_ContactSection {
@@ -443,11 +451,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 130vh;
+    height: 134vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 110vh;
+    height: 114vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 120vh;
   }
 
   .mainContainer_ContactSection {
@@ -473,11 +485,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 120vh;
+    height: 124vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 105vh;
+    height: 109vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 110vh;
   }
 
   .mainContainer_ContactSection {
@@ -503,11 +519,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 105vh;
+    height: 109vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 92vh;
+    height: 96vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 100vh;
   }
 
   .mainContainer_ContactSection {
@@ -533,11 +553,15 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 90vh;
+    height: 94vh;
   }
 
   .mainContainer_AchievementSection {
-    height: 80vh;
+    height: 84vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 84vh;
   }
 
   .mainContainer_ContactSection {
@@ -566,7 +590,11 @@
   }
 
   .mainContainer_AchievementSection {
-    height: 70vh;
+    height: 74vh;
+  }
+
+  .mainContainer_AchievementPageSection {
+    height: 75vh;
   }
 
   .mainContainer_ContactSection {
@@ -574,7 +602,7 @@
   }
 
   .mainContainer_ProjectSection {
-    height: 80vh;
+    height: 84vh;
   }
 
   .mainContainer_Information {
