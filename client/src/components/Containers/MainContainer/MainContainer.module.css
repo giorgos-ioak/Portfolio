@@ -377,7 +377,7 @@
 /* For small to medium screen heights (mobile portrait, small tablets) */
 @media (min-height: 400px) and (max-height: 449px)  {
   .mainContainer_SkillSection {
-    height: 140vh;
+    height: 170vh;
   }
 
   .mainContainer_ProjectSection {
@@ -397,22 +397,22 @@
   }
 
   .mainContainer_Information {
-    height: 140vh;
+    height: 180vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 135vh;
+    height: 150vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 280vh;
+    height: 400vh;
   }
 }
 
 
 @media (min-height: 450px) and (max-height: 500px)  {
   .mainContainer_SkillSection {
-    height: 130vh;
+    height: 155vh;
   }
 
   .mainContainer_ProjectSection {
@@ -432,22 +432,22 @@
   }
 
   .mainContainer_Information {
-    height: 130vh;
+    height: 155vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 120vh;
+    height: 135vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 250vh;
+    height: 320vh;
   }
 }
 
 
 @media (min-height: 501px) and (max-height: 540px)  {
   .mainContainer_SkillSection {
-    height: 120vh;
+    height: 140vh;
   }
 
   .mainContainer_ProjectSection {
@@ -467,21 +467,21 @@
   }
 
   .mainContainer_Information {
-    height: 110vh;
+    height: 140vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 100vh;
+    height: 120vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 220vh;
+    height: 290vh;
   }
 }
 
 @media (min-height: 541px) and (max-height: 600px)  {
   .mainContainer_SkillSection {
-    height: 110vh;
+    height: 130vh;
   }
 
   .mainContainer_ProjectSection {
@@ -501,21 +501,21 @@
   }
 
   .mainContainer_Information {
-    height: 100vh;
+    height: 130vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 100vh;
+    height: 110vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 200vh;
+    height: 270vh;
   }
 }
 
 @media (min-height: 601px) and (max-height: 700px)  {
   .mainContainer_SkillSection {
-    height: 95vh;
+    height: 115vh;
   }
 
   .mainContainer_ProjectSection {
@@ -535,21 +535,21 @@
   }
 
   .mainContainer_Information {
-    height: 90vh;
+    height: 120vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 90vh;
+    height: 100vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 180vh;
+    height: 240vh;
   }
 }
 
 @media (min-height: 701px) and (max-height: 800px)  {
   .mainContainer_SkillSection {
-    height: 80vh;
+    height: 100vh;
   }
 
   .mainContainer_ProjectSection {
@@ -569,15 +569,15 @@
   }
 
   .mainContainer_Information {
-    height: 80vh;
+    height: 100vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 82vh;
+    height: 85vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 150vh;
+    height: 210vh;
   }
 }
 
@@ -586,7 +586,7 @@
 /* For medium to large screen heights (laptops, desktops) */
 @media (min-height: 801px) and (max-height: 900px)  {
   .mainContainer_SkillSection {
-    height: 70vh;
+    height: 85vh;
   }
 
   .mainContainer_AchievementSection {
@@ -606,15 +606,15 @@
   }
 
   .mainContainer_Information {
-    height: 70vh;
+    height: 85vh;
   }
 
   .mainContainer_PortfolioInfo {
-    height: 70vh;
+    height: 75vh;
   }
 
   .mainContainer_PortfolioInfo_expanded {
-    height: 140vh;
+    height: 180vh;
   }
 }
 
